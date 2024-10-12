@@ -1,5 +1,5 @@
 from django.db import models
-from models import Escultor
+from escultor.models import Escultor
 
 class Escultura(models.Model):
     escultor = models.ForeignKey(Escultor, on_delete=models.CASCADE)
