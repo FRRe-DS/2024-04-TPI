@@ -1,6 +1,6 @@
 __pycache__/
 /__pycache__/
-/migrations
+migrations/
 
 # Environments
 variables/
@@ -10,3 +10,6 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+
+# exportaciones
+media/
