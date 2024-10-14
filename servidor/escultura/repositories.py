@@ -29,6 +29,10 @@ class EsculturaRepository:
     @staticmethod
     def obtener_por_escultor(escultor_id):
         return Escultura.objects.filter(escultor_id=escultor_id)
+    
+    @staticmethod
+    def obtener_por_evento(evento_id):
+        return Escultura.objects.filter(participacionescultura__evento_id=evento_id)
 
 class ImagenRepository:
     @staticmethod

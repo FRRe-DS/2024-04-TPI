@@ -23,4 +23,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/esculturas/', include('escultura.urls')),  # Rutas para esculturas
     path('api/escultores/', include('escultor.urls')),  # Rutas para escultores
+    path('api/eventos/', include('evento.urls')), #Rutas para eventos
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

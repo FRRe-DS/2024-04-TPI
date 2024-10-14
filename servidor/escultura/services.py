@@ -31,6 +31,10 @@ class EsculturaService:
     @staticmethod
     def obtener_por_escultor(escultor_id):
         return EsculturaRepository.obtener_por_escultor(escultor_id=escultor_id)
+    
+    @staticmethod
+    def obtener_por_evento(evento_id):
+        return EsculturaRepository.obtener_por_evento(evento_id=evento_id)
 
 class ImagenService:
     @staticmethod

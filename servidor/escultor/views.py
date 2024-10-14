@@ -24,7 +24,7 @@ class EscultorViewSet(viewsets.ModelViewSet):
     def create(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
         if serializer.is_valid():
-            escultor = EscultorService.crear(serializer.validated_data)
+            escultor = EscultorService.crear_escultor(serializer.validated_data)
             return Response(
                 {"message": "Escultor creado exitosamente", "data": EscultorSerializer(escultor).data},
                 status=status.HTTP_201_CREATED
@@ -37,7 +37,7 @@ class EscultorViewSet(viewsets.ModelViewSet):
     def update(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data, partial=True)
         if serializer.is_valid():
-            escultor = EscultorService.actualizar(kwargs['pk'], serializer.validated_data)
+            escultor = EscultorService.actualizar_escultor(kwargs['pk'], serializer.validated_data)
             if not escultor:
                 return Response(
                     {"message": "Escultor no encontrado"}, 
@@ -52,7 +52,7 @@ class EscultorViewSet(viewsets.ModelViewSet):
         )
 
     def destroy(self, request, *args, **kwargs):
-        eliminado = EscultorService.eliminar(kwargs['pk'])
+        eliminado = EscultorService.eliminar_escultor(kwargs['pk'])
         if eliminado:
             return Response(
                 {"message": "Escultor eliminado exitosamente"},
