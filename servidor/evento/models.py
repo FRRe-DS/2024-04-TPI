@@ -24,6 +24,15 @@ class ParticipacionEscultor(models.Model):
 
     def __str__(self):
         return f"{self.escultor} en {self.evento}"
+    
+    # Esto asegura que un escultor no se registre dos veces en el mismo evento
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(
+                fields=['evento', 'escultor'],
+                name='unique_escultor_por_evento'
+            )
+        ]
 
 class ParticipacionEscultura(models.Model):
     evento = models.ForeignKey(Evento, on_delete=models.CASCADE)
@@ -32,3 +41,12 @@ class ParticipacionEscultura(models.Model):
 
     def __str__(self):
         return f"{self.escultura} en {self.evento}"
+    
+    # Esto asegura que una escultura este registrada en un unico evento
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(
+                fields=['escultura'], 
+                name='unique_escultura_por_evento'
+            )
+        ]

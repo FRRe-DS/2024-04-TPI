@@ -1,6 +1,7 @@
 from rest_framework import viewsets, status
 from rest_framework.response import Response
 from rest_framework.decorators import action
+from django.db import IntegrityError
 
 from .services import EventoService
 from escultor.services import EscultorService
@@ -132,6 +133,11 @@ class EventoViewSet(viewsets.ModelViewSet):
                 {"detail": "Escultor agregado exitosamente al evento."},
                 status=status.HTTP_201_CREATED
             )
+        except IntegrityError:
+            return Response(
+                {"detail": "El escultor ya está registrado en este evento."},
+                status=status.HTTP_400_BAD_REQUEST
+            )
         except Exception as e:
             return Response(
                 {"detail": str(e)},
@@ -161,8 +167,17 @@ class EventoViewSet(viewsets.ModelViewSet):
                 {"detail": "Escultura agregada exitosamente al evento."},
                 status=status.HTTP_201_CREATED
             )
-        except Exception as e:
+        
+        except IntegrityError:
+            # Manejo específico de la restricción de unicidad
             return Response(
-                {"detail": str(e)},
+                {"detail": "La escultura ya está registrada en otro evento."},
                 status=status.HTTP_400_BAD_REQUEST
+            )
+
+        except Exception as e:
+            # Captura de cualquier otro error no esperado
+            return Response(
+                {"detail": f"Error inesperado: {str(e)}"},
+                status=status.HTTP_500_INTERNAL_SERVER_ERROR
             )
