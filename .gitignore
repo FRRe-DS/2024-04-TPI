@@ -1,5 +1,8 @@
+# Archivos de caché de Python
 __pycache__/
-/__pycache__/
+*.pyc
+
+# Migraciones
 migrations/
 
 # Environments
@@ -11,5 +14,18 @@ ENV/
 env.bak/
 venv.bak/
 
-# exportaciones
+# Exportaciones
 media/
+
+# Archivos de configuración de IDEs (como PyCharm)
+.idea/
+.vscode/
+
+# Archivos de configuración de sistemas operativos
+.DS_Store
+Thumbs.db
+
+# Archivos de compilación
+*.egg-info/
+dist/
+build/
