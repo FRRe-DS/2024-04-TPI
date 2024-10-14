@@ -6,5 +6,24 @@ class EscultorRepository:
         return Escultor.objects.all()
 
     @staticmethod
-    def crear_escultor(nombre, nacionalidad, fecha_nacimiento):
-        return Escultor.objects.create(nombre=nombre, nacionalidad=nacionalidad, fecha_nacimiento=fecha_nacimiento)
+    def obtener_por_id(id):
+        return Escultor.objects.filter(id=id).first()
+
+    @staticmethod
+    def crear_escultor(datos):
+        return Escultor.objects.create(**datos)
+
+    @staticmethod
+    def actualizar_escultor(escultor, datos):
+        for key, value in datos.items():
+            setattr(escultor, key, value)
+        escultor.save()
+        return escultor
+
+    @staticmethod
+    def eliminar_escultor(escultor):
+        escultor.delete()
+
+    @staticmethod
+    def obtener_por_evento(evento_id):
+        return Escultor.objects.filter(participacionescultor__evento_id=evento_id)
