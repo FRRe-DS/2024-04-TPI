@@ -11,20 +11,20 @@ class EscultorService:
 
     @staticmethod
     def crear_escultor(datos):
-        return EscultorRepository.crear(datos)
+        return EscultorRepository.crear_escultor(datos)
 
     @staticmethod
     def actualizar_escultor(id, datos):
         escultor = EscultorRepository.obtener_por_id(id)
         if not escultor:
             return None
-        return EscultorRepository.actualizar(escultor, datos)
+        return EscultorRepository.actualizar_escultor(escultor, datos)
 
     @staticmethod
     def eliminar_escultor(id):
         escultor = EscultorRepository.obtener_por_id(id)
         if escultor:
-            EscultorRepository.eliminar(escultor)
+            EscultorRepository.eliminar_escultor(escultor)
             return True
         return False
     

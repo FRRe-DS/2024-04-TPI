@@ -1,8 +1,12 @@
 from django.db import models
+
 from escultor.models import Escultor
+from evento.models import Evento
 
 class Escultura(models.Model):
+    id = models.AutoField(primary_key=True)
     escultor = models.ForeignKey(Escultor, on_delete=models.CASCADE, related_name="esculturas")
+    evento = models.ForeignKey(Evento, on_delete=models.CASCADE, related_name="esculturas")
     titulo = models.CharField(max_length=255)
     descripcion = models.TextField(null=True, blank=True)
     tematica = models.CharField(max_length=255)
@@ -19,6 +23,7 @@ class ImagenEscultura(models.Model):
         ('despues', 'Después del evento'),
     ]
 
+    id = models.AutoField(primary_key=True)
     escultura = models.ForeignKey(Escultura, on_delete=models.CASCADE, related_name="imagenes")
     imagen = models.ImageField(upload_to="esculturas/") 
     etapa = models.CharField(max_length=10, choices=ETAPAS_CHOICES)

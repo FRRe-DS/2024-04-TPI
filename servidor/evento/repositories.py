@@ -1,4 +1,4 @@
-from .models import Evento, ParticipacionEscultor, ParticipacionEscultura
+from .models import Evento, ParticipacionEscultor
 
 class EventoRepository:
     @staticmethod
@@ -32,9 +32,4 @@ class EventoRepository:
     @staticmethod
     def agregar_escultor(evento, escultor):
         participacion = ParticipacionEscultor.objects.create(evento=evento, escultor=escultor)
-        return participacion
-    
-    @staticmethod
-    def agregar_escultura(evento, escultura):
-        participacion = ParticipacionEscultura.objects.create(evento=evento, escultura=escultura)
         return participacion

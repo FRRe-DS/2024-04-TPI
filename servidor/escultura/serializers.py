@@ -9,4 +9,4 @@ class EsculturaSerializer(serializers.ModelSerializer):
 class ImagenEsculturaSerializer(serializers.ModelSerializer):
     class Meta:
         model = ImagenEscultura
-        fields = '__all__'
+        fields = ('imagen', 'etapa', 'descripcion', 'fecha_subida')
