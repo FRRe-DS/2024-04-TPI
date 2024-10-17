@@ -1,6 +1,7 @@
 from rest_framework import viewsets, status
 from rest_framework.response import Response
 from rest_framework.decorators import action
+from django.db import IntegrityError
 
 from .services import EventoService
 from escultor.services import EscultorService
@@ -132,34 +133,10 @@ class EventoViewSet(viewsets.ModelViewSet):
                 {"detail": "Escultor agregado exitosamente al evento."},
                 status=status.HTTP_201_CREATED
             )
-        except Exception as e:
+        except IntegrityError:
             return Response(
-                {"detail": str(e)},
+                {"detail": "El escultor ya está registrado en este evento."},
                 status=status.HTTP_400_BAD_REQUEST
-            )
-
-    @action(detail=True, methods=['post'], url_path='agregar-escultura')
-    def agregar_escultura(self, request, pk=None):
-        """ Agregar una escultura a un evento. """
-        evento = EventoService.obtener_por_id(pk)
-        if not evento:
-            return Response(
-                {"detail": "Evento no encontrado."},
-                status=status.HTTP_404_NOT_FOUND
-            )
-        
-        escultura_id = request.data.get('escultura_id')
-        if not escultura_id:
-            return Response(
-                {"detail": "El ID de la escultura es requerido."},
-                status=status.HTTP_400_BAD_REQUEST
-            )
-        
-        try:
-            EventoService.agregar_escultura_a_evento(evento, escultura_id)
-            return Response(
-                {"detail": "Escultura agregada exitosamente al evento."},
-                status=status.HTTP_201_CREATED
             )
         except Exception as e:
             return Response(

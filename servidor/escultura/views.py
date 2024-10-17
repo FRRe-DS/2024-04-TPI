@@ -25,7 +25,13 @@ class EsculturaViewSet(viewsets.ModelViewSet):
     def create(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
         if serializer.is_valid():
+            print(serializer.validated_data['escultor'])
             escultura = EsculturaService.crear_escultura(serializer.validated_data)
+            if not escultura:
+                return Response(
+                    {"message": "El escultor seleccionado no está registrado en el evento seleccionado."},
+                    status=status.HTTP_400_BAD_REQUEST
+                )
             return Response(
                 {"message": "Escultura creada exitosamente",
                  "data": EsculturaSerializer(escultura).data},
@@ -70,7 +76,7 @@ class EsculturaViewSet(viewsets.ModelViewSet):
 
     @action(detail=False, methods=['get'], url_path='escultor/(?P<escultor_id>[^/.]+)')
     def listar_esculturas_por_escultor(self, request, escultor_id=None):
-        """ Obtener todas las esculturas asociadas a un escultor específico. """
+        """ Obtener todas las esculturas asociadas a un escultor específico."""
         try:
             escultor_id = int(escultor_id)
             esculturas = EsculturaService.obtener_por_escultor(escultor_id)

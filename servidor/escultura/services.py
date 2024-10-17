@@ -1,4 +1,5 @@
 from .repositories import EsculturaRepository, ImagenRepository
+from escultor.services import EscultorService
 
 class EsculturaService:
     @staticmethod
@@ -11,6 +12,13 @@ class EsculturaService:
 
     @staticmethod
     def crear_escultura(data):
+        #Controlar que el escultor esté registrado en el evento
+        escultor = data['escultor']
+        escultores_del_evento = EscultorService.obtener_por_evento(data['evento'].id)
+        # Verificar si el escultor está en la lista de escultores del evento
+        if escultor not in escultores_del_evento:
+            return None  # Retorna None si el escultor no está en los escultores del evento
+        
         return EsculturaRepository.crear_escultura(data)
 
     @staticmethod

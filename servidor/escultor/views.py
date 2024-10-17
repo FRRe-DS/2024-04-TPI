@@ -13,9 +13,9 @@ class EscultorViewSet(viewsets.ModelViewSet):
 
     def retrieve(self, request, *args, **kwargs):
         escultor = EscultorService.obtener_por_id(kwargs['pk'])
-        if not escultor:
+        if escultor is None:
             return Response(
-                {"message": "Escultor no encontrado"}, 
+                {"message": "Escultor no encontrado"},
                 status=status.HTTP_404_NOT_FOUND
             )
         serializer = self.get_serializer(escultor)
@@ -26,7 +26,7 @@ class EscultorViewSet(viewsets.ModelViewSet):
         if serializer.is_valid():
             escultor = EscultorService.crear_escultor(serializer.validated_data)
             return Response(
-                {"message": "Escultor creado exitosamente", "data": EscultorSerializer(escultor).data},
+                {"message": "Escultor creado exitosamente", "data": self.serializer_class(escultor).data},
                 status=status.HTTP_201_CREATED
             )
         return Response(
@@ -38,13 +38,14 @@ class EscultorViewSet(viewsets.ModelViewSet):
         serializer = self.get_serializer(data=request.data, partial=True)
         if serializer.is_valid():
             escultor = EscultorService.actualizar_escultor(kwargs['pk'], serializer.validated_data)
-            if not escultor:
+            if escultor is None:
                 return Response(
                     {"message": "Escultor no encontrado"}, 
                     status=status.HTTP_404_NOT_FOUND
                 )
             return Response(
-                {"message": "Escultor actualizado exitosamente", "data": EscultorSerializer(escultor).data}
+                {"message": "Escultor actualizado exitosamente", "data": self.serializer_class(escultor).data},
+                status=status.HTTP_200_OK
             )
         return Response(
             {"message": "Error al actualizar escultor", "errors": serializer.errors},
