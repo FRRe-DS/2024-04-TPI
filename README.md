@@ -21,11 +21,29 @@ Analizar, desarrollar e implementar un sistema de gestión para la organización
 
 ### Servidor
 1. Instalar dependendias:
+    ```
     pip install -r requirements.txt
+    ```
 
 2. Aplicar migraciones:
+    ```
     python manage.py makemigrations
     python manage.py migrate
+    ```
 
 3. Ejecutar el servidor:
+    ```
     python manage.py runserver
+    ```
+
+    
+### Cliente
+1. Instalar dependendias:
+    ```
+    npm install
+    ```
+
+2. Ejecutar localmente
+    ```
+    npm run dev
+    ```
