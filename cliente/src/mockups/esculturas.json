@@ -1,0 +1,20 @@
+[
+    {
+        "id": 3,
+        "titulo": "123",
+        "descripcion": "456",
+        "tematica": "789",
+        "fecha_creacion": "2024-10-25",
+        "escultor": 3,
+        "evento": 13
+    },
+    {
+        "id": 4,
+        "titulo": "123",
+        "descripcion": "123",
+        "tematica": "123",
+        "fecha_creacion": "2024-10-24",
+        "escultor": 3,
+        "evento": 13
+    }
+]

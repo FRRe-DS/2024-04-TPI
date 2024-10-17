@@ -91,7 +91,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'bienal_db',
-        'USER': 'bienal_user',
+        'USER': 'postgres',
         'PASSWORD': 'root',
         'HOST': 'localhost', 
         'PORT': '5432',

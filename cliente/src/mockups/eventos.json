@@ -1,0 +1,20 @@
+[
+    {
+        "id": 13,
+        "titulo": "evento 1",
+        "descripcion": "este es el evento 1",
+        "fecha": "2024-10-06",
+        "lugar": "parque 2 de febrero",
+        "tematica": "tematica del evento 1",
+        "escultores": [3, 27]
+    },
+    {
+        "id": 14,
+        "titulo": "evento 2",
+        "descripcion": "este es el evento 20",
+        "fecha": "2001-02-12",
+        "lugar": "en algun lugar",
+        "tematica": "tematica del evento 2",
+        "escultores": [1, 2]
+    }
+]
