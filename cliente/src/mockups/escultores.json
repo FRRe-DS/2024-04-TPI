@@ -1,0 +1,26 @@
+[
+    {
+        "id": 3,
+        "nombre": "ignacio",
+        "nacionalidad": "argentina",
+        "biografia": "biografia de prueba",
+        "contacto": "contacto de prueba",
+        "fecha_nacimiento": "2017-02-17"
+    },
+    {
+        "id": 27,
+        "nombre": "agustin",
+        "nacionalidad": "brasil",
+        "biografia": "no tengo biografia",
+        "contacto": "12345",
+        "fecha_nacimiento": "2019-02-13"
+    },
+    {
+        "id": 28,
+        "nombre": "escultor 5",
+        "nacionalidad": "chile",
+        "biografia": "",
+        "contacto": "",
+        "fecha_nacimiento": "2024-09-30"
+    }
+]

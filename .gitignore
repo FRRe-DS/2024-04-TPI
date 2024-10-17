@@ -4,6 +4,7 @@ __pycache__/
 
 # Migraciones
 migrations/
+*/0001_initial.py
 
 # Environments
 variables/
