@@ -14,8 +14,7 @@ class EscultorRepositoryTests(TestCase):
         self.escultor2 = MagicMock(spec=Escultor, id=2, nombre="Escultor 2", nacionalidad="Chile", fecha_nacimiento="1990-12-12")
         
         # Simulamos un evento con una relación ManyToMany a los escultores
-        self.evento = MagicMock(spec=Evento, id=1, titulo="Evento de Arte", descripcion="Evento de Esculturas",
-                                fecha="2024-12-01", lugar="Parque 2 de febrero", tematica="tematica1")
+        self.evento = MagicMock(spec=Evento, id=1, titulo="Evento de Arte", descripcion="Evento de Esculturas", fecha="2024-12-01", lugar="Parque 2 de febrero", tematica="tematica1")
         
         # Configuramos la relación ManyToMany para devolver el escultor1
         self.evento.escultores.all.return_value = [self.escultor1]
