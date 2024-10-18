@@ -26,7 +26,8 @@ class EscultorViewSet(viewsets.ModelViewSet):
         if serializer.is_valid():
             escultor = EscultorService.crear_escultor(serializer.validated_data)
             return Response(
-                {"message": "Escultor creado exitosamente", "data": self.serializer_class(escultor).data},
+                {"message": "Escultor creado exitosamente",
+                "data": self.serializer_class(escultor).data},
                 status=status.HTTP_201_CREATED
             )
         return Response(
