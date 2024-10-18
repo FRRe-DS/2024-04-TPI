@@ -68,29 +68,6 @@ class EsculturaViewSet(viewsets.ModelViewSet):
             status=status.HTTP_404_NOT_FOUND
         )
 
-    @action(detail=False, methods=['get'], url_path='escultor/(?P<escultor_id>[^/.]+)')
-    def listar_esculturas_por_escultor(self, request, escultor_id=None):
-        """ Obtener todas las esculturas asociadas a un escultor específico."""
-        try:
-            escultor_id = int(escultor_id)
-            esculturas = EsculturaService.obtener_por_escultor(escultor_id)
-
-            # Verifica si se encontraron esculturas
-            if not esculturas:
-                return Response(
-                    {"detail": "No se encontraron esculturas para este escultor."},
-                    status=status.HTTP_404_NOT_FOUND
-                )
-
-            serializer = EsculturaSerializer(esculturas, many=True)
-            return Response(serializer.data)
-
-        except ValueError:
-            return Response(
-                {"detail": "ID de escultor no válido."},
-                status=status.HTTP_400_BAD_REQUEST
-            )
-
     @action(detail=True, methods=['get'], url_path='imagenes')
     def list_imagenes(self, request, pk=None):
         """ Obtener todas las imágenes asociadas a una escultura específica. """
