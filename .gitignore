@@ -3,8 +3,9 @@ __pycache__/
 *.pyc
 
 # Migraciones
+**/migrations/
 migrations/
-*/0001_initial.py
+servidor/escultor/migrations/0001_initial.py
 
 # Environments
 variables/

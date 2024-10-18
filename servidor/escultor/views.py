@@ -1,9 +1,11 @@
-from django.shortcuts import render
+from rest_framework.decorators import action
 from rest_framework import viewsets, status
 from rest_framework.response import Response
 
 from .services import EscultorService
+from escultura.services import EsculturaService
 from .serializers import EscultorSerializer
+from escultura.serializers import EsculturaSerializer
 
 class EscultorViewSet(viewsets.ModelViewSet):
     serializer_class = EscultorSerializer
@@ -26,7 +28,8 @@ class EscultorViewSet(viewsets.ModelViewSet):
         if serializer.is_valid():
             escultor = EscultorService.crear_escultor(serializer.validated_data)
             return Response(
-                {"message": "Escultor creado exitosamente", "data": self.serializer_class(escultor).data},
+                {"message": "Escultor creado exitosamente",
+                "data": self.serializer_class(escultor).data},
                 status=status.HTTP_201_CREATED
             )
         return Response(
@@ -63,3 +66,22 @@ class EscultorViewSet(viewsets.ModelViewSet):
             {"message": "Escultor no encontrado"},
             status=status.HTTP_404_NOT_FOUND
         )
+
+    @action(detail=True, methods=['get'], url_path='esculturas')
+    def listar_esculturas(self, request, pk=None):
+        """ Listar todas las esculturas asociadas a un escultor. """
+        escultor = EscultorService.obtener_por_id(pk)
+        if not escultor:
+            return Response(
+                {"detail": "escultor no encontrado."},
+                status=status.HTTP_404_NOT_FOUND
+            )
+
+        esculturas = EsculturaService.obtener_por_escultor(pk)
+        if not esculturas:
+            return Response(
+                {"detail": "No se encontraron esculturas para este escultor."},
+                status=status.HTTP_404_NOT_FOUND
+            )
+        serializer = EsculturaSerializer(esculturas, many=True)
+        return Response(serializer.data)

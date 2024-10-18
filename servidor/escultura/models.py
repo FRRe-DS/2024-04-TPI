@@ -6,7 +6,7 @@ from evento.models import Evento
 class Escultura(models.Model):
     id = models.AutoField(primary_key=True)
     escultor = models.ForeignKey(Escultor, on_delete=models.CASCADE, related_name="esculturas")
-    evento = models.ForeignKey(Evento, on_delete=models.CASCADE, related_name="esculturas")
+    evento = models.ForeignKey(Evento, on_delete=models.CASCADE, related_name="esculturas", null=True, blank=True)
     titulo = models.CharField(max_length=255)
     descripcion = models.TextField(null=True, blank=True)
     tematica = models.CharField(max_length=255)
