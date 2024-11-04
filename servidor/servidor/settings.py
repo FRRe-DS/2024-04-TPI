@@ -42,8 +42,15 @@ INSTALLED_APPS = [
     'drf_yasg',     # Swagger
     'escultor',
     'escultura',
-    'evento'
+    'evento',
+    'visitante',
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
+}
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
@@ -101,6 +108,8 @@ DATABASES = {
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
+
+AUTH_USER_MODEL = 'visitante.Visitante'
 
 AUTH_PASSWORD_VALIDATORS = [
     {
