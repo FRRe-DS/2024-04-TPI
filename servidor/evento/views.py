@@ -4,11 +4,9 @@ from rest_framework.decorators import action
 from django.db import IntegrityError
 
 from .services import EventoService
-from escultor.services import EscultorService
 from escultura.services import EsculturaService
 
 from .serializers import EventoSerializer
-from escultor.serializers import EscultorSerializer
 from escultura.serializers import EsculturaSerializer
 
 class EventoViewSet(viewsets.ModelViewSet):
@@ -72,25 +70,6 @@ class EventoViewSet(viewsets.ModelViewSet):
             status=status.HTTP_404_NOT_FOUND
         )
 
-    @action(detail=True, methods=['get'], url_path='escultores')
-    def listar_escultores(self, request, pk=None):
-        """ Listar todos los escultores asociados a un evento. """
-        evento = EventoService.obtener_por_id(pk)
-        if not evento:
-            return Response(
-                {"detail": "Evento no encontrado."},
-                status=status.HTTP_404_NOT_FOUND
-            )
-
-        escultores = EscultorService.obtener_por_evento(pk)
-        if not escultores:
-            return Response(
-                {"detail": "No se encontraron escultores para este evento."},
-                status=status.HTTP_404_NOT_FOUND
-            )
-        serializer = EscultorSerializer(escultores, many=True)
-        return Response(serializer.data)
-
     @action(detail=True, methods=['get'], url_path='esculturas')
     def listar_esculturas(self, request, pk=None):
         """ Listar todas las esculturas asociadas a un evento. """
@@ -110,9 +89,9 @@ class EventoViewSet(viewsets.ModelViewSet):
         serializer = EsculturaSerializer(esculturas, many=True)
         return Response(serializer.data)
 
-    @action(detail=True, methods=['post'], url_path='agregar-escultor')
-    def agregar_escultor(self, request, pk=None):
-        """ Agregar un escultor a un evento. """
+    @action(detail=True, methods=['post'], url_path='agregar-escultura')
+    def agregar_escultura(self, request, pk=None):
+        """ Agregar un escultura a un evento. """
         evento = EventoService.obtener_por_id(pk)
         if not evento:
             return Response(
@@ -120,22 +99,22 @@ class EventoViewSet(viewsets.ModelViewSet):
                 status=status.HTTP_404_NOT_FOUND
             )
         
-        escultor_id = request.data.get('escultor_id')
-        if not escultor_id:
+        escultura_id = request.data.get('escultura_id')
+        if not escultura_id:
             return Response(
-                {"detail": "El ID del escultor es requerido."},
+                {"detail": "Es necesario un id de escultura válido."},
                 status=status.HTTP_400_BAD_REQUEST
             )
         
         try:
-            EventoService.agregar_escultor_a_evento(evento, escultor_id)
+            EventoService.agregar_escultura_a_evento(evento, escultura_id)
             return Response(
-                {"detail": "Escultor agregado exitosamente al evento."},
+                {"detail": "Escultura agregada exitosamente al evento."},
                 status=status.HTTP_201_CREATED
             )
         except IntegrityError:
             return Response(
-                {"detail": "El escultor ya está registrado en este evento."},
+                {"detail": "La escultura ya está registrado en este evento."},
                 status=status.HTTP_400_BAD_REQUEST
             )
         except Exception as e:

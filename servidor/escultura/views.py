@@ -1,10 +1,14 @@
 from django.shortcuts import render
 from rest_framework import viewsets, status
 from rest_framework.response import Response
-from rest_framework.decorators import action
+from rest_framework.decorators import action, permission_classes
+from rest_framework.permissions import IsAuthenticated
+from django.db import IntegrityError
 
 from .services import EsculturaService, ImagenService
 from .serializers import EsculturaSerializer, ImagenEsculturaSerializer
+from votacion.services import VotacionService
+from votacion.serializers import VotacionSerializer
 
 class EsculturaViewSet(viewsets.ModelViewSet):
     serializer_class = EsculturaSerializer
@@ -25,13 +29,7 @@ class EsculturaViewSet(viewsets.ModelViewSet):
     def create(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
         if serializer.is_valid():
-            print(serializer.validated_data['escultor'])
             escultura = EsculturaService.crear_escultura(serializer.validated_data)
-            if not escultura:
-                return Response(
-                    {"message": "El escultor seleccionado no está registrado en el evento seleccionado."},
-                    status=status.HTTP_400_BAD_REQUEST
-                )
             return Response(
                 {"message": "Escultura creada exitosamente",
                  "data": EsculturaSerializer(escultura).data},
@@ -74,29 +72,6 @@ class EsculturaViewSet(viewsets.ModelViewSet):
             status=status.HTTP_404_NOT_FOUND
         )
 
-    @action(detail=False, methods=['get'], url_path='escultor/(?P<escultor_id>[^/.]+)')
-    def listar_esculturas_por_escultor(self, request, escultor_id=None):
-        """ Obtener todas las esculturas asociadas a un escultor específico."""
-        try:
-            escultor_id = int(escultor_id)
-            esculturas = EsculturaService.obtener_por_escultor(escultor_id)
-
-            # Verifica si se encontraron esculturas
-            if not esculturas:
-                return Response(
-                    {"detail": "No se encontraron esculturas para este escultor."},
-                    status=status.HTTP_404_NOT_FOUND
-                )
-
-            serializer = EsculturaSerializer(esculturas, many=True)
-            return Response(serializer.data)
-
-        except ValueError:
-            return Response(
-                {"detail": "ID de escultor no válido."},
-                status=status.HTTP_400_BAD_REQUEST
-            )
-
     @action(detail=True, methods=['get'], url_path='imagenes')
     def list_imagenes(self, request, pk=None):
         """ Obtener todas las imágenes asociadas a una escultura específica. """
@@ -130,3 +105,44 @@ class EsculturaViewSet(viewsets.ModelViewSet):
                 status=status.HTTP_201_CREATED
             )
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    @action(detail=True, methods=['post'], url_path='votar')
+    @permission_classes([IsAuthenticated])  # Requiere autenticación solo en esta acción
+    def votar(self, request, pk=None):
+        if not request.user.is_authenticated:
+            return Response(
+                {"detail": "No está autenticado para realizar esta acción."},
+                status=status.HTTP_403_FORBIDDEN
+            )
+        escultura = EsculturaService.obtener_por_id(pk)
+        if escultura is None:
+            return Response(
+                {"detail": "Escultura no encontrada."},
+                status=status.HTTP_404_NOT_FOUND
+            )
+
+        puntaje = request.data.get('puntaje')
+        if not puntaje:
+            return Response(
+                {"detail": "Debe proporcionar un puntaje."},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
+        try:
+            visitante = request.user
+            voto = VotacionService.crear_votacion(pk, visitante, puntaje)
+            return Response(
+                {"detail": "Voto registrado exitosamente.",
+                 "data": VotacionSerializer(voto).data},
+                status=status.HTTP_201_CREATED
+            )
+        except ValueError as e:
+            return Response(
+                {"detail": str(e)},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+        except IntegrityError:
+            return Response(
+                {"detail": "Error al intentar registrar el voto."},
+                status=status.HTTP_400_BAD_REQUEST
+            )

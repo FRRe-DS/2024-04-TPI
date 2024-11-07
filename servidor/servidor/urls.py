@@ -34,10 +34,14 @@ schema_view = get_schema_view(
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
+    #Documentacion de la API
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
 
+    #Rutas de apps individuales
     path('api/esculturas/', include('escultura.urls')),  # Rutas para esculturas
     path('api/escultores/', include('escultor.urls')),  # Rutas para escultores
     path('api/eventos/', include('evento.urls')), #Rutas para eventos
+    path('api/visitantes/', include('visitante.urls')) #Rutas para visitantes
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

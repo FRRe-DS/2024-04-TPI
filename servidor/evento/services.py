@@ -1,5 +1,4 @@
 from .repositories import EventoRepository
-from escultor.services import EscultorService
 from escultura.services import EsculturaService
 
 class EventoService:
@@ -36,9 +35,9 @@ class EventoService:
         return False
     
     @staticmethod
-    def agregar_escultor_a_evento(evento, escultor_id):
-        escultor = EscultorService.obtener_por_id(escultor_id)
-        if not escultor:
-            raise ValueError("Escultor no encontrado.")
+    def agregar_escultura_a_evento(evento, escultor_id):
+        escultura = EsculturaService.obtener_por_id(escultor_id)
+        if not escultura:
+            raise ValueError("Escultura no encontrada.")
         
-        return EventoRepository.agregar_escultor(evento, escultor)
+        return EventoRepository.agregar_escultura(evento, escultura)
