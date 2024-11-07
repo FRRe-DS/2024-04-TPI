@@ -1,0 +1,29 @@
+[
+    {
+        "id": 13,
+        "titulo": "Evento Mock 1",
+        "descripcion": "Exposición de esculturas modernas.",
+        "fecha": "2024-11-20",
+        "lugar": "Centro Cultural Buenos Aires",
+        "tematica": "Escultura Contemporánea",
+        "escultores": [3, 27]
+    },
+    {
+        "id": 14,
+        "titulo": "Evento Mock 2",
+        "descripcion": "Charla sobre arte y escultura urbana.",
+        "fecha": "2024-11-25",
+        "lugar": "Museo de Arte Moderno",
+        "tematica": "Arte Urbano",
+        "escultores": [5, 18]
+    },
+    {
+        "id": 15,
+        "titulo": "Evento Mock 3",
+        "descripcion": "Muestra interactiva de esculturas en 3D.",
+        "fecha": "2024-12-05",
+        "lugar": "Galería de Arte Digital",
+        "tematica": "Escultura Digital",
+        "escultores": [8, 12]
+    }
+]

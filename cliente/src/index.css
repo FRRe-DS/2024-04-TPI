@@ -44,7 +44,23 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
+a {
+  color: inherit; /* Mantiene el color del texto del padre */
+  text-decoration: none; /* Quita el subrayado */
+}
 
+a:visited {
+  color: inherit; /* Evita que cambie de color cuando es visitado */
+}
+
+a:hover {
+  color: inherit; /* Mantiene el color al pasar el cursor */
+  text-decoration: none; /* Sin subrayado al pasar el cursor */
+}
+
+a:active {
+  color: inherit; /* Mantiene el color al hacer clic */
+}
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;

@@ -20,6 +20,7 @@ function Eventos() {
         <>
             <ul>
                 {eventos?.map(evento=>{
+                    
                     return <div key={evento.id}>
                         <h1>{evento.titulo}</h1>
                         <p>{evento.descripcion}</p>

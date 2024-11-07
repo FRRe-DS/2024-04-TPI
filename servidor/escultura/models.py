@@ -11,7 +11,6 @@ class Escultura(models.Model):
     descripcion = models.TextField(null=True, blank=True)
     tematica = models.CharField(max_length=255)
     fecha_creacion = models.DateField()
-
     def promedio_votos(self):
         total_votos = self.votos.aggregate(models.Avg('puntaje'))['puntaje__avg']
         return total_votos if total_votos else 0
