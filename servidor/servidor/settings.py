@@ -42,8 +42,18 @@ INSTALLED_APPS = [
     'drf_yasg',     # Swagger
     'escultor',
     'escultura',
-    'evento'
+    'evento',
+    'visitante',
+    'votacion'
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.BasicAuthentication',
+    ),
+}
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
@@ -54,6 +64,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
 ]
 
 CORS_ALLOWED_ORIGINS = [
@@ -101,6 +112,8 @@ DATABASES = {
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
+
+AUTH_USER_MODEL = 'visitante.Visitante'
 
 AUTH_PASSWORD_VALIDATORS = [
     {
