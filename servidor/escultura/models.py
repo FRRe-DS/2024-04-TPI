@@ -1,4 +1,8 @@
 from django.db import models
+from PIL import Image
+import os
+from io import BytesIO
+from django.core.files.base import ContentFile
 
 from escultor.models import Escultor
 from evento.models import Evento
@@ -35,6 +39,17 @@ class ImagenEscultura(models.Model):
     etapa = models.CharField(max_length=10, choices=ETAPAS_CHOICES)
     descripcion = models.TextField(null=True, blank=True)
     fecha_subida = models.DateTimeField(auto_now_add=True)
+
+    def save(self, *args, **kwargs):
+        # Guardar la imagen temporalmente en memoria
+        if self.imagen:
+            img = Image.open(self.imagen)
+            img_io = BytesIO()
+            # Convertir la imagen a webp
+            img.save(img_io, format="WEBP", quality=85)
+            # Cambiar la extensión del archivo
+            self.imagen.save(f"{os.path.splitext(self.imagen.name)[0]}.webp", ContentFile(img_io.getvalue()), save=False)
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return f"Imagen de {self.escultura.titulo} ({self.etapa})"
