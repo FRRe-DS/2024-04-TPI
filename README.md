@@ -19,16 +19,26 @@ Analizar, desarrollar e implementar un sistema de gestión para la organización
 
 ## Instalación y Configuración
 
-### Servidor
+### Servidor y Base de Datos
 1. Instalar dependendias:
     ```
     pip install -r requirements.txt
     ```
 
-2. Aplicar migraciones:
+2. Ejecutar el script para la creación de la base de datos
+    ```
+    python create_db.py
+    ```
+
+3. Aplicar migraciones:
     ```
     python manage.py makemigrations
     python manage.py migrate
+    ```
+
+4. Cargar datos de prueba a la base de datos:
+    ```
+    python datos_prueba.py
     ```
 
 3. Ejecutar el servidor:
@@ -36,7 +46,6 @@ Analizar, desarrollar e implementar un sistema de gestión para la organización
     python manage.py runserver
     ```
 
-    
 ### Cliente
 1. Instalar dependendias:
     ```

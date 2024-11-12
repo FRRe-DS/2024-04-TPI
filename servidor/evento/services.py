@@ -8,6 +8,11 @@ class EventoService:
         return EventoRepository.obtener_todos()
 
     @staticmethod
+    def obtener_activos():
+        """Obtiene todos los eventos activos."""
+        return EventoRepository.obtener_activos()
+
+    @staticmethod
     def obtener_por_id(evento_id):
         """Obtiene un evento por su ID."""
         return EventoRepository.obtener_por_id(evento_id)

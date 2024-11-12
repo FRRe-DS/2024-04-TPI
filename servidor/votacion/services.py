@@ -15,7 +15,7 @@ class VotacionService:
 
         # Verificar que el evento está activo
         fecha_actual = timezone.now().date()
-        if not (evento.fecha <= fecha_actual): # <= evento.fecha_fin):
+        if not (evento.fecha_inicio <= fecha_actual <= evento.fecha_fin):
             raise ValueError("La escultura no está en un evento activo en esta fecha.")
 
         # Verificar que el visitante no haya votado antes esta escultura
