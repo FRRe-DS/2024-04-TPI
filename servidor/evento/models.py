@@ -10,4 +10,4 @@ class Evento(models.Model):
     tematica = models.CharField(max_length=100)
 
     def __str__(self):
-        return f"{self.titulo} - {self.fecha}"
+        return f"{self.titulo} - {self.fecha_inicio}"

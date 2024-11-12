@@ -10,7 +10,7 @@ function Home() {
             try {
                 setLoading(true)
                 const response = await fetch(
-                    `http://127.0.0.1:8000/api/eventos`,
+                    `http://127.0.0.1:8000/api/eventos/activos`,
                     {
                         method: 'GET',
                     }
@@ -48,7 +48,7 @@ function Home() {
                                 key={ev.id}
                                 className="tarjeta-evento-container"
                             >
-                                <time>{ev.fecha}</time>
+                                <time>{ev.fecha_inicio}  {ev.fecha_fin}</time>
                                 <TarjetaEvento evento={ev} />
                             </div>
                         )

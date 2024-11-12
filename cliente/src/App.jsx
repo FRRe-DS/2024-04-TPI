@@ -4,6 +4,7 @@ import AñadirEventos from './pages/AñadirEvento'
 import Evento from './pages/Evento'
 import Eventos from './pages/Eventos'
 import Home from './pages/Home'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
 function App() {
