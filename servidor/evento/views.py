@@ -122,3 +122,15 @@ class EventoViewSet(viewsets.ModelViewSet):
                 {"detail": str(e)},
                 status=status.HTTP_400_BAD_REQUEST
             )
+    
+    @action(detail=False, methods=["get"], url_path='activos')
+    def obtener_activos(self, request, pk=None):
+        eventos_activos = EventoService.obtener_activos()
+        
+        if not eventos_activos:
+            return Response(
+                {"detail": "No existen eventos activos."},
+                status=status.HTTP_404_NOT_FOUND
+            )
+        serializer = EventoSerializer(eventos_activos, many=True)
+        return Response(serializer.data)

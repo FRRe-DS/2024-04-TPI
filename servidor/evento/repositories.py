@@ -1,3 +1,4 @@
+from django.utils import timezone
 from .models import Evento
 
 class EventoRepository:
@@ -5,6 +6,18 @@ class EventoRepository:
     def obtener_todos():
         """Obtiene todos los eventos registrados."""
         return Evento.objects.all()
+    
+    @staticmethod
+    def obtener_activos():
+        """Obtiene todos los eventos activos."""
+        fecha_actual = timezone.now().date()  # Obtener la fecha actual (solo la fecha, sin la hora)
+        
+        # Filtrar eventos cuyo rango de fechas contenga la fecha actual
+        eventos_activos = Evento.objects.filter(
+            fecha_inicio__lte=fecha_actual,  # fecha de inicio antes o igual a la fecha actual
+            fecha_fin__gte=fecha_actual      # fecha de fin después o igual a la fecha actual
+        )
+        return eventos_activos
 
     @staticmethod
     def obtener_por_id(evento_id):
