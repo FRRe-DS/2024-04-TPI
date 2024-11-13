@@ -1,17 +1,16 @@
 import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import './Evento.css'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import Carousel from 'react-bootstrap/Carousel'
 
-import Carousel from 'react-bootstrap/Carousel';
 function Evento() {
     const [dataEvento, setDataEvento] = useState(null)
     const [error, setError] = useState(false)
     const [loading, setLoading] = useState(false)
     const { id } = useParams()
-
     useEffect(() => {
         async function obtenerData() {
             try {
@@ -24,7 +23,6 @@ function Evento() {
                 )
                 const data = await response.json()
                 setDataEvento(data)
-                console.log(data)
             } catch (e) {
                 console.error(e)
                 setError(true)
@@ -59,38 +57,37 @@ function Evento() {
                     </span>
                     <button className="evento-compartir">Compartir</button>
                 </div>
-                
+
+                <h5>Esculturas del evento</h5>
                 <div className="evento-galeria">
-                    <h5>Esculturas del evento</h5>
-                    {dataEvento?.galeria &&
-                        dataEvento.galeria.map((item, index) => (
-                            <div key={index} className="evento-item">
-                                <img
-                                    src={item.imagen}
-                                    alt={`Imagen ${index + 1}`}
-                                    className="evento-imagen-galeria"
-                                />
-                                <p className="evento-descripcion-galeria">
-                                    {item.descripcion}
-                                </p>
-                            </div>
-                        ))}
-                </div>
-                
-                <Container>
-                <Row>
                     {dataEvento?.esculturas?.map((escultura) => {
                         return (
-                            <Col key={escultura.id}>
-                                <Carousel.Item>
+                            <div
+                                key={escultura.id}
+                                className="evento-galeria-item"
+                            >
+                                <img
+                                    src={escultura.imagenes[0]?.imagen}
+                                    alt={escultura.titulo}
+                                    className="evento-galeria-imagen"
+                                />
+                                
+                                    <p className="evento-galeria-titulo">
+                                        {escultura.titulo}
+                                    </p>
+                                    <div className='galeria-item-opciones'>
+                                    <Link className="galeria-item-btn" to={`/esculturas/${escultura.id}`}>
+                                        Detalle
+                                    </Link>
+                                        
+                                        <div className='galeria-item-votacion'>
+                                            ⭐⭐⭐⭐⭐</div>
+                                    </div>
 
-                                </Carousel.Item>
-                            </Col>
+                            </div>
                         )
                     })}
-                </Row>
-
-                </Container>
+                </div>
             </Container>
         </>
     )

@@ -1,6 +1,9 @@
 #root {
   margin: 0 auto;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 /* EVENTOS */
@@ -74,7 +77,6 @@ button, input[type='submit']{
 
 .tarjeta-evento > img{
   height: 240px;
-
   opacity: .5;
   transition: all .1s;
   object-fit: cover;

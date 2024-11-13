@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-import TarjetaEvento from '../components/TarjetaEvento'
+import TarjetaEventoHome from '../components/TarjetaEventoHome'
 import Stack from 'react-bootstrap/esm/Stack'
 import Container from 'react-bootstrap/esm/Container'
 function Home() {
@@ -38,7 +38,7 @@ function Home() {
                 {loading ? <span>Cargando eventos...</span> : <></>}
                 <Stack direction="horizontal" gap={4}>
                     {eventosActuales?.map((ev) => {
-                        return <TarjetaEvento key={ev.id} evento={ev} />
+                        return <TarjetaEventoHome key={ev.id} evento={ev} />
                     })}
                 </Stack>
             </Container>
