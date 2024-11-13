@@ -1,7 +1,6 @@
 #root {
   margin: 0 auto;
   width: 100%;
-  max-width: 1280px;
 }
 
 /* EVENTOS */
@@ -28,9 +27,10 @@ button, input[type='submit']{
   padding: 100px;
   height: 400px;
   margin-bottom: 150px;
+  background-color: #000;
 }
 
-.hero-container::after{
+.hero-container::before{
   content: '';
   background-color: #000;
   position: absolute;
@@ -67,22 +67,26 @@ button, input[type='submit']{
 /* TARJETA EVENTO */
 
 .tarjeta-evento{
-  display: flex;
-  flex-direction: column;
+  text-shadow: 0 0 10px  #000;
+  transition: all .25s;
   width: 400px;
-  justify-content: center;
-  gap: 4px;
-  border-radius: 10px;
-  overflow: hidden;
-  margin-top: 10px;
-  margin-bottom: 10px;
 }
 
 .tarjeta-evento > img{
-  max-height: 120px;
+  height: 240px;
+
+  opacity: .5;
+  transition: all .1s;
   object-fit: cover;
 }
-
+.tarjeta-evento:hover{
+  cursor: pointer;
+  transform: scale(1.02);
+}
+.tarjeta-evento:hover > img{
+  opacity: .75;
+  
+}
 .tarjeta-evento > a:visited{
 
   color: none;

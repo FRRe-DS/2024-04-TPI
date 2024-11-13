@@ -1,10 +1,10 @@
 .evento-detalle {
-    max-width: 800px;
+    display: flex;
+    flex-direction: column;
     margin: auto;
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 10px;
-    text-align: center;
     background-color: #fff;
 }
 
@@ -14,31 +14,15 @@
     margin-bottom: 10px;
 }
 
-.evento-imagen-principal {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin-bottom: 20px;
-}
 
-.evento-info {
-    display: flex;
-    justify-content: space-around;
-    font-size: 16px;
-    margin-bottom: 20px;
-}
 
-.evento-descripcion {
-    text-align: left;
-    font-size: 16px;
-    margin-bottom: 20px;
-}
+
 
 .evento-galeria {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    margin-bottom: 20px;
+    margin: 20px 0;
 }
 
 .evento-item {
@@ -61,11 +45,15 @@
 }
 
 .evento-compartir {
-    background-color: #000000;
-    color: white;
+    background-color: transparent;
+    margin-top: 16px;
     padding: 10px 20px;
-    border: none;
+    border: 1px solid #000;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
+}
+.evento-compartir:hover{
+    background-color: #ddd;
+    border: 1px solid #000;
 }

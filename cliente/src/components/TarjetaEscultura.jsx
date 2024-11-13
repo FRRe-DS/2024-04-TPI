@@ -19,6 +19,9 @@ function TarjetaEscultura({ escultura }) {
                 <Card.Text>{escultura.descripcion}</Card.Text>
                 <Button variant="primary">Go somewhere</Button>
             </Card.Body>
+            <Card.Footer>
+                Autor: {escultura.escultor}
+            </Card.Footer>
         </Card>
     )
 }

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-
+import Stack from 'react-bootstrap/Stack';
 function Eventos() {
     const [eventos,setEventos] = useState(null)
 
@@ -18,7 +18,7 @@ function Eventos() {
     
     return (
         <>
-            <ul>
+            <Stack direction="horizontal" gap={3}>
                 {eventos?.map(evento=>{
                     
                     return <div key={evento.id}>
@@ -29,7 +29,7 @@ function Eventos() {
                         <span>Temática: {evento.tematica}</span>
                     </div>
                 })}
-            </ul>
+            </Stack>
         </>
     )
 }

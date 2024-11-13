@@ -1,14 +1,13 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import './Evento.css'
-import TarjetaEscultura from '../components/TarjetaEscultura'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 
+import Carousel from 'react-bootstrap/Carousel';
 function Evento() {
     const [dataEvento, setDataEvento] = useState(null)
-    const [imagenes, setImagenes] = useState(null)
     const [error, setError] = useState(false)
     const [loading, setLoading] = useState(false)
     const { id } = useParams()
@@ -45,26 +44,24 @@ function Evento() {
 
     return (
         <>
-            <article className="evento-detalle">
-                {console.log(dataEvento)}
-
+            <Container>
                 <h1 className="evento-titulo">{dataEvento?.titulo}</h1>
-
-                <img
-                    src={dataEvento?.imagenPrincipal}
-                    alt="Imagen del evento"
-                    className="evento-imagen-principal"
-                />
-
-                <div className="evento-info">
-                    <span>Lugar: {dataEvento?.lugar}</span>
-                    <span>Fecha: {dataEvento?.fecha_inicio}</span>
-                    <span>Temática: {dataEvento?.tematica}</span>
+                <div className="evento-detalle">
+                    <p>{dataEvento?.descripcion}</p>
+                    <span>
+                        Fecha de Inicio: <b>{dataEvento?.fecha_inicio}</b>
+                    </span>
+                    <span>
+                        Fecha de Finalización: <b>{dataEvento?.fecha_fin}</b>
+                    </span>
+                    <span>
+                        Ubicación: <b>{dataEvento?.lugar}</b>
+                    </span>
+                    <button className="evento-compartir">Compartir</button>
                 </div>
-
-                <p className="evento-descripcion">{dataEvento?.descripcion}</p>
-
+                
                 <div className="evento-galeria">
+                    <h5>Esculturas del evento</h5>
                     {dataEvento?.galeria &&
                         dataEvento.galeria.map((item, index) => (
                             <div key={index} className="evento-item">
@@ -79,22 +76,21 @@ function Evento() {
                             </div>
                         ))}
                 </div>
-
-                <button className="evento-compartir">Compartir</button>
-            </article>
-            <Container>
+                
+                <Container>
                 <Row>
                     {dataEvento?.esculturas?.map((escultura) => {
                         return (
-                            <Col  key={escultura.id}>
-                                <TarjetaEscultura
-                                    
-                                    escultura={escultura}
-                                />
+                            <Col key={escultura.id}>
+                                <Carousel.Item>
+
+                                </Carousel.Item>
                             </Col>
                         )
                     })}
                 </Row>
+
+                </Container>
             </Container>
         </>
     )

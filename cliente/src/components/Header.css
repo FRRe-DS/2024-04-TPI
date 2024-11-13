@@ -1,0 +1,51 @@
+header {
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  padding: 20px 70px;
+  font-weight:600;
+}
+
+header nav {
+  display: flex;
+  width: 575px;
+  max-width: 100%;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.logo {
+  aspect-ratio: 1.06;
+  object-fit: contain;
+  width: 71px;
+  cursor: pointer;
+}
+
+.navItem {
+  margin: auto 0;
+  color: #aaa;
+}
+
+
+.menuIcon {
+  aspect-ratio: 1.04;
+  object-fit: contain;
+  width: 24px;
+  margin: auto 0;
+}
+
+.navItem:hover{
+  color: #fff
+}
+@media (max-width: 991px) {
+  .header {
+    padding: 20px;
+  }
+  
+  .nav {
+    white-space: initial;
+  }
+}
