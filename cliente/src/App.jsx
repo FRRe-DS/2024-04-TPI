@@ -6,6 +6,8 @@ import Evento from './pages/Evento'
 import Home from './pages/Home'
 import Footer from './components/Footer'
 import Login from './pages/Login'
+import Esculturas from './pages/Esculturas'
+import Escultores from './pages/Escultores'
 import { AuthProvider } from './context/AuthContext'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -28,6 +30,8 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/eventos" element={<Eventos />} />
+                    <Route path="/esculturas" element={<Esculturas />} />
+                    <Route path="/escultores" element={<Escultores />} />
                     <Route path="/añadir-evento" element={<AñadirEventos />} />
                     <Route path="/eventos/:id" element={<Evento />} />
                     <Route path="/login" element={<Login />} />

@@ -1,0 +1,43 @@
+.escultoresPage {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .mainContent {
+    flex-grow: 1;
+    background-color: #eee;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    flex: 1;
+  }
+  
+  .escultoresSection {
+    width: 100%;
+    max-width: 811px;
+  }
+  
+  .escultoresTitle {
+    color: #000;
+    text-align: center;
+  }
+  
+  @media (max-width: 991px) {
+    .heroContent {
+      flex-direction: column;
+    }
+  
+    .heroTitle {
+      margin-top: 40px;
+    }
+  
+    .heroImage {
+      margin-top: 40px;
+    }
+  
+    .escultoresTitle {
+      margin-top: 40px;
+    }
+  }
+  

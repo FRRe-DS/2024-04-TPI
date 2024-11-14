@@ -5,7 +5,7 @@ class EventoRepository:
     @staticmethod
     def obtener_todos():
         """Obtiene todos los eventos registrados."""
-        return Evento.objects.all()
+        return Evento.objects.all().order_by('-fecha_inicio')
     
     @staticmethod
     def obtener_activos():

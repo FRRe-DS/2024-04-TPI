@@ -40,8 +40,9 @@ urlpatterns = [
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
 
     #Rutas de apps individuales
-    path('api/esculturas/', include('escultura.urls')),  # Rutas para esculturas
-    path('api/escultores/', include('escultor.urls')),  # Rutas para escultores
-    path('api/eventos/', include('evento.urls')), #Rutas para eventos
-    path('api/visitantes/', include('visitante.urls')) #Rutas para visitantes
+    path('api/esculturas/', include('escultura.urls')),
+    path('api/escultores/', include('escultor.urls')),
+    path('api/eventos/', include('evento.urls')),
+    path('api/visitantes/', include('visitante.urls')), 
+    path('api/votaciones/', include ('votacion.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

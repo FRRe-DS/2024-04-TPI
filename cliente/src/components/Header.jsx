@@ -5,8 +5,7 @@ const navItems = ['Eventos', 'Esculturas', 'Escultores'];
 
 function Header() {
   const navigate = useNavigate()
-  const userContext = useAuth()
-  console.log(userContext)
+  const {user, logoutUser} = useAuth()
   return (
     <header >
       <nav>
@@ -17,7 +16,7 @@ function Header() {
         {navItems.map((item)=>{
           return <Link key={item} to={`/${item.toLocaleLowerCase()}`} className='navItem'>{item}</Link>
         })}
-        {userContext.authTokens ? <button>Cerrar sesión</button> : <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/f24694e27ccc4885e652c75170782aac661dd9e72ce330a4db559cdee1fa8a82?placeholderIfAbsent=true&apiKey=30d7ef0f40b54a82bd2a50ed0795d71c" alt="Menu" className={'menuIcon'} />}
+        {user ? <button onClick={logoutUser}>Cerrar sesión</button> : <button onClick={()=>navigate('/login/')}>Iniciar Sesión</button>}
         
       </nav>
     </header>

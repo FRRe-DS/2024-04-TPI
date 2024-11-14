@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Form, Button, Container, Row, Col, Alert } from 'react-bootstrap';
 import { useContext } from 'react';
+import { Link } from 'react-router-dom'; // Importar Link
 import useAuth from '../context/AuthContext';
 
 function Login() {
@@ -8,12 +9,12 @@ function Login() {
     const { loginUser } = useContext(useAuth);
 
     const handleSubmit = (e) => {
-      console.log(e.target.email.value, e.target.password.value);
-      e.preventDefault();
-      const email = e.target.email.value;
-      const password = e.target.password.value;
+        console.log(e.target.email.value, e.target.password.value);
+        e.preventDefault();
+        const email = e.target.email.value;
+        const password = e.target.password.value;
   
-      loginUser(email, password);
+        loginUser(email, password);
     };
 
     return (
@@ -48,6 +49,14 @@ function Login() {
                     </Form>
                     <br />
                     {error && <Alert variant="danger">{error}</Alert>}
+
+                    {/* Mensaje para el registro */}
+                    <div className="text-center mt-3">
+                        <p>
+                            ¿No tienes una cuenta?{' '}
+                            <Link to="/registrar" style={{ color: '#007bff' }}>Regístrate</Link>
+                        </p>
+                    </div>
                 </Col>
             </Row>
         </Container>
