@@ -50,7 +50,7 @@ function RegistrarVisitante() {
         <Container className="d-flex justify-content-center align-items-center" style={{ height: '100vh' }}>
             <Row className="w-100">
                 <Col md={{ span: 6, offset: 3 }} lg={{ span: 4, offset: 4 }}>
-                    <h3 className="text-center mb-4">Registrar Visitante</h3>
+                    <h3 className="text-center mb-4">Regístrate</h3>
                     <Form onSubmit={handleSubmit}>
                         <Form.Group controlId="formEmail">
                             <Form.Label>Correo electrónico</Form.Label>

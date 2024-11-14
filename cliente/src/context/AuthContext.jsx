@@ -103,21 +103,32 @@ export const AuthProvider = ({ children }) => {
     };
 
     const refreshToken = async () => {
-        let url = "http://127.0.0.1:8000/api/visitantes/token/";
-        const response = await fetch(url, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({ refresh: authTokens.refresh })
-        });
-        const data = await response.json();
-
-        if (response.status === 200) {
-            setAuthTokens(data);
-            setUser(jwtDecode(data.refresh));
-            localStorage.setItem("authTokens", JSON.stringify(data));
-        } else {
+        const url = "http://127.0.0.1:8000/api/visitantes/token/refresh/";
+        try {
+            const response = await fetch(url, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ refresh: authTokens.refresh })
+            });
+    
+            if (response.ok) {
+                const data = await response.json();
+    
+                const updatedTokens = {
+                    access: data.access,
+                    refresh: authTokens.refresh
+                };
+    
+                setAuthTokens(updatedTokens);
+                setUser(jwtDecode(data.access)); 
+                localStorage.setItem("authTokens", JSON.stringify(updatedTokens));
+            } else {
+                logoutUser();
+            }
+        } catch (error) {
+            console.error("Error al refrescar el token:", error);
             logoutUser();
         }
     };

@@ -147,10 +147,6 @@
     "visitante": 3,
     "puntaje": 1
   }, {
-    "escultura": 61,
-    "visitante": 2,
-    "puntaje": 5
-  }, {
     "escultura": 47,
     "visitante": 9,
     "puntaje": 4
@@ -262,10 +258,6 @@
     "escultura": 42,
     "visitante": 6,
     "puntaje": 1
-  }, {
-    "escultura": 52,
-    "visitante": 2,
-    "puntaje": 5
   }, {
     "escultura": 99,
     "visitante": 8,

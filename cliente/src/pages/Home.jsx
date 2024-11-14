@@ -34,7 +34,7 @@ function Home() {
     return (
         <>
             <div className='home-eventos-container'>
-                <h2>Eventos</h2>
+                <h2>Eventos en curso</h2>
                 {loading ? <span>Cargando eventos...</span> : <></>}
                 <div className='eventos-tarjetas-container'>
                     {eventosActuales?.map((ev) => {
