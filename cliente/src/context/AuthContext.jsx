@@ -63,8 +63,9 @@ export const AuthProvider = ({ children }) => {
             } else {
                 setError(data.message || "Error al iniciar sesión");
                 Swal.fire({
-                    title: data.message || 'Error en la autenticación',
-                    icon: "error",
+                    title: 'No se pudo iniciar sesión',
+                    text: 'Usuario o contraseña incorrecta',
+                    icon: 'error',
                     toast: true,
                     timer: 8000,
                     position: 'top',
@@ -76,18 +77,26 @@ export const AuthProvider = ({ children }) => {
             // Verificar si el error es de conexión
             if (error.message.includes('Failed to fetch') || error.message.includes('net::ERR_CONNECTION_REFUSED')) {
                 Swal.fire({
-                    title: 'Error de Conexión',
-                    text: 'No se pudo conectar al servidor. Por favor, inténtelo de nuevo más tarde.',
+                    title: 'No se pudo iniciar sesión',
+                    text: 'Usuario o contraseña incorrecta',
                     icon: 'error',
-                    confirmButtonText: 'Aceptar',
+                    toast: true,
+                    timer: 8000,
+                    position: 'top',
+                    timerProgressBar: true,
+                    showConfirmButton: false
                 });
             } else {
                 // Manejar otros errores
                 Swal.fire({
-                    title: 'Error',
-                    text: 'Se produjo un error inesperado. Por favor, inténtelo de nuevo.',
+                    title: 'No se pudo iniciar sesión',
+                    text: 'Usuario o contraseña incorrecta',
                     icon: 'error',
-                    confirmButtonText: 'Aceptar',
+                    toast: true,
+                    timer: 8000,
+                    position: 'top',
+                    timerProgressBar: true,
+                    showConfirmButton: false
                 });
             }
         }
