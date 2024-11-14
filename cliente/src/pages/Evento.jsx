@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import './Evento.css'
 import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
-import Carousel from 'react-bootstrap/Carousel'
 
+import ControlesVotacion from '../components/ControlesVotacion'
+import LoginModal from '../components/LoginModal'
 function Evento() {
     const [dataEvento, setDataEvento] = useState(null)
+    const [showModal,setShowModal] = useState(false)
     const [error, setError] = useState(false)
     const [loading, setLoading] = useState(false)
     const { id } = useParams()
@@ -22,6 +22,7 @@ function Evento() {
                     }
                 )
                 const data = await response.json()
+                console.log(data)
                 setDataEvento(data)
             } catch (e) {
                 console.error(e)
@@ -66,28 +67,27 @@ function Evento() {
                                 key={escultura.id}
                                 className="evento-galeria-item"
                             >
+                                <span className="evento-galeria-titulo">
+                                    {escultura.titulo}
+                                </span>
                                 <img
                                     src={escultura.imagenes[0]?.imagen}
                                     alt={escultura.titulo}
                                     className="evento-galeria-imagen"
                                 />
-                                
-                                    <p className="evento-galeria-titulo">
-                                        {escultura.titulo}
-                                    </p>
-                                    <div className='galeria-item-opciones'>
-                                    <Link className="galeria-item-btn" to={`/esculturas/${escultura.id}`}>
-                                        Detalle
-                                    </Link>
-                                        
-                                        <div className='galeria-item-votacion'>
-                                            ⭐⭐⭐⭐⭐</div>
-                                    </div>
 
+                                <span>Autor: {escultura.escultor.nombre}</span>
+
+                                <div className="galeria-item-opciones">
+                                    <b>Votar:</b>
+                                    <ControlesVotacion idEscultura={escultura.id} openModal={()=>setShowModal(true)}/>
+
+                                </div>
                             </div>
                         )
                     })}
                 </div>
+                <LoginModal isOpen={showModal} closeModal={()=>setShowModal(false)}/>
             </Container>
         </>
     )
