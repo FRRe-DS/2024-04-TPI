@@ -35,20 +35,39 @@ class ImagenEscultura(models.Model):
 
     id = models.AutoField(primary_key=True)
     escultura = models.ForeignKey(Escultura, on_delete=models.CASCADE, related_name="imagenes")
-    imagen = models.ImageField(upload_to="esculturas/") 
+    imagen = models.ImageField(upload_to="esculturas/")
     etapa = models.CharField(max_length=10, choices=ETAPAS_CHOICES)
     descripcion = models.TextField(null=True, blank=True)
     fecha_subida = models.DateTimeField(auto_now_add=True)
 
     def save(self, *args, **kwargs):
-        # Guardar la imagen temporalmente en memoria
         if self.imagen:
             img = Image.open(self.imagen)
+
+            # Redimensionar la imagen
+            size = (800, 800)
+            img = img.resize(size, Image.LANCZOS)
+
+            # Guardar la imagen temporalmente en memoria
             img_io = BytesIO()
-            # Convertir la imagen a webp
-            img.save(img_io, format="WEBP", quality=85)
-            # Cambiar la extensión del archivo
-            self.imagen.save(f"{os.path.splitext(self.imagen.name)[0]}.webp", ContentFile(img_io.getvalue()), save=False)
+
+            # Convertir la imagen a formato WebP solo si no es ya WebP
+            if img.format != "WEBP":
+                img.save(img_io, format="WEBP", quality=85)
+                self.imagen.save(
+                    f"{os.path.splitext(self.imagen.name)[0]}.webp",
+                    ContentFile(img_io.getvalue()),
+                    save=False
+                )
+            else:
+                # Si ya es WebP, guardar la imagen redimensionada en el formato original
+                img.save(img_io, format="WEBP", quality=85)
+                self.imagen.save(
+                    self.imagen.name,
+                    ContentFile(img_io.getvalue()),
+                    save=False
+                )
+
         super().save(*args, **kwargs)
 
     def __str__(self):
