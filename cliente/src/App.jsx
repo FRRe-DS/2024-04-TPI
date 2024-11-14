@@ -13,6 +13,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Header from './components/Header'
 import Eventos from './pages/Eventos';
+import RegistrarVisitante from './pages/RegistrarVisitante';
+
 function App() {
     return (
            <Router>
@@ -25,6 +27,7 @@ function App() {
                     <Route path="/añadir-evento" element={<AñadirEventos />} />
                     <Route path="/evento/:id" element={<Evento />} />
                     <Route path="/login" element={<Login />} />
+                    <Route path="/registrar" element={<RegistrarVisitante />} />
                 </Routes>
                  <Footer />
             </AuthProvider>
