@@ -44,14 +44,11 @@ class ImagenEscultura(models.Model):
         if self.imagen:
             img = Image.open(self.imagen)
 
-            # Redimensionar la imagen
             size = (800, 800)
             img = img.resize(size, Image.LANCZOS)
 
-            # Guardar la imagen temporalmente en memoria
             img_io = BytesIO()
 
-            # Convertir la imagen a formato WebP solo si no es ya WebP
             if img.format != "WEBP":
                 img.save(img_io, format="WEBP", quality=85)
                 self.imagen.save(
@@ -60,7 +57,6 @@ class ImagenEscultura(models.Model):
                     save=False
                 )
             else:
-                # Si ya es WebP, guardar la imagen redimensionada en el formato original
                 img.save(img_io, format="WEBP", quality=85)
                 self.imagen.save(
                     self.imagen.name,
