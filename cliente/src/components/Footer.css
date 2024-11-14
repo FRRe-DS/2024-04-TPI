@@ -1,0 +1,44 @@
+footer {
+  background-color: #000;
+  color: #fff;
+  padding: 20px 70px;
+  text-align: center;
+  margin-top: 100px;
+}
+
+.footerContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.footerLogo {
+  width: 71px;
+  aspect-ratio: 1.06;
+  object-fit: contain;
+}
+
+.footerText {
+  flex-grow: 1;
+  max-width: 285px;
+}
+
+.socialIcons {
+  width: 129px;
+  aspect-ratio: 5.38;
+  object-fit: contain;
+}
+
+@media (max-width: 991px) {
+  .footer {
+    margin-top: 40px;
+    padding: 20px;
+  }
+
+  .footerContent {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
