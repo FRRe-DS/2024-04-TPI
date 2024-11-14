@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from .models import Escultura, ImagenEscultura
-
+from escultor.serializers import EscultorSerializer
 class ImagenEsculturaSerializer(serializers.ModelSerializer):
     class Meta:
         model = ImagenEscultura
@@ -10,7 +10,8 @@ class EsculturaSerializer(serializers.ModelSerializer):
     promedio_votos = serializers.SerializerMethodField()
     total_votos = serializers.SerializerMethodField()
     imagenes = ImagenEsculturaSerializer(many=True, read_only=True)
-
+    escultor = EscultorSerializer(read_only=True)
+    
     class Meta:
         model = Escultura
         fields = '__all__'

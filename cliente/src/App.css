@@ -62,11 +62,17 @@ button, input[type='submit']{
 }
 
 .home-eventos-container{
+  padding: 0 200px;
   display: flex;
+  flex-direction: column;
   gap: 24px;
-  flex-wrap: wrap;
-}
 
+}
+.eventos-tarjetas-container{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
 /* TARJETA EVENTO */
 
 .tarjeta-evento{
@@ -119,4 +125,21 @@ button, input[type='submit']{
 .tarjeta-evento > a:focus,
 .tarjeta-evento > a:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+.controles-votacion{
+  display: flex;
+  gap: 4px;
+  width: 100%;
+  justify-content: center;
+}
+.controles-votacion > button{
+  width: 30px;
+  padding: 0;
+  border-radius: 2px;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  font-size: 15px;
+  justify-content: center;
+  align-items: center;
 }

@@ -27,7 +27,7 @@ function EventsPage() {
             }
         }
         obtenerTodosLosEventos()
-    }, [])
+    },[])
   return (
     <div className='eventsPage'>
       <main className='mainContent'>

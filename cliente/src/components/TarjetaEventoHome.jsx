@@ -4,7 +4,10 @@ import { useNavigate } from 'react-router-dom';
 import Card from 'react-bootstrap/Card'
 
 function TarjetaEvento({ evento }) {
-    const imageUrl = evento?.esculturas[0]?.imagenes[0]?.imagen ?? testImg
+    const esculturaConImagen = evento.esculturas.find(escultura=>escultura.imagenes && escultura.imagenes.length > 0)
+    
+    const imageUrl = esculturaConImagen?.imagenes[0]?.imagen ? `http://127.0.0.1:8000${esculturaConImagen?.imagenes[0]?.imagen}` : testImg
+
     const navigate = useNavigate();
     const handleClick = () => {
         navigate(`/eventos/${evento.id}`)

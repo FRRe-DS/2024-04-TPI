@@ -11,7 +11,7 @@ function Home() {
             try {
                 setLoading(true)
                 const response = await fetch(
-                    `http://127.0.0.1:8000/api/eventos`,
+                    `http://127.0.0.1:8000/api/eventos/activos`,
                     {
                         method: 'GET',
                     }
@@ -28,20 +28,20 @@ function Home() {
             }
         }
         obtenerEventosActivos()
-    }, [])
+    },[])
 
 
     return (
         <>
-            <Container style={{minHeight:'240px'}}>
+            <div className='home-eventos-container'>
                 <h2>Eventos</h2>
                 {loading ? <span>Cargando eventos...</span> : <></>}
-                <Stack direction="horizontal" gap={4}>
+                <div className='eventos-tarjetas-container'>
                     {eventosActuales?.map((ev) => {
                         return <TarjetaEventoHome key={ev.id} evento={ev} />
                     })}
-                </Stack>
-            </Container>
+                </div>
+            </div>
         </>
     )
 }
