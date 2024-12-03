@@ -15,7 +15,7 @@ from votacion.models import Votacion
 
 def cargar_datos_json(archivo):
     """Carga datos desde un archivo JSON."""
-    ruta = os.path.join(settings.BASE_DIR, 'datos', archivo)  # Se asume que los archivos JSON están en 'datos/'
+    ruta = os.path.join(settings.BASE_DIR, 'datos', archivo)
     if not os.path.exists(ruta):
         print(f"No se encontró el archivo: {archivo}")
         return []
@@ -37,8 +37,8 @@ def create_eventos():
 def create_esculturas():
     esculturas = cargar_datos_json('esculturas.json')
     for data in esculturas:
-        escultor = Escultor.objects.get(id=data['escultor'])  # Supongamos que el JSON incluye el nombre del escultor
-        evento = Evento.objects.get(id=data['evento'])  # Supongamos que el JSON incluye el título del evento
+        escultor = Escultor.objects.get(id=data['escultor'])
+        evento = Evento.objects.get(id=data['evento'])
         data['escultor'] = escultor
         data['evento'] = evento
         Escultura.objects.create(**data)
@@ -67,7 +67,7 @@ def create_imagenes_esculturas():
     for data in imagenes:
         escultura = Escultura.objects.get(id=data['escultura'])
         data['escultura'] = escultura
-        ruta_imagen = os.path.join(ruta_imagenes, data['imagen'])  # El JSON incluye solo el nombre de archivo
+        ruta_imagen = os.path.join(ruta_imagenes, data['imagen'])
 
         if not os.path.exists(ruta_imagen):
             print(f"La imagen no existe en la ruta: {ruta_imagen}")
