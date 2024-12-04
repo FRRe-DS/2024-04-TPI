@@ -6,7 +6,7 @@ from rest_framework.permissions import IsAuthenticated
 from django.db import IntegrityError
 
 from .services import EsculturaService, ImagenService
-from .serializers import EsculturaSerializer, ImagenEsculturaSerializer
+from .serializers import EsculturaSerializer, ImagenEsculturaSerializer, CrearEsculturaSerializer
 from votacion.services import VotacionService
 from votacion.serializers import VotacionSerializer
 
@@ -27,12 +27,12 @@ class EsculturaViewSet(viewsets.ModelViewSet):
         return Response(serializer.data)
 
     def create(self, request, *args, **kwargs):
-        serializer = self.get_serializer(data=request.data)
+        serializer = CrearEsculturaSerializer(data=request.data)
         if serializer.is_valid():
             escultura = EsculturaService.crear_escultura(serializer.validated_data)
             return Response(
                 {"message": "Escultura creada exitosamente",
-                 "data": EsculturaSerializer(escultura).data},
+                 "data": CrearEsculturaSerializer(escultura).data},
                 status=status.HTTP_201_CREATED
             )
         return Response(
