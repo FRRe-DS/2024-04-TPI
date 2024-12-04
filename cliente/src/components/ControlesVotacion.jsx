@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { useAuth } from "../context/AuthContext";
+import GenerarQR from "./GenerarQR"; // Asegúrate de importar GenerarQR
+import './ControlesVotacion.css';
 
 function ControlesVotacion({ idEscultura, openModal }) {
     const { authTokens } = useAuth();
@@ -43,6 +45,13 @@ function ControlesVotacion({ idEscultura, openModal }) {
     }, [idEscultura]);
 
     const handleClick = async (value) => {
+        const confirmVote = window.confirm("¿Estás seguro de que deseas votar con este puntaje?");
+        
+        if (!confirmVote) {
+            // Si el usuario cancela, no se realiza la votación.
+            return;
+        }
+    
         try {
             const bodyJSON = { puntaje: value };
             const response = await fetch(
@@ -74,6 +83,7 @@ function ControlesVotacion({ idEscultura, openModal }) {
             openModal();
         }
     };
+    
 
     if (loading) {
         return <div>Cargando...</div>;
@@ -85,11 +95,16 @@ function ControlesVotacion({ idEscultura, openModal }) {
                 <div>Ya has votado por esta escultura</div>
             ) : (
                 <>
-                    <button onClick={() => handleClick(1)}>1</button>
-                    <button onClick={() => handleClick(2)}>2</button>
-                    <button onClick={() => handleClick(3)}>3</button>
-                    <button onClick={() => handleClick(4)}>4</button>
-                    <button onClick={() => handleClick(5)}>5</button>
+                    <div className="botones-votacion">
+                        <button onClick={() => handleClick(1)}>1</button>
+                        <button onClick={() => handleClick(2)}>2</button>
+                        <button onClick={() => handleClick(3)}>3</button>
+                        <button onClick={() => handleClick(4)}>4</button>
+                        <button onClick={() => handleClick(5)}>5</button>
+                    </div>
+                    <div className="qr-votacion">
+                        <GenerarQR esculturaId={idEscultura} />
+                    </div>
                 </>
             )}
         </div>

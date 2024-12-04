@@ -206,7 +206,7 @@ function Evento() {
                                 <div className="galeria-item-opciones">
                                     {eventoEnCurso && (
                                         <>
-                                            <b>Votar:</b>
+                                            <p>Votar:</p>
                                             <ControlesVotacion idEscultura={escultura.id} openModal={() => setShowModalLogin(true)} />
                                         </>
                                     )}
