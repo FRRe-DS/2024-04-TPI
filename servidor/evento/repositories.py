@@ -45,4 +45,5 @@ class EventoRepository:
     @staticmethod
     def agregar_escultura(evento, escultura):
         escultura.evento = evento
+        escultura.save()
         return escultura

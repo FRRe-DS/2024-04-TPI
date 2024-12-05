@@ -1,10 +1,11 @@
 import { useEffect, useState, useContext } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import './Evento.css';
-import { Container, Button } from 'react-bootstrap';
+import { Container, Button, Carousel } from 'react-bootstrap';
 import testImg from '../assets/test.jpg';
 import useAuth from "../context/AuthContext";
 
+import AgregarEsculturasAEventoModal from '../components/AgregarEsculturasAEventoModal';
 import ControlesVotacion from '../components/ControlesVotacion';
 import LoginModal from '../components/LoginModal';
 import ModificarEventoModal from '../components/ModificarEventoModal';
@@ -15,6 +16,7 @@ function Evento() {
     const [dataEvento, setDataEvento] = useState(null);
     const [showModalLogin, setShowModalLogin] = useState(false);
     const [showModalModificar, setShowModalModificar] = useState(false);
+    const [showModalAgregar, setShowModalAgregar] = useState(false);
     const [error, setError] = useState(false);
     const [loading, setLoading] = useState(false);
     const { id } = useParams();
@@ -57,6 +59,7 @@ function Evento() {
             });
             console.log(eventoModificado)
             if (response.ok) {
+                alert('Evento modificado exitosamente');
                 setShowModalModificar(false);
                 await obtenerData();
             } else {
@@ -85,6 +88,7 @@ function Evento() {
                     );
 
                     if (response.ok) {
+                        alert('Evento eliminado exitosamente');
                         navigate('/eventos');
                     } else {
                         console.error('Error al eliminar el evento');
@@ -99,6 +103,30 @@ function Evento() {
             }
         } else {
             alert('Eliminación cancelada.');
+        }
+    };
+
+    const agregarEsculturas = async (ids) => {
+        try {
+            const response = await fetch(
+                `http://127.0.0.1:8000/api/eventos/${id}/agregar-esculturas/`,
+                {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ esculturas_ids: ids }),
+                }
+            );
+            const data = await response.json();
+            if (response.ok) {
+                alert('Esculturas agregadas exitosamente.');
+                await obtenerData();
+            } else {
+                console.error(data.detail || 'Error al agregar esculturas.');
+            }
+        } catch (error) {
+            console.error('Error al agregar esculturas:', error);
         }
     };
 
@@ -144,6 +172,13 @@ function Evento() {
                     >
                         Modificar evento
                     </Button>
+                    <Button
+                        variant="dark"
+                        onClick={() => setShowModalAgregar(true)}
+                        className="mx-3"
+                    >
+                        Agregar esculturas
+                    </Button>
                 </div>
             )}
             <h1 className="evento-titulo">{dataEvento?.titulo}</h1>
@@ -183,12 +218,37 @@ function Evento() {
                 <div className="evento-galeria">
                     {dataEvento?.esculturas?.map((escultura) => (
                         <div key={escultura.id} className="evento-galeria-item">
-                            <span className="evento-galeria-titulo">{escultura.titulo}</span>
-                            <img
-                                src={escultura.imagenes[0]?.imagen ? escultura.imagenes[0]?.imagen : testImg}
-                                alt={escultura.titulo}
-                                className="evento-galeria-imagen"
-                            />
+                            <div
+                                    onClick={() => navigate(`/esculturas/${escultura.id}`)}
+                                    style={{ cursor: 'pointer' }}
+                                >
+                                    <span className="evento-galeria-titulo">
+                                        {escultura.titulo}
+                                    </span>
+                            </div>
+                            {escultura.imagenes.length > 1 ? (
+                                    <Carousel>
+                                        {escultura.imagenes.map((img, index) => (
+                                            <Carousel.Item key={index}>
+                                                <img
+                                                    src={`${img.imagen}`}
+                                                    alt={`${escultura.titulo} - Imagen ${index + 1}`}
+                                                    className="escultor-galeria-imagen d-block w-100"
+                                                />
+                                            </Carousel.Item>
+                                        ))}
+                                    </Carousel>
+                                ) : (
+                                    <img
+                                        src={
+                                            escultura.imagenes[0]?.imagen
+                                                ? `${escultura.imagenes[0]?.imagen}`
+                                                : testImg
+                                        }
+                                        alt={escultura.titulo}
+                                        className="escultor-galeria-imagen"
+                                    />
+                                )}
                             <span>Autor: {escultura.escultor.nombre}</span>
 
                             <div className="galeria-item-opciones">
@@ -214,6 +274,13 @@ function Evento() {
                 handleClose={() => setShowModalModificar(false)}
                 handleSubmit={actualizarEvento}
                 eventoActual={dataEvento}
+            />
+
+            <AgregarEsculturasAEventoModal
+                show={showModalAgregar}
+                handleClose={() => setShowModalAgregar(false)}
+                onSubmit={agregarEsculturas}
+                eventoId={id}
             />
         </Container>
     );

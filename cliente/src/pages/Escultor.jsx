@@ -1,7 +1,7 @@
 import { useEffect, useState, useContext } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import './Escultor.css';
-import { Container, Button } from 'react-bootstrap';
+import { Container, Button, Carousel } from 'react-bootstrap';
 import testImg from '../assets/test.jpg';
 import useAuth from "../context/AuthContext";
 
@@ -82,6 +82,7 @@ function Escultor() {
             });
             console.log(escultorModificado)
             if (response.ok) {
+                alert('Escultor modificado exitosamente');
                 setShowModalModificar(false);
                 await obtenerData();
             } else {
@@ -112,6 +113,7 @@ function Escultor() {
                     );
     
                     if (response.ok) {
+                        alert('Escultor eliminado exitosamente');
                         navigate('/escultores');
                     } else {
                         console.error('Error al eliminar el escultor');
@@ -174,19 +176,38 @@ function Escultor() {
                 <div className="escultor-galeria">
                     {esculturas.map((escultura) => {
                         return (
-                            <div key={escultura.id} className="escultor-galeria-item">
-                                <span className="escultor-galeria-titulo">
-                                    {escultura.titulo}
-                                </span>
-                                <img
-                                    src={
-                                        escultura.imagenes[0]?.imagen
-                                            ? `http://127.0.0.1:8000${escultura.imagenes[0]?.imagen}`
-                                            : testImg
-                                    }
-                                    alt={escultura.titulo}
-                                    className="escultor-galeria-imagen"
-                                />
+                            <div key={escultura.id} className="escultor-galeria-item" >
+                                <div
+                                    onClick={() => navigate(`/esculturas/${escultura.id}`)}
+                                    style={{ cursor: 'pointer' }}
+                                >
+                                    <span className="escultor-galeria-titulo">
+                                        {escultura.titulo}
+                                    </span>
+                                </div>
+                                {escultura.imagenes.length > 1 ? (
+                                    <Carousel>
+                                        {escultura.imagenes.map((img, index) => (
+                                            <Carousel.Item key={index}>
+                                                <img
+                                                    src={`http://127.0.0.1:8000${img.imagen}`}
+                                                    alt={`${escultura.titulo} - Imagen ${index + 1}`}
+                                                    className="escultor-galeria-imagen d-block w-100"
+                                                />
+                                            </Carousel.Item>
+                                        ))}
+                                    </Carousel>
+                                ) : (
+                                    <img
+                                        src={
+                                            escultura.imagenes[0]?.imagen
+                                                ? `http://127.0.0.1:8000${escultura.imagenes[0]?.imagen}`
+                                                : testImg
+                                        }
+                                        alt={escultura.titulo}
+                                        className="escultor-galeria-imagen"
+                                    />
+                                )}
                                 <span>Fecha de creación: {escultura.fecha_creacion}</span>
                             </div>
                         );

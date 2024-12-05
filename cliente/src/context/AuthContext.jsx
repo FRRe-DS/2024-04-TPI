@@ -46,7 +46,7 @@ export const AuthProvider = ({ children }) => {
                 console.log(decodedUser)
                 const userRole = decodedUser.is_admin;
                 if (userRole === true) {
-                    navigate("/admin");
+                    navigate("/");
                 } else {
                     navigate("/");
                 }

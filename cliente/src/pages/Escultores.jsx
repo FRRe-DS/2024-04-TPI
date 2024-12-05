@@ -1,4 +1,5 @@
 import { useEffect, useState, useContext } from "react";
+import { useNavigate } from 'react-router-dom';
 import TarjetaEscultorDetallada from "../components/TarjetaEscultorDetallada";
 import useAuth from "../context/AuthContext";
 import { Modal, Button, Form } from "react-bootstrap";
@@ -8,6 +9,8 @@ function EscultoresPage() {
   const [listaEscultores, setListaEscultores] = useState([]);
   const [loading, setLoading] = useState(false);
   const { user } = useContext(useAuth);
+  const [fechaError, setFechaError] = useState('');
+  const navigate = useNavigate();
 
   const [showModal, setShowModal] = useState(false);
   
@@ -29,9 +32,27 @@ function EscultoresPage() {
     setNuevoEscultor((prev) => ({ ...prev, [name]: value }));
   };
 
+    // Función para validar la fecha de nacimiento
+    const handleFechaNacimientoChange = (e) => {
+      handleInputChange(e)
+    };
+
+  useEffect(() => {
+    if (new Date(nuevoEscultor.fecha_nacimiento) > new Date()) {
+      setFechaError('La fecha de nacimiento no puede ser futura');
+    } else {
+        setFechaError('');
+    }
+  }, [nuevoEscultor.fecha_nacimiento]);
+
   // Enviar formulario
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+      if (fechaError) {
+        return;
+    }
+
     try {
       const response = await fetch("http://127.0.0.1:8000/api/escultores/", {
         method: "POST",
@@ -41,6 +62,7 @@ function EscultoresPage() {
         body: JSON.stringify(nuevoEscultor),
       });
       if (response.ok) {
+        alert('Escultor generado exitosamente');
         const data = await response.json();
         setListaEscultores((prev) => [...prev, data]); // Agregar el nuevo escultor a la lista
         setShowModal(false); // Cerrar el modal
@@ -53,7 +75,7 @@ function EscultoresPage() {
           fecha_nacimiento: "",
         });
 
-        window.location.reload();
+        navigate(`/escultores/${data.data.id}`);
       } else {
         console.error("Error al agregar escultor");
       }
@@ -161,11 +183,11 @@ function EscultoresPage() {
                 type="date"
                 name="fecha_nacimiento"
                 value={nuevoEscultor.fecha_nacimiento}
-                onChange={handleInputChange}
+                onChange={handleFechaNacimientoChange}
                 required
               />
             </Form.Group>
-
+            {fechaError && <div style={{ color: 'red' }}>{fechaError}</div>}
             <div className="text-center mt-3">
               <Button variant="danger" className="mt-3 mx-2" onClick={handleCloseModal}>
                 Cancelar

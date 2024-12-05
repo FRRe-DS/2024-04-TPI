@@ -89,39 +89,43 @@ class EventoViewSet(viewsets.ModelViewSet):
         serializer = EsculturaSerializer(esculturas, many=True)
         return Response(serializer.data)
 
-    @action(detail=True, methods=['post'], url_path='agregar-escultura')
-    def agregar_escultura(self, request, pk=None):
-        """ Agregar un escultura a un evento. """
+    @action(detail=True, methods=['post'], url_path='agregar-esculturas')
+    def agregar_esculturas(self, request, pk=None):
+        """ Agregar múltiples esculturas a un evento. """
         evento = EventoService.obtener_por_id(pk)
         if not evento:
             return Response(
                 {"detail": "Evento no encontrado."},
                 status=status.HTTP_404_NOT_FOUND
             )
-        
-        escultura_id = request.data.get('escultura_id')
-        if not escultura_id:
+
+        esculturas_ids = request.data.get('esculturas_ids', [])
+        if not esculturas_ids:
             return Response(
-                {"detail": "Es necesario un id de escultura válido."},
+                {"detail": "Es necesario proporcionar una lista de esculturas."},
                 status=status.HTTP_400_BAD_REQUEST
             )
-        
-        try:
-            EventoService.agregar_escultura_a_evento(evento, escultura_id)
-            return Response(
-                {"detail": "Escultura agregada exitosamente al evento."},
-                status=status.HTTP_201_CREATED
-            )
-        except IntegrityError:
-            return Response(
-                {"detail": "La escultura ya está registrado en este evento."},
-                status=status.HTTP_400_BAD_REQUEST
-            )
-        except Exception as e:
-            return Response(
-                {"detail": str(e)},
-                status=status.HTTP_400_BAD_REQUEST
-            )
+
+        exitosos = []
+        errores = []
+
+        for escultura_id in esculturas_ids:
+            try:
+                EventoService.agregar_escultura_a_evento(evento, escultura_id)
+                exitosos.append(escultura_id)
+            except IntegrityError:
+                errores.append({"id": escultura_id, "error": "Ya está registrada."})
+            except Exception as e:
+                errores.append({"id": escultura_id, "error": str(e)})
+
+        return Response(
+            {
+                "detail": "Proceso finalizado.",
+                "agregados": exitosos,
+                "errores": errores
+            },
+            status=status.HTTP_201_CREATED
+        )
     
     @action(detail=False, methods=["get"], url_path='activos')
     def obtener_activos(self, request, pk=None):

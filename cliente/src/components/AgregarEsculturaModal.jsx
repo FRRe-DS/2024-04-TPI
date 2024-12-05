@@ -10,6 +10,7 @@ function AgregarEsculturaModal({ show, handleClose, handleSubmit }) {
     const [evento, setEvento] = useState('');
     const [escultores, setEscultores] = useState([]);
     const [eventos, setEventos] = useState([]);
+    const [fechaError, setFechaError] = useState('');
 
     useEffect(() => {
         async function obtenerEscultores() {
@@ -41,6 +42,12 @@ function AgregarEsculturaModal({ show, handleClose, handleSubmit }) {
 
     const handleFormSubmit = (e) => {
         e.preventDefault();
+
+        // Si hay un error en la fecha, no enviamos el formulario
+        if (fechaError) {
+            return;
+        }
+
         handleSubmit({
             titulo,
             descripcion,
@@ -49,6 +56,18 @@ function AgregarEsculturaModal({ show, handleClose, handleSubmit }) {
             escultor,
             evento
         });
+    };
+
+    // Función para validar la fecha de creación
+    const handleFechaCreacionChange = (e) => {
+        const nuevaFechaCreacion = e.target.value;
+        setFechaCreacion(nuevaFechaCreacion);
+
+        if (new Date(nuevaFechaCreacion) > new Date()) {
+            setFechaError('La fecha de creación no puede ser futura');
+        } else {
+            setFechaError('');
+        }
     };
 
     return (
@@ -92,10 +111,11 @@ function AgregarEsculturaModal({ show, handleClose, handleSubmit }) {
                         <Form.Control 
                             type="date" 
                             value={fechaCreacion}
-                            onChange={(e) => setFechaCreacion(e.target.value)}
+                            onChange={handleFechaCreacionChange}
                             required
                         />
                     </Form.Group>
+                    {fechaError && <div style={{ color: 'red' }}>{fechaError}</div>}
                     <Form.Group controlId="formEscultor">
                         <Form.Label>Escultor</Form.Label>
                         <Form.Control 

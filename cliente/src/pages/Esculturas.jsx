@@ -1,4 +1,5 @@
 import { useEffect, useState, useContext } from "react";
+import { useNavigate } from 'react-router-dom';
 import useAuth from "../context/AuthContext";
 import EsculturaCard from '../components/TarjetaEsculturaDetallada.jsx';
 import { Modal, Button, Form } from "react-bootstrap";
@@ -10,6 +11,7 @@ function EsculturasPage() {
   const [loading, setLoading] = useState(false);
   const [showModalEscultura, setShowModalEscultura] = useState(false);
   const { user } = useContext(useAuth);
+  const navigate = useNavigate();
 
   useEffect(() => {
     async function obtenerTodasLasEsculturas() {
@@ -49,11 +51,12 @@ function EsculturasPage() {
           
           });
           if (response.ok) {
+              alert('Escultura generada exitosamente');
               const nuevaEscultura = await response.json();
               console.log("Escultura creada:", nuevaEscultura);
 
               setShowModalEscultura(false);
-              window.location.reload();
+              navigate(`/esculturas/${nuevaEscultura.data.id}`);
           } else {
               console.error("Error al crear la escultura");
           }

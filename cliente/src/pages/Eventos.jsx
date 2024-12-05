@@ -1,4 +1,5 @@
 import { useEffect, useState, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import EventCard from '../components/TarjetaEventoDetallada';
 import useAuth from "../context/AuthContext";
 import { Modal, Button, Form } from 'react-bootstrap';
@@ -10,6 +11,7 @@ function EventsPage() {
   const { user } = useContext(useAuth);
   const [showModal, setShowModal] = useState(false);
   const [fechaError, setFechaError] = useState('');
+  const navigate = useNavigate();
   const [nuevoEvento, setNuevoEvento] = useState({
     titulo: '',
     descripcion: '',
@@ -64,6 +66,7 @@ function EventsPage() {
       });
 
       if (response.ok) {
+        alert('Evento generado exitosamente');
         const data = await response.json();
         setListaEventos((prev) => [...prev, data]); 
         setShowModal(false);
@@ -76,7 +79,7 @@ function EventsPage() {
           tematica: '',
         });
 
-        window.location.reload();
+        navigate(`/eventos/${data.data.id}`);
       } else {
         console.error("Error al agregar evento");
       }

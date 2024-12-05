@@ -40,8 +40,8 @@ class EventoService:
         return False
     
     @staticmethod
-    def agregar_escultura_a_evento(evento, escultor_id):
-        escultura = EsculturaService.obtener_por_id(escultor_id)
+    def agregar_escultura_a_evento(evento, escultura_id):
+        escultura = EsculturaService.obtener_por_id(escultura_id)
         if not escultura:
             raise ValueError("Escultura no encontrada.")
         
