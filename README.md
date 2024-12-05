@@ -61,9 +61,9 @@ Analizar, desarrollar e implementar un sistema de gestión para la organización
 
 #### Usuarios para iniciar sesión
 Visitantes:
-    Correo electrónico: visitante1@gmail.com (mismo correo para demás usuarios, de 1 hasta 10)
-    Contraseña: password123 (misma contraseña para todos los correos)
+Correo electrónico: visitante1@gmail.com (mismo correo para demás usuarios, de 1 hasta 10)
+Contraseña: password123 (misma contraseña para todos los correos)
 
 Admin:
-    Correo electrónico: admin@gmail.com
-    Contraseña: password123
+Correo electrónico: admin@gmail.com
+Contraseña: password123
