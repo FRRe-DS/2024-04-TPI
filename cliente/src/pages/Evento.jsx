@@ -9,6 +9,9 @@ import ControlesVotacion from '../components/ControlesVotacion';
 import LoginModal from '../components/LoginModal';
 import ModificarEventoModal from '../components/ModificarEventoModal';
 
+import CompartirBoton from '../components/CompartirBoton';
+
+
 function Evento() {
     const [dataEvento, setDataEvento] = useState(null);
     const [showModalLogin, setShowModalLogin] = useState(false);
@@ -37,6 +40,8 @@ function Evento() {
             setLoading(false);
         }
     };
+
+    const shareUrl = `Mira el evento "${dataEvento?.titulo}": http://localhost:5173/eventos/${id}`;
 
     useEffect(() => {
         obtenerData();
@@ -154,7 +159,7 @@ function Evento() {
                 <span>
                     Ubicación: <b>{dataEvento?.lugar}</b>
                 </span>
-                <button className="evento-compartir">Compartir</button>
+                <CompartirBoton shareUrl={shareUrl}></CompartirBoton>
             </div>
 
             {eventoFinalizado && esculturaMasVotada ? (
