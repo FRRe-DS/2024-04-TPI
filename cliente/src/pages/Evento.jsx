@@ -1,5 +1,5 @@
 import { useEffect, useState, useContext } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, useSearchParams } from 'react-router-dom';
 import './Evento.css';
 import { Container, Button, Carousel, Modal, Badge } from 'react-bootstrap';
 import testImg from '../assets/test.jpg';
@@ -24,6 +24,8 @@ function Evento() {
     const { id } = useParams();
     const { user } = useContext(useAuth);
     const navigate = useNavigate();
+    const [searchParams] = useSearchParams();
+    const esculturaIdParam = searchParams.get('escultura');
 
     const shareUrl = `Mira el evento "${dataEvento?.titulo}": http://localhost:5173/eventos/${id}`;
 
@@ -132,14 +134,25 @@ function Evento() {
         }
     };
 
-    const handleVotarEscultura = (esculturaId) => {
+    const handleVotarEscultura = (escultura) => {
         if (user) {
-            setEsculturaSeleccionada(esculturaId);
+            setEsculturaSeleccionada(escultura);
           setShowModalVotar(true);
         } else {
           setShowModalLogin(true);
         }
       };
+
+    useEffect(() => {
+        if (user) {
+            if (esculturaIdParam) {
+                setEsculturaSeleccionada(esculturaIdParam);
+                setShowModalVotar(true);
+            }
+        } else {
+            setShowModalLogin(true);
+        }
+    }, [esculturaIdParam]);
 
     if (error) return <span>Error al cargar el evento.</span>;
     if (loading) return <span>Cargando...</span>;
@@ -288,7 +301,7 @@ function Evento() {
                                 {eventoEnCurso && (
                                     <Button
                                         variant="dark"
-                                        onClick={() => handleVotarEscultura(escultura.id)}
+                                        onClick={() => handleVotarEscultura(escultura)}
                                         className="mt-3"
                                     >
                                         Votar Escultura
