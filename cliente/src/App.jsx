@@ -17,6 +17,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Header from './components/Header'
 import Eventos from './pages/Eventos';
 import RegistrarVisitante from './pages/RegistrarVisitante';
+import Escultura from './pages/Escultura'
 
 function App() {
     return (
@@ -35,6 +36,7 @@ function App() {
                     <Route path="/escultores" element={<Escultores />} />
                     <Route path="/escultores/:id" element={<Escultor />} />
                     <Route path="/añadir-evento" element={<AñadirEventos />} />
+                    <Route path="/esculturas/:id" element={<Escultura />} />
                     <Route path="/eventos/:id" element={<Evento />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/registrar" element={<RegistrarVisitante />} />

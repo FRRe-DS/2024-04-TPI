@@ -1,12 +1,15 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import EventCard from '../components/TarjetaEventoDetallada';
+import useAuth from "../context/AuthContext";
 import { Modal, Button, Form } from 'react-bootstrap';
 import './Eventos.css';
 
 function EventsPage() {
   const [listaEventos, setListaEventos] = useState([]);
   const [loading, setLoading] = useState(false);
+  const { user } = useContext(useAuth);
   const [showModal, setShowModal] = useState(false);
+  const [fechaError, setFechaError] = useState('');
   const [nuevoEvento, setNuevoEvento] = useState({
     titulo: '',
     descripcion: '',
@@ -16,19 +19,41 @@ function EventsPage() {
     tematica: '',
   });
 
-  // Manejo de modal
-  const handleShowModal = () => setShowModal(true);
-  const handleCloseModal = () => setShowModal(false);
-
   // Manejo de inputs
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setNuevoEvento((prev) => ({ ...prev, [name]: value }));
   };
 
-  // Enviar formulario
+  // Función para validar las fechas
+  const handleFechaInicioChange = (e) => {
+    handleInputChange(e);
+  };
+
+  const handleFechaFinChange = (e) => {
+    handleInputChange(e);
+  };
+
+  useEffect(() => {
+    if (nuevoEvento.fecha_inicio && nuevoEvento.fecha_fin) {
+      if (nuevoEvento.fecha_inicio > nuevoEvento.fecha_fin) {
+        setFechaError('La fecha de inicio no puede ser mayor que la fecha de fin');
+      } else {
+        setFechaError('');
+      }
+    }
+  }, [nuevoEvento.fecha_inicio, nuevoEvento.fecha_fin]);
+
+  const handleShowModal = () => setShowModal(true);
+  const handleCloseModal = () => setShowModal(false);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (fechaError) {
+        return;
+    }
+
     try {
       const response = await fetch("http://127.0.0.1:8000/api/eventos/", {
         method: "POST",
@@ -50,7 +75,7 @@ function EventsPage() {
           lugar: '',
           tematica: '',
         });
-        
+
         window.location.reload();
       } else {
         console.error("Error al agregar evento");
@@ -88,11 +113,13 @@ function EventsPage() {
       <main className="mainContent">
         <section className="eventsSection">
           <h2 className="eventsTitle">Eventos</h2>
-          <div className="text-center mt-3">
-            <Button variant="dark" onClick={handleShowModal}>
-              Agregar Evento
-            </Button>
-          </div>
+          {user?.is_admin && (
+            <div className="text-center mt-3">
+              <Button variant="dark" onClick={handleShowModal}>
+                Agregar Evento
+              </Button>
+            </div>
+          )}
           {loading ? (
             <p>Cargando eventos...</p>
           ) : (
@@ -138,7 +165,7 @@ function EventsPage() {
                 type="date"
                 name="fecha_inicio"
                 value={nuevoEvento.fecha_inicio}
-                onChange={handleInputChange}
+                onChange={handleFechaInicioChange}
                 required
               />
             </Form.Group>
@@ -149,11 +176,11 @@ function EventsPage() {
                 type="date"
                 name="fecha_fin"
                 value={nuevoEvento.fecha_fin}
-                onChange={handleInputChange}
+                onChange={handleFechaFinChange}
                 required
               />
             </Form.Group>
-
+            {fechaError && <div style={{ color: 'red' }}>{fechaError}</div>}
             <Form.Group controlId="lugar">
               <Form.Label>Lugar</Form.Label>
               <Form.Control

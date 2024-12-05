@@ -5,35 +5,38 @@ import { Container, Button } from 'react-bootstrap';
 import testImg from '../assets/test.jpg';
 import useAuth from "../context/AuthContext";
 
+import ModificarEscultorModal from '../components/ModificarEscultorModal';
+
 function Escultor() {
     const [dataEscultor, setDataEscultor] = useState(null);
     const [esculturas, setDataEsculturas] = useState([]);
+    const [showModalModificar, setShowModalModificar] = useState(false);
     const [error, setError] = useState(false);
     const [loading, setLoading] = useState(false);
     const { id } = useParams();
     const { user } = useContext(useAuth);
     const navigate = useNavigate();
 
-    useEffect(() => {
-        async function obtenerData() {
-            try {
-                setLoading(true);
-                const response = await fetch(
-                    `http://127.0.0.1:8000/api/escultores/${id}`,
-                    {
-                        method: 'GET',
-                    }
-                );
-                const data = await response.json();
-                setDataEscultor(data);
-            } catch (e) {
-                console.error(e);
-                setError(true);
-            } finally {
-                setLoading(false);
-            }
+    const obtenerData = async () => {
+        try {
+            setLoading(true);
+            const response = await fetch(
+                `http://127.0.0.1:8000/api/escultores/${id}`,
+                {
+                    method: 'GET',
+                }
+            );
+            const data = await response.json();
+            setDataEscultor(data);
+        } catch (e) {
+            console.error(e);
+            setError(true);
+        } finally {
+            setLoading(false);
         }
+    };
 
+    useEffect(() => {
         obtenerData();
     }, [id]);
 
@@ -64,6 +67,29 @@ function Escultor() {
         obtenerEsculturas();
     }, [id]);
 
+    const actualizarEscultor = async (escultorModificado) => {
+        try {
+            const response = await fetch(`http://127.0.0.1:8000/api/escultores/${id}/`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(escultorModificado),
+            });
+            console.log(escultorModificado)
+            if (response.ok) {
+                setShowModalModificar(false);
+                await obtenerData();
+            } else {
+                console.error('Error al actualizar el escultor');
+                setError(true);
+            }
+        } catch (error) {
+            console.error(error);
+            setError(true);
+        }
+    };
+
     const eliminarEscultor = async () => {
         // Primer aviso de confirmación
         const confirmacion1 = window.confirm('¿Estás seguro de que deseas eliminar este escultor?');
@@ -82,7 +108,6 @@ function Escultor() {
                     );
     
                     if (response.ok) {
-                        // Redirigir después de la eliminación
                         navigate('/escultores');
                     } else {
                         console.error('Error al eliminar el escultor');
@@ -108,6 +133,21 @@ function Escultor() {
 
     return (
         <Container>
+            <br /> <br />
+            {user?.is_admin && (
+                <div className="text-center mt-3">
+                    <Button variant="dark" onClick={eliminarEscultor}>
+                        Eliminar Escultor
+                    </Button>
+                    <Button
+                        variant="dark"
+                        onClick={() => setShowModalModificar(true)}
+                        className="mx-3"
+                    >
+                        Modificar Escultor
+                    </Button>
+                </div>
+            )}
             <h1 className="escultor-titulo">{dataEscultor?.nombre}</h1>
             <div className="escultor-detalle">
                 <p>{dataEscultor?.biografia}</p>
@@ -116,6 +156,9 @@ function Escultor() {
                 </span>
                 <span>
                     Nacionalidad: <b>{dataEscultor?.nacionalidad}</b>
+                </span>
+                <span>
+                    Contacto: <b>{dataEscultor?.contacto}</b>
                 </span>
                 <button className="escultor-compartir">Compartir</button>
             </div>
@@ -147,13 +190,12 @@ function Escultor() {
                 </div>
             )}
 
-            {user?.is_admin && (
-                <div className="text-center mt-3">
-                    <Button variant="dark" onClick={eliminarEscultor}>
-                        Eliminar Escultor
-                    </Button>
-                </div>
-            )}
+            <ModificarEscultorModal
+                show={showModalModificar}
+                handleClose={() => setShowModalModificar(false)}
+                handleSubmit={actualizarEscultor}
+                escultorActual={dataEscultor}
+            />
         </Container>
     );
 }

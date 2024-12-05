@@ -53,7 +53,7 @@ class EsculturaViewSet(viewsets.ModelViewSet):
                 status=status.HTTP_404_NOT_FOUND
             )
         
-        serializer = self.get_serializer(escultura, data=request.data, partial=True)
+        serializer = CrearEsculturaSerializer(data=request.data)
         if serializer.is_valid():
             escultura_actualizada = EsculturaService.actualizar_escultura(kwargs['pk'], serializer.validated_data)
             return Response(

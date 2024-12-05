@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Modal, Form, Button } from 'react-bootstrap';
 
-function AgregarEsculturaModal({ show, handleClose, handleSubmit }) {
+function ModificarEsculturaModal({ show, handleClose, handleSubmit, esculturaActual, eventoActual}) {
     const [titulo, setTitulo] = useState('');
     const [descripcion, setDescripcion] = useState('');
     const [tematica, setTematica] = useState('');
@@ -10,6 +10,7 @@ function AgregarEsculturaModal({ show, handleClose, handleSubmit }) {
     const [evento, setEvento] = useState('');
     const [escultores, setEscultores] = useState([]);
     const [eventos, setEventos] = useState([]);
+    const [fechaError, setFechaError] = useState('');
 
     useEffect(() => {
         async function obtenerEscultores() {
@@ -39,48 +40,78 @@ function AgregarEsculturaModal({ show, handleClose, handleSubmit }) {
         obtenerEventos();
     }, []);
 
+    useEffect(() => {
+        if (esculturaActual) {
+            setTitulo(esculturaActual.titulo || '');
+            setDescripcion(esculturaActual.descripcion || '');
+            setTematica(esculturaActual.tematica || '');
+            setFechaCreacion(esculturaActual.fecha_creacion || '');
+            setEscultor(esculturaActual.escultor?.id || '');
+            setEvento(eventoActual?.id || '');
+        }
+    }, [esculturaActual]);
+
+    // Función para validar la fecha de creación
+    const handleFechaCreacionChange = (e) => {
+        const nuevaFechaCreacion = e.target.value;
+        setFechaCreacion(nuevaFechaCreacion);
+
+        if (new Date(nuevaFechaCreacion) > new Date()) {
+            setFechaError('La fecha de creación no puede ser futura');
+        } else {
+            setFechaError('');
+        }
+    };
+
     const handleFormSubmit = (e) => {
         e.preventDefault();
+
+        // Si hay un error en la fecha, no enviamos el formulario
+        if (fechaError) {
+            return;
+        }
+
         handleSubmit({
+            id: esculturaActual.id,
             titulo,
             descripcion,
             tematica,
             fecha_creacion: fechaCreacion,
-            escultor,
-            evento
+            escultor: escultor,
+            evento: evento,
         });
     };
 
     return (
         <Modal show={show} onHide={handleClose}>
             <Modal.Header closeButton>
-                <Modal.Title>Agregar Escultura</Modal.Title>
+                <Modal.Title>Modificar Escultura</Modal.Title>
             </Modal.Header>
             <Modal.Body>
                 <Form onSubmit={handleFormSubmit}>
                     <Form.Group controlId="formTitulo">
                         <Form.Label>Título</Form.Label>
-                        <Form.Control 
-                            type="text" 
+                        <Form.Control
+                            type="text"
                             placeholder="Título de la escultura"
                             value={titulo}
-                            onChange={(e) => setTitulo(e.target.value)} 
+                            onChange={(e) => setTitulo(e.target.value)}
                             required
                         />
                     </Form.Group>
                     <Form.Group controlId="formDescripcion">
                         <Form.Label>Descripción</Form.Label>
-                        <Form.Control 
-                            as="textarea" 
+                        <Form.Control
+                            as="textarea"
                             placeholder="Descripción de la escultura"
                             value={descripcion}
-                            onChange={(e) => setDescripcion(e.target.value)} 
+                            onChange={(e) => setDescripcion(e.target.value)}
                         />
                     </Form.Group>
                     <Form.Group controlId="formTematica">
                         <Form.Label>Temática</Form.Label>
-                        <Form.Control 
-                            type="text" 
+                        <Form.Control
+                            type="text"
                             placeholder="Temática de la escultura"
                             value={tematica}
                             onChange={(e) => setTematica(e.target.value)}
@@ -89,22 +120,24 @@ function AgregarEsculturaModal({ show, handleClose, handleSubmit }) {
                     </Form.Group>
                     <Form.Group controlId="formFechaCreacion">
                         <Form.Label>Fecha de Creación</Form.Label>
-                        <Form.Control 
-                            type="date" 
+                        <Form.Control
+                            type="date"
                             value={fechaCreacion}
-                            onChange={(e) => setFechaCreacion(e.target.value)}
+                            onChange={handleFechaCreacionChange}
                             required
                         />
                     </Form.Group>
+                    {fechaError && <div style={{ color: 'red' }}>{fechaError}</div>}
+
                     <Form.Group controlId="formEscultor">
                         <Form.Label>Escultor</Form.Label>
-                        <Form.Control 
+                        <Form.Control
                             as="select"
                             value={escultor}
-                            onChange={(e) => setEscultor(e.target.value)} 
+                            onChange={(e) => setEscultor(e.target.value)}
                             required
                         >
-                            <option value="">Seleccionar Escultor</option>
+                            <option value="">Seleccionar escultor</option>
                             {escultores.map((escultor) => (
                                 <option key={escultor.id} value={escultor.id}>
                                     {escultor.nombre}
@@ -112,14 +145,15 @@ function AgregarEsculturaModal({ show, handleClose, handleSubmit }) {
                             ))}
                         </Form.Control>
                     </Form.Group>
-                    <Form.Group controlId="formEscultor">
+                            {console.log(escultor)}
+                    <Form.Group controlId="formEvento">
                         <Form.Label>Evento</Form.Label>
-                        <Form.Control 
+                        <Form.Control
                             as="select"
                             value={evento}
-                            onChange={(e) => setEvento(e.target.value)} 
+                            onChange={(e) => setEvento(e.target.value)}
                         >
-                            <option value="">Seleccionar Evento</option>
+                            <option value="">Seleccionar evento</option>
                             {eventos.map((evento) => (
                                 <option key={evento.id} value={evento.id}>
                                     {evento.titulo}
@@ -127,6 +161,7 @@ function AgregarEsculturaModal({ show, handleClose, handleSubmit }) {
                             ))}
                         </Form.Control>
                     </Form.Group>
+
                     <br />
                     <div className="text-center mt-3">
                         <Button variant="danger" onClick={handleClose} className="mx-3">
@@ -142,4 +177,4 @@ function AgregarEsculturaModal({ show, handleClose, handleSubmit }) {
     );
 }
 
-export default AgregarEsculturaModal;
+export default ModificarEsculturaModal;
