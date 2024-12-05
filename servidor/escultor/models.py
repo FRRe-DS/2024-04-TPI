@@ -3,6 +3,7 @@ from django.db import models
 class Escultor(models.Model):
     id = models.AutoField(primary_key=True)
     nombre = models.CharField(max_length=255)
+    imagen = models.ImageField(upload_to="escultores/", null=True, blank=True)
     nacionalidad = models.CharField(max_length=255)
     biografia = models.CharField(max_length=255, null=True, blank=True)
     contacto = models.CharField(max_length=255, null=True, blank=True)

@@ -3,7 +3,7 @@ from .models import Escultor
 class EscultorRepository:
     @staticmethod
     def obtener_todos():
-        return Escultor.objects.all()
+        return Escultor.objects.all().order_by('-id')
 
     @staticmethod
     def obtener_por_id(id):
