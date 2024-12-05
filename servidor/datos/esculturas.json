@@ -1,701 +1,122 @@
-[{
-    "escultor": 39,
-    "evento": 9,
-    "titulo": "escultura1",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Minimalismo",
-    "fecha_creacion": "2022-04-18"
-  }, {
-    "escultor": 43,
-    "evento": 15,
-    "titulo": "escultura2",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Diversidad",
-    "fecha_creacion": "2023-07-14"
-  }, {
-    "escultor": 9,
-    "evento": 13,
-    "titulo": "escultura3",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Social",
-    "fecha_creacion": "2023-10-09"
-  }, {
-    "escultor": 35,
-    "evento": 8,
-    "titulo": "escultura4",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Surrealismo",
-    "fecha_creacion": "2021-07-10"
-  }, {
-    "escultor": 7,
-    "evento": 5,
-    "titulo": "escultura5",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Mitos y Leyendas",
-    "fecha_creacion": "2023-06-19"
-  }, {
-    "escultor": 28,
-    "evento": 8,
-    "titulo": "escultura6",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Diversidad",
-    "fecha_creacion": "2020-07-25"
-  }, {
-    "escultor": 46,
-    "evento": 11,
-    "titulo": "escultura7",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Escultura Sonora",
-    "fecha_creacion": "2023-01-25"
-  }, {
-    "escultor": 25,
-    "evento": 8,
-    "titulo": "escultura8",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Diversidad",
-    "fecha_creacion": "2021-06-21"
-  }, {
-    "escultor": 21,
-    "evento": 5,
-    "titulo": "escultura9",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Clásico",
-    "fecha_creacion": "2024-06-17"
-  }, {
-    "escultor": 11,
-    "evento": 15,
-    "titulo": "escultura10",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Escultura Sonora",
-    "fecha_creacion": "2021-02-24"
-  }, {
-    "escultor": 23,
-    "evento": 10,
-    "titulo": "escultura11",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Efímero",
-    "fecha_creacion": "2021-03-11"
-  }, {
-    "escultor": 49,
-    "evento": 8,
-    "titulo": "escultura12",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Medioambiental",
-    "fecha_creacion": "2021-06-07"
-  }, {
-    "escultor": 30,
-    "evento": 9,
-    "titulo": "escultura13",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Moderno",
-    "fecha_creacion": "2021-10-23"
-  }, {
-    "escultor": 15,
-    "evento": 8,
-    "titulo": "escultura14",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Político",
-    "fecha_creacion": "2021-11-10"
-  }, {
-    "escultor": 1,
-    "evento": 4,
-    "titulo": "escultura15",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Arquitectura",
-    "fecha_creacion": "2024-10-17"
-  }, {
+[
+  {
     "escultor": 5,
-    "evento": 6,
-    "titulo": "escultura16",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Medioambiental",
-    "fecha_creacion": "2024-11-09"
-  }, {
-    "escultor": 9,
-    "evento": 4,
-    "titulo": "escultura17",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Efímero",
-    "fecha_creacion": "2023-06-24"
-  }, {
-    "escultor": 44,
+    "evento": 2,
+    "titulo": "Figura Reclining",
+    "descripcion": "Una figura abstracta reclinada que simboliza la conexión entre el cuerpo humano y el paisaje.",
+    "tematica": "Abstracto",
+    "fecha_creacion": "2009-03-15"
+  },
+  {
+    "escultor": 7,
     "evento": 1,
-    "titulo": "escultura18",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Movimiento",
-    "fecha_creacion": "2020-02-01"
-  }, {
+    "titulo": "Torse Humain",
+    "descripcion": "Una escultura fluida que representa un torso humano con formas orgánicas.",
+    "tematica": "Surrealismo",
+    "fecha_creacion": "1999-05-20"
+  },
+  {
+    "escultor": 8,
+    "evento": 3,
+    "titulo": "La Valse",
+    "descripcion": "Una obra emotiva que muestra una pareja bailando, atrapados en el movimiento eterno.",
+    "tematica": "Romanticismo",
+    "fecha_creacion": "1993-07-14"
+  },
+  {
+    "escultor": 10,
+    "evento": 5,
+    "titulo": "Crown Fountain",
+    "descripcion": "Una obra monumental que combina esculturas de rostros con fuentes interactivas.",
+    "tematica": "Arte Público",
+    "fecha_creacion": "2004-06-25"
+  },
+  {
     "escultor": 2,
-    "evento": 13,
-    "titulo": "escultura19",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Cultural",
-    "fecha_creacion": "2022-06-29"
-  }, {
-    "escultor": 21,
-    "evento": 14,
-    "titulo": "escultura20",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Naturaleza",
-    "fecha_creacion": "2023-06-25"
-  }, {
-    "escultor": 8,
+    "evento": 4,
+    "titulo": "Círculo de la Vida",
+    "descripcion": "Una instalación abstracta que simboliza el ciclo eterno de la vida y la muerte.",
+    "tematica": "Espiritualidad",
+    "fecha_creacion": "1985-09-10"
+  },
+  {
+    "escultor": 9,
+    "evento": 1,
+    "titulo": "Rostro de Luz",
+    "descripcion": "Una escultura minimalista de un rostro humano que interactúa con la luz natural.",
+    "tematica": "Minimalismo",
+    "fecha_creacion": "2018-03-18"
+  },
+  {
+    "escultor": 6,
+    "evento": 2,
+    "titulo": "Espejo del Alma",
+    "descripcion": "Una escultura reflectante que juega con las percepciones del observador.",
+    "tematica": "Modernismo",
+    "fecha_creacion": "2010-11-05"
+  },
+  {
+    "escultor": 3,
     "evento": 5,
-    "titulo": "escultura21",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Social",
-    "fecha_creacion": "2022-05-09"
-  }, {
-    "escultor": 43,
-    "evento": 8,
-    "titulo": "escultura22",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Innovación",
-    "fecha_creacion": "2021-10-09"
-  }, {
-    "escultor": 23,
-    "evento": 10,
-    "titulo": "escultura23",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Abstracto",
-    "fecha_creacion": "2023-11-04"
-  }, {
-    "escultor": 35,
-    "evento": 12,
-    "titulo": "escultura24",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Identidad",
+    "titulo": "Mujer Voluminosa",
+    "descripcion": "Una figura femenina voluptuosa, característica del estilo boterista.",
+    "tematica": "Cultura",
+    "fecha_creacion": "1990-06-22"
+  },
+  {
+    "escultor": 1,
+    "evento": 3,
+    "titulo": "La Puerta del Infierno",
+    "descripcion": "Una obra épica basada en 'La Divina Comedia', llena de figuras y dramatismo.",
+    "tematica": "Literatura",
     "fecha_creacion": "2020-05-01"
-  }, {
-    "escultor": 33,
-    "evento": 7,
-    "titulo": "escultura25",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Innovación",
-    "fecha_creacion": "2021-06-26"
-  }, {
-    "escultor": 15,
-    "evento": 5,
-    "titulo": "escultura26",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Conceptual",
-    "fecha_creacion": "2022-05-20"
-  }, {
-    "escultor": 48,
-    "evento": 7,
-    "titulo": "escultura27",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Minimalismo",
-    "fecha_creacion": "2024-10-21"
-  }, {
-    "escultor": 5,
-    "evento": 2,
-    "titulo": "escultura28",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Monumental",
-    "fecha_creacion": "2023-08-23"
-  }, {
-    "escultor": 48,
-    "evento": 6,
-    "titulo": "escultura29",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Monumental",
-    "fecha_creacion": "2020-12-02"
-  }, {
-    "escultor": 1,
-    "evento": 11,
-    "titulo": "escultura30",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Figurativo",
-    "fecha_creacion": "2023-12-22"
-  }, {
-    "escultor": 11,
-    "evento": 13,
-    "titulo": "escultura31",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Minimalismo",
-    "fecha_creacion": "2022-11-11"
-  }, {
-    "escultor": 16,
-    "evento": 9,
-    "titulo": "escultura32",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Efímero",
-    "fecha_creacion": "2023-02-18"
-  }, {
-    "escultor": 15,
-    "evento": 2,
-    "titulo": "escultura33",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Identidad",
-    "fecha_creacion": "2023-06-24"
-  }, {
-    "escultor": 12,
-    "evento": 12,
-    "titulo": "escultura34",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Político",
-    "fecha_creacion": "2022-05-15"
-  }, {
-    "escultor": 10,
-    "evento": 10,
-    "titulo": "escultura35",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Minimalismo",
-    "fecha_creacion": "2024-05-18"
-  }, {
-    "escultor": 9,
-    "evento": 12,
-    "titulo": "escultura36",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Realismo",
-    "fecha_creacion": "2024-02-20"
-  }, {
-    "escultor": 20,
-    "evento": 14,
-    "titulo": "escultura37",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Geometría",
-    "fecha_creacion": "2022-10-08"
-  }, {
-    "escultor": 38,
-    "evento": 10,
-    "titulo": "escultura38",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Moderno",
-    "fecha_creacion": "2021-09-01"
-  }, {
-    "escultor": 16,
-    "evento": 15,
-    "titulo": "escultura39",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Identidad",
-    "fecha_creacion": "2024-01-02"
-  }, {
-    "escultor": 36,
-    "evento": 14,
-    "titulo": "escultura40",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Geometría",
-    "fecha_creacion": "2023-03-25"
-  }, {
-    "escultor": 41,
-    "evento": 7,
-    "titulo": "escultura41",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Simbolismo",
-    "fecha_creacion": "2023-11-04"
-  }, {
-    "escultor": 5,
-    "evento": 14,
-    "titulo": "escultura42",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Minimalismo",
-    "fecha_creacion": "2020-01-13"
-  }, {
-    "escultor": 5,
-    "evento": 3,
-    "titulo": "escultura43",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Monumental",
-    "fecha_creacion": "2020-05-13"
-  }, {
-    "escultor": 32,
-    "evento": 11,
-    "titulo": "escultura44",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Mitos y Leyendas",
-    "fecha_creacion": "2021-01-09"
-  }, {
-    "escultor": 20,
-    "evento": 4,
-    "titulo": "escultura45",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Abstracto",
-    "fecha_creacion": "2023-12-03"
-  }, {
-    "escultor": 21,
-    "evento": 12,
-    "titulo": "escultura46",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Arte Sacro",
-    "fecha_creacion": "2021-07-22"
-  }, {
-    "escultor": 21,
-    "evento": 2,
-    "titulo": "escultura47",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Surrealismo",
-    "fecha_creacion": "2023-03-05"
-  }, {
-    "escultor": 32,
-    "evento": 7,
-    "titulo": "escultura48",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Escultura Interactiva",
-    "fecha_creacion": "2020-04-09"
-  }, {
-    "escultor": 50,
-    "evento": 8,
-    "titulo": "escultura49",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Realismo",
-    "fecha_creacion": "2024-02-04"
-  }, {
-    "escultor": 26,
-    "evento": 1,
-    "titulo": "escultura50",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Cultural",
-    "fecha_creacion": "2023-03-10"
-  }, {
-    "escultor": 31,
-    "evento": 15,
-    "titulo": "escultura51",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Social",
-    "fecha_creacion": "2021-03-30"
-  }, {
-    "escultor": 40,
-    "evento": 8,
-    "titulo": "escultura52",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Social",
-    "fecha_creacion": "2021-02-24"
-  }, {
-    "escultor": 22,
-    "evento": 6,
-    "titulo": "escultura53",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Futurismo",
-    "fecha_creacion": "2023-12-14"
-  }, {
-    "escultor": 12,
-    "evento": 6,
-    "titulo": "escultura54",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Historia",
-    "fecha_creacion": "2022-02-24"
-  }, {
-    "escultor": 42,
-    "evento": 15,
-    "titulo": "escultura55",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Conceptual",
-    "fecha_creacion": "2022-04-25"
-  }, {
-    "escultor": 30,
-    "evento": 2,
-    "titulo": "escultura56",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Figurativo",
-    "fecha_creacion": "2022-12-29"
-  }, {
-    "escultor": 7,
-    "evento": 13,
-    "titulo": "escultura57",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Efímero",
-    "fecha_creacion": "2024-07-12"
-  }, {
-    "escultor": 41,
-    "evento": 10,
-    "titulo": "escultura58",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Espiritual",
-    "fecha_creacion": "2024-04-25"
-  }, {
-    "escultor": 16,
-    "evento": 9,
-    "titulo": "escultura59",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Identidad",
-    "fecha_creacion": "2022-09-24"
-  }, {
-    "escultor": 37,
-    "evento": 2,
-    "titulo": "escultura60",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Diversidad",
-    "fecha_creacion": "2021-05-17"
-  }, {
-    "escultor": 33,
-    "evento": 10,
-    "titulo": "escultura61",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Naturaleza",
-    "fecha_creacion": "2024-09-27"
-  }, {
-    "escultor": 41,
-    "evento": 15,
-    "titulo": "escultura62",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Social",
-    "fecha_creacion": "2021-02-13"
-  }, {
-    "escultor": 12,
-    "evento": 2,
-    "titulo": "escultura63",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Arte Sacro",
-    "fecha_creacion": "2023-12-22"
-  }, {
-    "escultor": 6,
-    "evento": 15,
-    "titulo": "escultura64",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Minimalismo",
-    "fecha_creacion": "2024-07-04"
-  }, {
+  },
+  {
     "escultor": 4,
-    "evento": 9,
-    "titulo": "escultura65",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Innovación",
-    "fecha_creacion": "2022-05-14"
-  }, {
-    "escultor": 15,
-    "evento": 3,
-    "titulo": "escultura66",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Geometría",
-    "fecha_creacion": "2023-02-02"
-  }, {
-    "escultor": 20,
-    "evento": 1,
-    "titulo": "escultura67",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Escultura Sonora",
-    "fecha_creacion": "2024-09-28"
-  }, {
-    "escultor": 46,
     "evento": 4,
-    "titulo": "escultura68",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Cultural",
-    "fecha_creacion": "2022-02-18"
-  }, {
-    "escultor": 29,
-    "evento": 13,
-    "titulo": "escultura69",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Social",
-    "fecha_creacion": "2021-04-16"
-  }, {
-    "escultor": 13,
-    "evento": 9,
-    "titulo": "escultura70",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Conceptual",
-    "fecha_creacion": "2022-01-30"
-  }, {
-    "escultor": 26,
-    "evento": 3,
-    "titulo": "escultura71",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Monumental",
-    "fecha_creacion": "2024-06-25"
-  }, {
-    "escultor": 5,
-    "evento": 11,
-    "titulo": "escultura72",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Identidad",
-    "fecha_creacion": "2021-11-07"
-  }, {
-    "escultor": 30,
-    "evento": 4,
-    "titulo": "escultura73",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Simbolismo",
-    "fecha_creacion": "2023-04-16"
-  }, {
-    "escultor": 45,
-    "evento": 2,
-    "titulo": "escultura74",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Naturaleza",
-    "fecha_creacion": "2021-01-29"
-  }, {
-    "escultor": 10,
-    "evento": 8,
-    "titulo": "escultura75",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
+    "titulo": "Arquitectura Emocional",
+    "descripcion": "Una escultura surrealista que mezcla elementos arquitectónicos y orgánicos.",
     "tematica": "Surrealismo",
-    "fecha_creacion": "2020-09-16"
-  }, {
-    "escultor": 1,
-    "evento": 6,
-    "titulo": "escultura76",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Social",
-    "fecha_creacion": "2020-05-16"
-  }, {
-    "escultor": 6,
-    "evento": 8,
-    "titulo": "escultura77",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Realismo",
-    "fecha_creacion": "2024-07-17"
-  }, {
-    "escultor": 28,
-    "evento": 5,
-    "titulo": "escultura78",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Arte Sacro",
-    "fecha_creacion": "2020-09-18"
-  }, {
-    "escultor": 27,
-    "evento": 10,
-    "titulo": "escultura79",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Moderno",
-    "fecha_creacion": "2023-07-31"
-  }, {
-    "escultor": 41,
-    "evento": 12,
-    "titulo": "escultura80",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Arquitectura",
-    "fecha_creacion": "2022-03-25"
-  }, {
-    "escultor": 13,
-    "evento": 8,
-    "titulo": "escultura81",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Monumental",
-    "fecha_creacion": "2022-02-04"
-  }, {
-    "escultor": 43,
-    "evento": 13,
-    "titulo": "escultura82",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Mitos y Leyendas",
-    "fecha_creacion": "2022-06-23"
-  }, {
-    "escultor": 6,
-    "evento": 13,
-    "titulo": "escultura83",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Minimalismo",
-    "fecha_creacion": "2021-03-24"
-  }, {
-    "escultor": 9,
-    "evento": 9,
-    "titulo": "escultura84",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Surrealismo",
-    "fecha_creacion": "2024-11-18"
-  }, {
-    "escultor": 31,
-    "evento": 12,
-    "titulo": "escultura85",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Cultural",
-    "fecha_creacion": "2024-11-28"
-  }, {
-    "escultor": 30,
-    "evento": 15,
-    "titulo": "escultura86",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Político",
-    "fecha_creacion": "2023-08-16"
-  }, {
-    "escultor": 40,
-    "evento": 9,
-    "titulo": "escultura87",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Político",
-    "fecha_creacion": "2020-11-09"
-  }, {
-    "escultor": 19,
-    "evento": 10,
-    "titulo": "escultura88",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Escultura Interactiva",
-    "fecha_creacion": "2020-06-30"
-  }, {
+    "fecha_creacion": "1999-02-12"
+  },
+  {
     "escultor": 8,
-    "evento": 3,
-    "titulo": "escultura89",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Movimiento",
-    "fecha_creacion": "2020-11-17"
-  }, {
-    "escultor": 17,
-    "evento": 12,
-    "titulo": "escultura90",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Cultural",
-    "fecha_creacion": "2022-01-23"
-  }, {
-    "escultor": 27,
-    "evento": 9,
-    "titulo": "escultura91",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Medioambiental",
-    "fecha_creacion": "2023-01-15"
-  }, {
-    "escultor": 18,
-    "evento": 10,
-    "titulo": "escultura92",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Clásico",
-    "fecha_creacion": "2022-11-05"
-  }, {
-    "escultor": 47,
-    "evento": 10,
-    "titulo": "escultura93",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Efímero",
-    "fecha_creacion": "2023-01-03"
-  }, {
-    "escultor": 28,
-    "evento": 12,
-    "titulo": "escultura94",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Escultura Interactiva",
-    "fecha_creacion": "2021-04-03"
-  }, {
-    "escultor": 36,
-    "evento": 14,
-    "titulo": "escultura95",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Social",
-    "fecha_creacion": "2021-04-23"
-  }, {
-    "escultor": 15,
-    "evento": 13,
-    "titulo": "escultura96",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Historia",
-    "fecha_creacion": "2022-02-10"
-  }, {
-    "escultor": 44,
     "evento": 2,
-    "titulo": "escultura97",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Historia",
-    "fecha_creacion": "2021-07-17"
-  }, {
-    "escultor": 20,
-    "evento": 9,
-    "titulo": "escultura98",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Clásico",
-    "fecha_creacion": "2020-08-25"
-  }, {
-    "escultor": 48,
-    "evento": 10,
-    "titulo": "escultura99",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Minimalismo",
-    "fecha_creacion": "2023-10-22"
-  }, {
-    "escultor": 20,
-    "evento": 14,
-    "titulo": "escultura100",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "tematica": "Abstracto",
-    "fecha_creacion": "2022-08-31"
-  }]
+    "titulo": "El Éxtasis",
+    "descripcion": "Una escultura que capta la intensidad emocional de un momento de éxtasis.",
+    "tematica": "Romanticismo",
+    "fecha_creacion": "2012-11-14"
+  },
+  {
+    "escultor": 7,
+    "evento": 5,
+    "titulo": "Forma en Movimiento",
+    "descripcion": "Una escultura cinética que juega con el equilibrio y el movimiento constante.",
+    "tematica": "Cinetismo",
+    "fecha_creacion": "2000-08-03"
+  },
+  {
+    "escultor": 10,
+    "evento": 4,
+    "titulo": "Cara de Hierro",
+    "descripcion": "Una figura abstracta construida con acero oxidado, destacando la fuerza del material.",
+    "tematica": "Industria",
+    "fecha_creacion": "2015-04-16"
+  },
+  {
+    "escultor": 5,
+    "evento": 1,
+    "titulo": "Conexión Primordial",
+    "descripcion": "Una obra que explora las conexiones ancestrales entre los humanos y la naturaleza.",
+    "tematica": "Naturaleza",
+    "fecha_creacion": "2001-09-30"
+  },
+  {
+    "escultor": 3,
+    "evento": 3,
+    "titulo": "Caballo Mítico",
+    "descripcion": "Una escultura ecuestre que representa la fuerza y la elegancia de un ser mítico.",
+    "tematica": "Fantasía",
+    "fecha_creacion": "2010-10-09"
+  }
+]

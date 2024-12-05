@@ -1,106 +1,42 @@
-[{
-    "titulo": "evento1",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "fecha_inicio": "2022-04-05",
-    "fecha_fin": "2022-06-13",
-    "lugar": "Domo del Centenario",
-    "tematica": "Moderno"
-  }, {
-    "titulo": "evento2",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "fecha_inicio": "2021-04-04",
-    "fecha_fin": "2021-10-25",
-    "lugar": "Plaza 25 de Mayo",
-    "tematica": "Mitos y Leyendas"
-  }, {
-    "titulo": "evento3",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "fecha_inicio": "2023-01-26",
-    "fecha_fin": "2023-02-12",
-    "lugar": "Parque de la Democracia",
-    "tematica": "Expresionismo"
-  }, {
-    "titulo": "evento4",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "fecha_inicio": "2024-11-01",
-    "fecha_fin": "2024-12-01",
-    "lugar": "Domo del Centenario",
-    "tematica": "Monumental"
-  }, {
-    "titulo": "evento5",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "fecha_inicio": "2021-07-30",
-    "fecha_fin": "2021-08-24",
-    "lugar": "Plaza 25 de Mayo",
-    "tematica": "Movimiento"
-  }, {
-    "titulo": "evento6",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "fecha_inicio": "2024-11-08",
-    "fecha_fin": "2024-12-20",
-    "lugar": "Domo del Centenario",
-    "tematica": "Vanguardismo"
-  }, {
-    "titulo": "evento7",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "fecha_inicio": "2022-04-02",
-    "fecha_fin": "2022-10-27",
-    "lugar": "Domo del Centenario",
-    "tematica": "Expresionismo"
-  }, {
-    "titulo": "evento8",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "fecha_inicio": "2024-12-05",
-    "fecha_fin": "2024-12-25",
-    "lugar": "Plaza 25 de Mayo",
-    "tematica": "Naturaleza"
-  }, {
-    "titulo": "evento9",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "fecha_inicio": "2024-10-13",
-    "fecha_fin": "2024-12-20",
-    "lugar": "Parque 2 de Febrero",
-    "tematica": "Social"
-  }, {
-    "titulo": "evento10",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "fecha_inicio": "2025-01-20",
-    "fecha_fin": "2025-02-15",
-    "lugar": "Plaza 25 de Mayo",
-    "tematica": "Simbolismo"
-  }, {
-    "titulo": "evento11",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "fecha_inicio": "2021-05-15",
-    "fecha_fin": "2021-05-28",
-    "lugar": "Domo del Centenario",
-    "tematica": "Movimiento"
-  }, {
-    "titulo": "evento12",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "fecha_inicio": "2024-08-05",
-    "fecha_fin": "2024-12-20",
-    "lugar": "Domo del Centenario",
-    "tematica": "Vanguardismo"
-  }, {
-    "titulo": "evento13",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "fecha_inicio": "2024-06-03",
-    "fecha_fin": "2024-10-15",
-    "lugar": "Parque de la Democracia",
-    "tematica": "Espiritual"
-  }, {
-    "titulo": "evento14",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "fecha_inicio": "2022-11-30",
-    "fecha_fin": "2022-12-02",
-    "lugar": "Parque de la Democracia",
-    "tematica": "Luz y Sombra"
-  }, {
-    "titulo": "evento15",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "fecha_inicio": "2024-11-04",
-    "fecha_fin": "2024-12-20",
-    "lugar": "Plaza 25 de Mayo",
-    "tematica": "Abstracto"
-  }]
+[
+  {
+    "titulo": "Bienal de Venecia 2022",
+    "descripcion": "Exposición internacional de arte contemporáneo con artistas de todo el mundo.",
+    "fecha_inicio": "2022-04-23",
+    "fecha_fin": "2022-11-27",
+    "lugar": "Venecia, Italia",
+    "tematica": "Arte Contemporáneo"
+  },
+  {
+    "titulo": "Documenta Fifteen",
+    "descripcion": "Evento de arte moderno y contemporáneo que se celebra cada cinco años en Kassel, Alemania.",
+    "fecha_inicio": "2024-12-04",
+    "fecha_fin": "2024-12-14",
+    "lugar": "Kassel, Alemania",
+    "tematica": "Arte Moderno"
+  },
+  {
+    "titulo": "Exposición Rodin y Claudel",
+    "descripcion": "Una exploración de las obras de Auguste Rodin y Camille Claudel, mostrando su conexión personal y artística.",
+    "fecha_inicio": "2025-01-05",
+    "fecha_fin": "2025-01-12",
+    "lugar": "Museo Rodin, París",
+    "tematica": "Escultura Clásica"
+  },
+  {
+    "titulo": "Esculturas al Aire Libre",
+    "descripcion": "Evento anual que presenta esculturas monumentales en parques urbanos.",
+    "fecha_inicio": "2024-11-30",
+    "fecha_fin": "2024-12-07",
+    "lugar": "Nueva York, EE.UU.",
+    "tematica": "Arte Público"
+  },
+  {
+    "titulo": "Festival Internacional de Escultura",
+    "descripcion": "Reúne escultores de todo el mundo para crear obras únicas en vivo.",
+    "fecha_inicio": "2024-07-10",
+    "fecha_fin": "2024-07-20",
+    "lugar": "Barcelona, España",
+    "tematica": "Escultura Contemporánea"
+  }
+]
