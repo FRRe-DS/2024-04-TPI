@@ -21,6 +21,8 @@ function EventCard({ evento }) {
         estadoEvento = 'Proximamente';
     } else if (fechaInicio <= currentDate && fechaFin >= currentDate) {
         estadoEvento = 'En curso';
+    } else {
+        estadoEvento = 'Finalizado'
     }
 
     const handleClick = () => {
@@ -51,11 +53,6 @@ function EventCard({ evento }) {
                         <span>
                             Lugar: <b>{evento?.lugar}</b>
                         </span>
-                        <img
-                            src="https://cdn.builder.io/api/v1/image/assets/TEMP/e458362ec5b01ad669b7dc5c3dfc6c8cf93e9acb25f66f480a35224a9cf7f2db?placeholderIfAbsent=true&apiKey=30d7ef0f40b54a82bd2a50ed0795d71c"
-                            alt=""
-                            className="locationIcon"
-                        />
                     </div>
                 </div>
                 <div className="eventStatus">

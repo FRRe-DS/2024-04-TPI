@@ -3,6 +3,10 @@
   flex-direction: column;
 }
 
+.galeria-item-opciones{
+  align-items: center;
+}
+
 .mainContent {
   flex-grow: 1;
   background-color: #eee;
@@ -40,4 +44,29 @@
   .eventsTitle {
     margin-top: 40px;
   }
+}
+
+.escultura-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.escultura-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.escultura-card h5 {
+  font-size: 1.25rem;
+}
+
+.escultura-card p {
+  font-size: 0.95rem;
+  margin-bottom: 0.2rem;
+}
+
+.escultura-card hr {
+  border: 0;
+  border-top: 1px solid #e0e0e0;
 }

@@ -5,6 +5,7 @@ import { Container, Button, Carousel } from 'react-bootstrap';
 import testImg from '../assets/test.jpg';
 import useAuth from "../context/AuthContext";
 
+import AgregarImagenModal from '../components/AgregarImagenModal';
 import ModificarEsculturaModal from '../components/ModificarEsculturaModal';
 
 import CompartirBoton from '../components/CompartirBoton';
@@ -16,6 +17,7 @@ function Escultura() {
     const [error, setError] = useState(false);
     const [loading, setLoading] = useState(false);
     const [showModalModificar, setShowModalModificar] = useState(false);
+    const [showModalAgregarImagen, setShowModalAgregarImagen] = useState(false);
     const { id } = useParams();
     const { user } = useContext(useAuth);
     const navigate = useNavigate();
@@ -62,6 +64,7 @@ function Escultura() {
             });
             console.log(esculturaModificado)
             if (response.ok) {
+                alert('Escultura modificada exitosamente');
                 setShowModalModificar(false);
                 await obtenerData();
             } else {
@@ -117,7 +120,7 @@ function Escultura() {
                     );
     
                     if (response.ok) {
-
+                        alert('Escultura eliminada exitosamente');
                         navigate('/esculturas');
                     } else {
                         console.error('Error al eliminar el escultor');
@@ -135,6 +138,29 @@ function Escultura() {
         }
     };
 
+    const agregarImagen = async (formData) => {
+        try {
+            const response = await fetch(
+                `http://127.0.0.1:8000/api/esculturas/${id}/imagenes/nueva/`,
+                {
+                    method: 'POST',
+                    body: formData,
+                }
+            );
+
+            if (response.ok) {
+                alert('Imagen agregada exitosamente');
+                setShowModalAgregarImagen(false);
+                obtenerData(); // Refresca los datos de la escultura
+            } else {
+                alert('Error al agregar la imagen.');
+            }
+        } catch (error) {
+            console.error(error);
+            alert('Error al agregar la imagen.');
+        }
+    };
+
     if (error) return <span>Error al cargar la información de la escultura.</span>;
     if (loading) return <span>Cargando...</span>;
 
@@ -146,7 +172,7 @@ function Escultura() {
             <br /> <br />
             {user?.is_admin && (
                 <div className="text-center mt-3">
-                    <Button variant="dark" onClick={eliminarEscultura}>
+                    <Button variant="dark" onClick={eliminarEscultura} className="mx-3">
                         Eliminar escultura
                     </Button>
                     <Button
@@ -155,6 +181,13 @@ function Escultura() {
                         className="mx-3"
                     >
                         Modificar escultura
+                    </Button>
+                    <Button
+                        variant="dark"
+                        onClick={() => setShowModalAgregarImagen(true)}
+                        className="mx-3"
+                    >
+                        Agregar imágenes
                     </Button>
                 </div>
             )}
@@ -169,10 +202,22 @@ function Escultura() {
                     Fecha de creación: <b>{dataEscultura?.fecha_creacion}</b>
                 </span>
                 <span>
-                    Autor: <b>{dataEscultura?.escultor?.nombre}</b>
+                    Autor: 
+                            <b
+                            onClick={() => navigate(`/escultores/${dataEscultura?.escultor?.id}`)}
+                            style={{ cursor: 'pointer' }}
+                            >
+                                {" " + dataEscultura?.escultor?.nombre}
+                            </b>
                 </span>
                 <span>
-                    Evento: <b>{evento?.titulo}</b>
+                    Evento:
+                                <b
+                                onClick={() => navigate(`/eventos/${evento?.id}`)}
+                                style={{ cursor: 'pointer' }}
+                                >
+                                    {" " + evento?.titulo}
+                                </b>
                 </span>
                 <CompartirBoton shareUrl={shareUrl}></CompartirBoton>
             </div>
@@ -209,6 +254,12 @@ function Escultura() {
                     esculturaActual={dataEscultura}
                     eventoActual = {evento}
                 />
+            
+            <AgregarImagenModal
+                show={showModalAgregarImagen}
+                handleClose={() => setShowModalAgregarImagen(false)}
+                handleSubmit={agregarImagen}
+            />
         </Container>
         
     );
