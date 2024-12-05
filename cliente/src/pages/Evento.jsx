@@ -148,10 +148,11 @@ function Evento() {
             if (user) {
                 setEsculturaSeleccionada(esculturaIdParam);
                 setShowModalVotar(true);
-            } else {
+            }else {
                 setShowModalLogin(true);
             }
         }
+
     }, [esculturaIdParam]);
 
     if (error) return <span>Error al cargar el evento.</span>;

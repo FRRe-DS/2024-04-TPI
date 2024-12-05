@@ -8,6 +8,7 @@
   cursor: pointer;
   position: relative;
   box-shadow: 5px 5px 12px 0px #0000001f;
+  height: 300px;
 }
 
 .esculturaCard::after {
@@ -37,13 +38,6 @@
   opacity: 1;
 }
 
-.imageWrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 300px;
-  min-width: 300px;
-}
 
 .esculturaCard:hover .esculturaCard::after {
   content: '';
@@ -52,10 +46,23 @@
   background-color: #000;
   position: absolute;
   z-index: -1;
+
+
+}
+
+
+.imageWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex: 1;
+  position: relative;
 }
 
 .esculturaImage {
-  border-radius: 10px 10px 0 0;
+  width: 100%;
+  height: 80%;
+  object-fit: cover;
 }
 
 .esculturaName {
@@ -102,19 +109,54 @@
   object-fit: contain;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 768px) {
   .esculturaCard {
     flex-direction: column;
-    margin-top: 40px;
+    height: auto; /* Permitir altura dinámica */
+    margin-top: 30px;
   }
 
-  .imageWrapper,
-  .esculturaDetails {
+  .imageWrapper {
     width: 100%;
   }
 
-  .esculturaName,
+  .esculturaImage {
+    height: 200px; /* Ajustar tamaño de imagen en pantallas pequeñas */
+    object-fit: cover;
+  }
+
   .esculturaDetails {
-    padding: 14px 20px;
+    padding: 8px;
+    font-size: 0.9em;
+  }
+
+  .esculturaName {
+    padding: 10px;
+    font-size: 1em;
+    min-height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .esculturaCard {
+    margin-top: 20px;
+    box-shadow: 3px 3px 8px 0px #0000001f;
+  }
+
+  .esculturaImage {
+    height: 150px;
+  }
+
+  .esculturaName {
+    font-size: 0.9em;
+    padding: 8px;
+  }
+
+  .esculturaDetails {
+    font-size: 0.8em;
+  }
+
+  .esculturaDescriptionData span {
+    font-size: 0.75em;
   }
 }
