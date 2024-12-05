@@ -21,6 +21,8 @@ function EventCard({ evento }) {
         estadoEvento = 'Proximamente';
     } else if (fechaInicio <= currentDate && fechaFin >= currentDate) {
         estadoEvento = 'En curso';
+    } else {
+        estadoEvento = 'Finalizado'
     }
 
     const handleClick = () => {

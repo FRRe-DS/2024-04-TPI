@@ -1,7 +1,7 @@
 import { useEffect, useState, useContext } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import './Evento.css';
-import { Container, Button, Carousel } from 'react-bootstrap';
+import { Container, Button, Carousel, Modal, Badge } from 'react-bootstrap';
 import testImg from '../assets/test.jpg';
 import useAuth from "../context/AuthContext";
 
@@ -15,8 +15,10 @@ import CompartirBoton from '../components/CompartirBoton';
 function Evento() {
     const [dataEvento, setDataEvento] = useState(null);
     const [showModalLogin, setShowModalLogin] = useState(false);
+    const [showModalVotar, setShowModalVotar] = useState(false);
     const [showModalModificar, setShowModalModificar] = useState(false);
     const [showModalAgregar, setShowModalAgregar] = useState(false);
+    const [esculturaSeleccionada, setEsculturaSeleccionada] = useState(null);
     const [error, setError] = useState(false);
     const [loading, setLoading] = useState(false);
     const { id } = useParams();
@@ -130,6 +132,15 @@ function Evento() {
         }
     };
 
+    const handleVotarEscultura = (esculturaId) => {
+        if (user) {
+            setEsculturaSeleccionada(esculturaId);
+          setShowModalVotar(true);
+        } else {
+          setShowModalLogin(true);
+        }
+      };
+
     if (error) return <span>Error al cargar el evento.</span>;
     if (loading) return <span>Cargando...</span>;
 
@@ -181,6 +192,13 @@ function Evento() {
                     </Button>
                 </div>
             )}
+                <Badge bg="dark">
+                    {eventoEnCurso 
+                        ? "En curso" 
+                        : eventoFinalizado 
+                        ? "Finalizado" 
+                        : "Próximamente"}
+                </Badge>
             <h1 className="evento-titulo">{dataEvento?.titulo}</h1>
             <div className="evento-detalle">
                 <p>{dataEvento?.descripcion}</p>
@@ -197,16 +215,32 @@ function Evento() {
             </div>
 
             {eventoFinalizado && esculturaMasVotada ? (
-                <div className="evento-escultura-votada">
-                    <h5>Escultura más votada: {esculturaMasVotada?.titulo}</h5>
-                    <h5>Escultor destacado: {esculturaMasVotada?.escultor?.nombre}</h5>
-                    <p>
-                        Puntaje promedio: <b>{puntajeEsculturaMasVotada?.toFixed(2)}</b>
+                <div className="card escultura-card border-0 shadow-sm p-3 mb-4">
+                    <h3>Escultura mas votada</h3>
+                <div className="d-flex justify-content-between align-items-center">
+                  <div>
+                    <h5 className="text-dark fw-bold mb-1">
+                      {esculturaMasVotada?.titulo || "Sin título"}
+                    </h5>
+                    <p className="text-muted mb-0">
+                      Escultor: <span className="text-secondary">{esculturaMasVotada?.escultor?.nombre || "Desconocido"}</span>
                     </p>
-                    <p>
-                        Cantidad de votos: <b>{cantidadVotosEsculturaMasVotada}</b>
-                    </p>
+                  </div>
+                  <div className="text-center">
+                    <h4 className="text-dark fw-bold mb-1">
+                      {cantidadVotosEsculturaMasVotada || 0}
+                    </h4>
+                    <p className="text-muted mb-0">Votos totales</p>
+                  </div>
                 </div>
+                <hr className="my-3" />
+                <div>
+                  <p className="text-muted mb-1">
+                    Puntaje promedio: <span className="fw-bold text-dark">{puntajeEsculturaMasVotada?.toFixed(2) || "0.00"}</span>
+                  </p>
+                </div>
+              </div>
+              
             ) : (
                 <p>Las esculturas más votadas se mostrarán una vez que el evento haya finalizado.</p>
             )}
@@ -251,15 +285,15 @@ function Evento() {
                                 )}
                             <span>Autor: {escultura.escultor.nombre}</span>
 
-                            <div className="galeria-item-opciones">
+                            <div >
                                 {eventoEnCurso && (
-                                    <>
-                                        <p>Votar:</p>
-                                        <ControlesVotacion
-                                            idEscultura={escultura.id}
-                                            openModal={() => setShowModalLogin(true)}
-                                        />
-                                    </>
+                                    <Button
+                                        variant="dark"
+                                        onClick={() => handleVotarEscultura(escultura.id)}
+                                        className="mt-3"
+                                    >
+                                        Votar Escultura
+                                    </Button>
                                 )}
                                 {!eventoEnCurso && <p>No puedes votar</p>}
                             </div>
@@ -282,6 +316,28 @@ function Evento() {
                 onSubmit={agregarEsculturas}
                 eventoId={id}
             />
+
+            <Modal
+                show={showModalVotar}
+                onHide={() => setShowModalVotar(false)}
+                centered
+            >
+                <Modal.Header closeButton>
+                <Modal.Title>Votar Escultura</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                <ControlesVotacion
+                    idEscultura={esculturaSeleccionada}
+                    openModal={() => setShowModalLogin(true)}
+                />
+                {/* Aquí podrías agregar un QR si es necesario */}
+                </Modal.Body>
+                <Modal.Footer>
+                <Button variant="secondary" onClick={() => setShowModalVotar(false)}>
+                    Cerrar
+                </Button>
+                </Modal.Footer>
+            </Modal>
         </Container>
     );
 }

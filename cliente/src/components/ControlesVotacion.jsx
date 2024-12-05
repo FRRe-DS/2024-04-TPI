@@ -95,6 +95,7 @@ function ControlesVotacion({ idEscultura, openModal }) {
                 <div>Ya has votado por esta escultura</div>
             ) : (
                 <>
+                    <h2>Selecciona un puntaje</h2>
                     <div className="botones-votacion">
                         <button onClick={() => handleClick(1)}>1</button>
                         <button onClick={() => handleClick(2)}>2</button>
