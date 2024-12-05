@@ -50,7 +50,6 @@ function Login() {
                     <br />
                     {error && <Alert variant="danger">{error}</Alert>}
 
-                    {/* Mensaje para el registro */}
                     <div className="text-center mt-3">
                         <p>
                             ¿No tienes una cuenta?{' '}

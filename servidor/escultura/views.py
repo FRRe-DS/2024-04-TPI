@@ -4,9 +4,14 @@ from rest_framework.response import Response
 from rest_framework.decorators import action, permission_classes
 from rest_framework.permissions import IsAuthenticated
 from django.db import IntegrityError
+from rest_framework.views import APIView
+import qrcode
+from io import BytesIO
+from django.http.response import HttpResponse
+from datetime import datetime
 
 from .services import EsculturaService, ImagenService
-from .serializers import EsculturaSerializer, ImagenEsculturaSerializer
+from .serializers import EsculturaSerializer, ImagenEsculturaSerializer, CrearEsculturaSerializer
 from votacion.services import VotacionService
 from votacion.serializers import VotacionSerializer
 
@@ -27,12 +32,12 @@ class EsculturaViewSet(viewsets.ModelViewSet):
         return Response(serializer.data)
 
     def create(self, request, *args, **kwargs):
-        serializer = self.get_serializer(data=request.data)
+        serializer = CrearEsculturaSerializer(data=request.data)
         if serializer.is_valid():
             escultura = EsculturaService.crear_escultura(serializer.validated_data)
             return Response(
                 {"message": "Escultura creada exitosamente",
-                 "data": EsculturaSerializer(escultura).data},
+                 "data": CrearEsculturaSerializer(escultura).data},
                 status=status.HTTP_201_CREATED
             )
         return Response(
@@ -48,7 +53,7 @@ class EsculturaViewSet(viewsets.ModelViewSet):
                 status=status.HTTP_404_NOT_FOUND
             )
         
-        serializer = self.get_serializer(escultura, data=request.data, partial=True)
+        serializer = CrearEsculturaSerializer(data=request.data)
         if serializer.is_valid():
             escultura_actualizada = EsculturaService.actualizar_escultura(kwargs['pk'], serializer.validated_data)
             return Response(
@@ -146,3 +151,39 @@ class EsculturaViewSet(viewsets.ModelViewSet):
                 {"detail": "Error al intentar registrar el voto."},
                 status=status.HTTP_400_BAD_REQUEST
             )
+
+class GenerarQR(APIView):
+    def get(self, request, escultura_id):
+        if not escultura_id:
+            return Response(
+                {"error": "Debe proporcionar un ID válido de la escultura."},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
+        escultura = EsculturaService.obtener_por_id(escultura_id)
+
+        if not escultura:
+            return Response(
+                {"error": "Escultura no encontrada."},
+                status=status.HTTP_404_NOT_FOUND
+            )
+
+        # Obtener el minuto actual para incluirlo en la URL
+        minuto_actual = datetime.now().strftime("%Y%m%d%H%M")  # Ejemplo: '202412031345' (AAAAmmddHHMM)
+        
+        # Construcción de la URL para la escultura
+        escultura_url = f"http://localhost:5173/validar/{escultura_id}?timestamp={minuto_actual}"
+
+        # Generación del QR
+        qr = qrcode.QRCode(version=1, error_correction=qrcode.ERROR_CORRECT_L, box_size=4, border=1)
+        qr.add_data(escultura_url)
+        qr.make(fit=True)
+        
+        img = qr.make_image(fill="black", back_color="white")
+        
+        # Enviamos la imagen del QR como respuesta
+        buffer = BytesIO()
+        img.save(buffer, format="PNG", optimize=True)
+        buffer.seek(0)
+
+        return HttpResponse(buffer, content_type="image/png", status=status.HTTP_200_OK)

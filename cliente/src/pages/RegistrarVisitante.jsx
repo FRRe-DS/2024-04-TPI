@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Form, Button, Container, Row, Col, Alert } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
+
 
 function RegistrarVisitante() {
     const [error, setError] = useState('');
@@ -99,6 +100,12 @@ function RegistrarVisitante() {
                     <br />
                     {error && <Alert variant="danger">{error}</Alert>}
                     {success && <Alert variant="success">{success}</Alert>}
+                    <div className="text-center mt-3">
+                        <p>
+                            ¿Ya tienes una cuenta?{' '}
+                            <Link to="/login" style={{ color: '#007bff' }}>Ingresar</Link>
+                        </p>
+                    </div>
                 </Col>
             </Row>
         </Container>

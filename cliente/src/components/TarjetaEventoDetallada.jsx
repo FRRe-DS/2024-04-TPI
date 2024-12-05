@@ -5,7 +5,7 @@ import testImg from '../assets/test.jpg'
 function EventCard({ evento }) {
     const navigate = useNavigate();
     
-    const esculturaConImagen = evento.esculturas.find(escultura=>escultura.imagenes && escultura.imagenes.length > 0)
+    const esculturaConImagen = evento.esculturas?.find(escultura=>escultura.imagenes && escultura.imagenes.length > 0)
     const imageUrl = esculturaConImagen?.imagenes[0]?.imagen ? esculturaConImagen?.imagenes[0]?.imagen : testImg
 
     // Obtener la fecha actual

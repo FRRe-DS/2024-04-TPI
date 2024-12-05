@@ -1,0 +1,17 @@
+.controles-votacion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.botones-votacion {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.qr-votacion img {
+    max-width: 150px;
+    height: auto;
+}

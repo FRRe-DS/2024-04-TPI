@@ -1,0 +1,106 @@
+.escultor-detalle {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    border-radius: 10px;
+    background-color: #fff;
+    margin-bottom: 20px;
+}
+
+.escultor-titulo {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.escultor-galeria {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los items se acomoden en nuevas filas */
+    gap: 20px; /* Espacio entre las esculturas */
+    justify-content: flex-start; /* Alinea los elementos al inicio */
+}
+
+.escultor-galeria-item {
+    display: flex;
+    flex-direction: column;
+    aspect-ratio: 1 / 1;
+    align-items: center;
+    width: calc(33.33% - 20px); /* Establece el ancho al 33% menos el gap */
+    justify-content: space-between;
+    gap: 10px;
+    box-sizing: border-box; /* Incluye el padding y margin en el cálculo del tamaño */
+    margin-bottom: 20px; /* Espaciado entre las filas */
+    padding: 10px;
+    border: 2px solid #ccc; /* Agrega un borde alrededor de cada item */
+    border-radius: 8px; /* Borde redondeado para los items */
+    background-color: #f9f9f9; /* Fondo sutil para los items */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Efecto al pasar el mouse */
+}
+
+.escultor-galeria-item:hover {
+    transform: translateY(-5px); /* Desplazamiento ligero al pasar el mouse */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra al pasar el mouse */
+}
+
+@media (max-width: 768px) {
+    .escultor-galeria-item {
+        width: calc(50% - 20px); /* En pantallas más pequeñas (tablet), se ajusta al 50% */
+    }
+}
+
+@media (max-width: 480px) {
+    .escultor-galeria-item {
+        width: 100%; /* En pantallas muy pequeñas (móviles), cada item ocupa el 100% */
+    }
+}
+
+.escultor-galeria-imagen {
+    width: 100%;
+    object-fit: contain;
+    background-color: #eee;
+    border-radius: 5px;
+    flex: 1;
+    transition: all .1s;
+}
+
+.galeria-item-opciones {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.galeria-item-btn {
+    padding: 5px 20px;
+    border-radius: 5px;
+    background-color: #eee;
+    border: 1px solid #bbb;
+}
+
+.galeria-item-btn:hover {
+    background-color: #ddd;
+    border: 1px solid #aaa;
+}
+
+.escultor-galeria-titulo {
+    margin: 0;
+    font-size: 18px; /* Aumenta el tamaño del título */
+    font-weight: bold; /* Título en negrita */
+    text-align: center; /* Alinea el título al centro */
+}
+
+.escultor-compartir {
+    background-color: transparent;
+    margin-top: 16px;
+    padding: 10px 20px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: max-content;
+}
+
+.escultor-compartir:hover {
+    background-color: #ddd;
+    border: 1px solid #000;
+}
