@@ -216,7 +216,7 @@ function Evento() {
 
             {eventoFinalizado && esculturaMasVotada ? (
                 <div className="card escultura-card border-0 shadow-sm p-3 mb-4">
-                    <h3>Escultura mas votada</h3>
+                    <h3>Escultura más votada</h3>
                 <div className="d-flex justify-content-between align-items-center">
                   <div>
                     <h5 className="text-dark fw-bold mb-1">
@@ -254,9 +254,8 @@ function Evento() {
                         <div key={escultura.id} className="evento-galeria-item">
                             <div
                                     onClick={() => navigate(`/esculturas/${escultura.id}`)}
-                                    style={{ cursor: 'pointer' }}
                                 >
-                                    <span className="evento-galeria-titulo">
+                                    <span className="evento-galeria-titulo hover-subrayado">
                                         {escultura.titulo}
                                     </span>
                             </div>

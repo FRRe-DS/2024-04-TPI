@@ -179,9 +179,8 @@ function Escultor() {
                             <div key={escultura.id} className="escultor-galeria-item" >
                                 <div
                                     onClick={() => navigate(`/esculturas/${escultura.id}`)}
-                                    style={{ cursor: 'pointer' }}
                                 >
-                                    <span className="escultor-galeria-titulo">
+                                    <span className="escultor-galeria-titulo hover-subrayado">
                                         {escultura.titulo}
                                     </span>
                                 </div>

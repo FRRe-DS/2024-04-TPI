@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import CompartirModal from './CompartirModal';
+import ShareIcon from '../assets/share.svg'
 
 // Este componente renderiza el botón de compartir y muestra el modal cuando se hace click
 const CompartirBoton = ({ shareUrl }) => {
@@ -13,7 +14,7 @@ const CompartirBoton = ({ shareUrl }) => {
 
   return (
     <>
-      <button onClick={openModal} className="evento-compartir">Compartir</button>
+      <button onClick={openModal} className="evento-compartir"><ShareIcon/> Compartir</button>
 
       {/* Modal de Compartir */}
       <CompartirModal isOpen={modalOpen} closeModal={closeModal} shareUrl={shareUrl} />
