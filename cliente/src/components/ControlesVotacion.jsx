@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useAuth } from "../context/AuthContext";
-import GenerarQR from "./GenerarQR"; // Asegúrate de importar GenerarQR
+import GenerarQR from "./GenerarQR";
 import './ControlesVotacion.css';
 
 function ControlesVotacion({ idEscultura, openModal }) {
@@ -29,7 +29,7 @@ function ControlesVotacion({ idEscultura, openModal }) {
                     throw new Error("Error en la consulta de votaciones.");
                 }
             } else {
-                const yaVoto = data.some((votacion) => votacion.escultura === idEscultura);
+                const yaVoto = data.some((votacion) => votacion.escultura === idEscultura.id);
                 setVotado(yaVoto);
             }
         } catch (error) {
@@ -42,7 +42,7 @@ function ControlesVotacion({ idEscultura, openModal }) {
 
     useEffect(() => {
         checkVotacion();
-    }, [idEscultura]);
+    }, [idEscultura.id]);
 
     const handleClick = async (value) => {
         const confirmVote = window.confirm("¿Estás seguro de que deseas votar con este puntaje?");
@@ -55,7 +55,7 @@ function ControlesVotacion({ idEscultura, openModal }) {
         try {
             const bodyJSON = { puntaje: value };
             const response = await fetch(
-                `http://127.0.0.1:8000/api/esculturas/${idEscultura}/votar/`,
+                `http://127.0.0.1:8000/api/esculturas/${idEscultura.id}/votar/`,
                 {
                     method: "POST",
                     headers: {
@@ -95,16 +95,13 @@ function ControlesVotacion({ idEscultura, openModal }) {
                 <div>Ya has votado por esta escultura</div>
             ) : (
                 <>
-                    <h2>Selecciona un puntaje</h2>
+                    <h2>Selecciona un puntaje para la escultura {idEscultura.titulo}</h2>
                     <div className="botones-votacion">
                         <button onClick={() => handleClick(1)}>1</button>
                         <button onClick={() => handleClick(2)}>2</button>
                         <button onClick={() => handleClick(3)}>3</button>
                         <button onClick={() => handleClick(4)}>4</button>
                         <button onClick={() => handleClick(5)}>5</button>
-                    </div>
-                    <div className="qr-votacion">
-                        <GenerarQR esculturaId={idEscultura} />
                     </div>
                 </>
             )}

@@ -4,6 +4,7 @@ import './Escultura.css';
 import { Container, Button, Carousel } from 'react-bootstrap';
 import testImg from '../assets/test.jpg';
 import useAuth from "../context/AuthContext";
+import GenerarQR from "../components/GenerarQR";
 
 import AgregarImagenModal from '../components/AgregarImagenModal';
 import ModificarEsculturaModal from '../components/ModificarEsculturaModal';
@@ -221,6 +222,14 @@ function Escultura() {
                 </span>
                 <CompartirBoton shareUrl={shareUrl}></CompartirBoton>
             </div>
+            { evento &&
+                <div className="qr-votacion">
+                    <h2>Participa en el evento <b>{evento.titulo}</b> votando por esta escultura.</h2>
+                    <div className="qr-code">
+                        <GenerarQR esculturaId={dataEscultura?.id} />
+                    </div>
+                </div>
+            }
 
             <h5>Galería de imágenes</h5>
             {imagenes.length === 0 ? (

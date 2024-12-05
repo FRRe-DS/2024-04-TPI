@@ -57,4 +57,49 @@
     .escultura-galeria-item {
         width: 100%;
     }
+
+}
+
+.qr-votacion {
+    background-color: #f9f9f9; /* Fondo suave */
+    border: 2px solid #5c656e; /* Borde azul para destacar */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 20px; /* Espaciado interno */
+    text-align: center; /* Centrado del texto */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    font-family: 'Arial', sans-serif; /* Fuente profesional */
+    color: #333; /* Texto oscuro para buen contraste */
+    margin: 20px auto; /* Espaciado externo */
+
+}
+
+.qr-votacion h2 {
+    font-size: 1.5rem; /* Tamaño del título */
+    margin-bottom: 15px; /* Espaciado debajo del título */
+    color: #212224; /* Color azul para destacar */
+}
+
+.qr-votacion p {
+    font-size: 1rem; /* Tamaño del texto */
+    margin-bottom: 10px; /* Espaciado debajo del texto */
+    line-height: 1.6; /* Mejora la legibilidad */
+}
+
+.qr-votacion .qr-code img{
+    margin-top: 15px; /* Espaciado encima del QR */
+}
+
+.qr-votacion button {
+    background-color: #007bff; /* Botón azul */
+    color: white; /* Texto blanco */
+    border: none; /* Sin bordes */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px 20px; /* Espaciado interno */
+    font-size: 1rem; /* Tamaño del texto */
+    cursor: pointer; /* Cursor de clic */
+    transition: background-color 0.3s; /* Animación en hover */
+}
+
+.qr-votacion button:hover {
+    background-color: #0056b3; /* Azul más oscuro al pasar el mouse */
 }
