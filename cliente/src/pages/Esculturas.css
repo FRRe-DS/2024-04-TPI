@@ -1,42 +1,42 @@
 .esculturasPage {
-    display: flex;
+  display: flex;
+  flex-direction: column;
+}
+
+.mainContent {
+  flex-grow: 1;
+  background-color: #eee;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  flex: 1;
+}
+
+.esculturasSection {
+  width: 100%;
+  max-width: 811px;
+}
+
+.esculturasTitle {
+  color: #000;
+  text-align: center;
+}
+
+@media (max-width: 991px) {
+  .heroContent {
     flex-direction: column;
   }
-  
-  .mainContent {
-    flex-grow: 1;
-    background-color: #eee;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    flex: 1;
+
+  .heroTitle {
+    margin-top: 40px;
   }
-  
-  .esculturasSection {
-    width: 100%;
-    max-width: 811px;
+
+  .heroImage {
+    margin-top: 40px;
   }
-  
+
   .esculturasTitle {
-    color: #000;
-    text-align: center;
+    margin-top: 40px;
   }
-  
-  @media (max-width: 991px) {
-    .heroContent {
-      flex-direction: column;
-    }
-  
-    .heroTitle {
-      margin-top: 40px;
-    }
-  
-    .heroImage {
-      margin-top: 40px;
-    }
-  
-    .esculturasTitle {
-      margin-top: 40px;
-    }
-  }
+}

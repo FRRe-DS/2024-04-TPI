@@ -14,21 +14,25 @@ footer {
   margin: 0 auto;
 }
 
-.footerLogo {
-  width: 71px;
-  aspect-ratio: 1.06;
+.logo {
   object-fit: contain;
+  width: 71px;
+  cursor: pointer;
 }
 
 .footerText {
   flex-grow: 1;
   max-width: 285px;
+  margin: 0;
 }
 
-.socialIcons {
-  width: 129px;
-  aspect-ratio: 5.38;
-  object-fit: contain;
+.social-media-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.social-media-icons a svg {
+  width: 24px;
 }
 
 @media (max-width: 991px) {

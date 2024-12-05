@@ -26,7 +26,6 @@ class Escultura(models.Model):
     def __str__(self):
         return f"{self.titulo} - {self.escultor.nombre}"
 
-
 class ImagenEscultura(models.Model):
     ETAPAS_CHOICES = [
         ('antes', 'Antes del evento'),

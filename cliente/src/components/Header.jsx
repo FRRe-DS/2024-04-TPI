@@ -6,6 +6,7 @@ const navItems = ['Eventos', 'Esculturas', 'Escultores'];
 function Header() {
   const navigate = useNavigate()
   const {user, logoutUser} = useAuth()
+  
   return (
     <header >
       <nav>
