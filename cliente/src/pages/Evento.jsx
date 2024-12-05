@@ -333,9 +333,7 @@ function Evento() {
                                 {eventoEnCurso && (
                                     <Button
                                         variant="dark"
-                                        onClick={() =>
-                                            handleVotarEscultura(escultura)
-                                        }
+                                        onClick={() => handleVotarEscultura(escultura.id)}
                                         className="mt-3"
                                     >
                                         Votar escultura

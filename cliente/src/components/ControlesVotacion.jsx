@@ -21,7 +21,6 @@ function ControlesVotacion({ idEscultura, openModal }) {
                 }
             );
             const data = await response.json();
-
             if (!response.ok) {
                 if (response.status === 401) {
                     openModal();
@@ -29,7 +28,7 @@ function ControlesVotacion({ idEscultura, openModal }) {
                     throw new Error("Error en la consulta de votaciones.");
                 }
             } else {
-                const yaVoto = data.some((votacion) => votacion.escultura === idEscultura.id);
+                const yaVoto = data.some((votacion) => votacion.escultura === parseInt(idEscultura));
                 setVotado(yaVoto);
             }
         } catch (error) {
@@ -42,7 +41,7 @@ function ControlesVotacion({ idEscultura, openModal }) {
 
     useEffect(() => {
         checkVotacion();
-    }, [idEscultura.id]);
+    }, []);
 
     const handleClick = async (value) => {
         const confirmVote = window.confirm("¿Estás seguro de que deseas votar con este puntaje?");
@@ -55,7 +54,7 @@ function ControlesVotacion({ idEscultura, openModal }) {
         try {
             const bodyJSON = { puntaje: value };
             const response = await fetch(
-                `http://127.0.0.1:8000/api/esculturas/${idEscultura.id}/votar/`,
+                `http://127.0.0.1:8000/api/esculturas/${idEscultura}/votar/`,
                 {
                     method: "POST",
                     headers: {
@@ -95,7 +94,7 @@ function ControlesVotacion({ idEscultura, openModal }) {
                 <div>Ya has votado por esta escultura</div>
             ) : (
                 <>
-                    <h2>Selecciona un puntaje para la escultura {idEscultura.titulo}</h2>
+                    <h2>Selecciona un puntaje para la escultura {idEscultura}</h2>
                     <div className="botones-votacion">
                         <button onClick={() => handleClick(1)}>1</button>
                         <button onClick={() => handleClick(2)}>2</button>
