@@ -7,12 +7,17 @@ import testImg from '../assets/test.jpg';
 import ControlesVotacion from '../components/ControlesVotacion';
 import LoginModal from '../components/LoginModal';
 
+import CompartirBoton from '../components/CompartirBoton';
+
+
 function Evento() {
     const [dataEvento, setDataEvento] = useState(null);
     const [showModal, setShowModal] = useState(false);
     const [error, setError] = useState(false);
     const [loading, setLoading] = useState(false);
     const { id } = useParams();
+
+    const shareUrl = `Mira el evento "${dataEvento?.titulo}": http://localhost:5173/eventos/${id}`;
 
     useEffect(() => {
         async function obtenerData() {
@@ -82,7 +87,7 @@ function Evento() {
                 <span>
                     Ubicación: <b>{dataEvento?.lugar}</b>
                 </span>
-                <button className="evento-compartir">Compartir</button>
+                <CompartirBoton shareUrl={shareUrl}></CompartirBoton>
             </div>
 
             {/* Mostrar detalles de la escultura más votada solo si el evento ha finalizado */}
