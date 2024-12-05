@@ -19,7 +19,7 @@ db_host = db_config['HOST']
 db_port = db_config['PORT']
 
 def create_database():
-    # Conectar a la base de datos postgres (que siempre existe)
+    
     connection = psycopg2.connect(
         dbname='postgres',
         user=db_user,
@@ -27,7 +27,7 @@ def create_database():
         host=db_host,
         port=db_port
     )
-    connection.autocommit = True  # Permite ejecutar comandos CREATE DATABASE
+    connection.autocommit = True  
 
     with connection.cursor() as cursor:
         # Verificar si la base de datos ya existe

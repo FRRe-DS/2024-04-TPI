@@ -26,6 +26,7 @@ function Evento() {
     const navigate = useNavigate()
     const [searchParams] = useSearchParams()
     const esculturaIdParam = searchParams.get('escultura')
+    const timestamp = searchParams.get('timestamp');
 
     const shareUrl = `Mira el evento "${dataEvento?.titulo}": http://localhost:5173/eventos/${id}`
 
@@ -141,6 +142,26 @@ function Evento() {
         }
     }
 
+    const validarQR = () => {
+        const fechaQR = new Date(
+            parseInt(timestamp.substring(0, 4)),  // Año
+            parseInt(timestamp.substring(4, 6)) - 1,  // Mes (0-11)
+            parseInt(timestamp.substring(6, 8)),  // Día
+            parseInt(timestamp.substring(8, 10)),  // Hora
+            parseInt(timestamp.substring(10, 12))  // Minutos
+        );
+
+        const tiempoActual = new Date();
+
+        const diferencia = (tiempoActual - fechaQR) / 1000 / 60;
+
+        if (diferencia > 2) {
+            return false;
+        }
+
+        return true; // QR válido
+    };
+
     const handleVotarEscultura = (escultura) => {
         if (user) {
             setEsculturaSeleccionada(escultura)
@@ -152,12 +173,22 @@ function Evento() {
 
     useEffect(() => {
         if (esculturaIdParam) {
-            if (user) {
-                setEsculturaSeleccionada(esculturaIdParam)
-                setShowModalVotar(true)
+            if (validarQR()){
+                if (user) {
+                    setEsculturaSeleccionada(esculturaIdParam)
+                    setShowModalVotar(true)
+                } else {
+                    setShowModalLogin(true)
+                }
             } else {
-                setShowModalLogin(true)
+                setTimeout(() => {
+                    alert('El QR para votar a la escultura ya expiró');
+                }, 1000); // Mostrar el alert 1 segundo después
+                setShowModalVotar(false)
+                setShowModalLogin(false)
+                
             }
+
         }
     }, [esculturaIdParam])
 
