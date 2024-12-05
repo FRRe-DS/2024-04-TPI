@@ -174,7 +174,7 @@ class GenerarQR(APIView):
         # Construcción de la URL para la escultura
         # escultura_url = f"http://localhost:5173/validar/{escultura_id}?timestamp={minuto_actual}"
 
-        escultura_url = f"http://localhost:5173/eventos/{escultura.evento.id}?escultura=${escultura_id}?timestamp={minuto_actual}"
+        escultura_url = f"http://localhost:5173/eventos/{escultura.evento.id}?escultura={escultura_id}&timestamp={minuto_actual}"
         
         # Generación del QR
         qr = qrcode.QRCode(version=1, error_correction=qrcode.ERROR_CORRECT_L, box_size=30, border=2)
