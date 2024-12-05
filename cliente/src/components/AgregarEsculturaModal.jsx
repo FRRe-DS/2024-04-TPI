@@ -73,33 +73,33 @@ function AgregarEsculturaModal({ show, handleClose, handleSubmit }) {
     return (
         <Modal show={show} onHide={handleClose}>
             <Modal.Header closeButton>
-                <Modal.Title>Agregar escultura</Modal.Title>
+                <Modal.Title>Crear nueva escultura</Modal.Title>
             </Modal.Header>
             <Modal.Body>
                 <Form onSubmit={handleFormSubmit}>
                     <Form.Group controlId="formTitulo">
                         <Form.Label>Título</Form.Label>
-                        <Form.Control 
-                            type="text" 
+                        <Form.Control
+                            type="text"
                             placeholder="Título de la escultura"
                             value={titulo}
-                            onChange={(e) => setTitulo(e.target.value)} 
+                            onChange={(e) => setTitulo(e.target.value)}
                             required
                         />
                     </Form.Group>
                     <Form.Group controlId="formDescripcion">
                         <Form.Label>Descripción</Form.Label>
-                        <Form.Control 
-                            as="textarea" 
+                        <Form.Control
+                            as="textarea"
                             placeholder="Descripción de la escultura"
                             value={descripcion}
-                            onChange={(e) => setDescripcion(e.target.value)} 
+                            onChange={(e) => setDescripcion(e.target.value)}
                         />
                     </Form.Group>
                     <Form.Group controlId="formTematica">
                         <Form.Label>Temática</Form.Label>
-                        <Form.Control 
-                            type="text" 
+                        <Form.Control
+                            type="text"
                             placeholder="Temática de la escultura"
                             value={tematica}
                             onChange={(e) => setTematica(e.target.value)}
@@ -108,8 +108,8 @@ function AgregarEsculturaModal({ show, handleClose, handleSubmit }) {
                     </Form.Group>
                     <Form.Group controlId="formFechaCreacion">
                         <Form.Label>Fecha de creación</Form.Label>
-                        <Form.Control 
-                            type="date" 
+                        <Form.Control
+                            type="date"
                             value={fechaCreacion}
                             onChange={handleFechaCreacionChange}
                             required
@@ -118,10 +118,10 @@ function AgregarEsculturaModal({ show, handleClose, handleSubmit }) {
                     {fechaError && <div style={{ color: 'red' }}>{fechaError}</div>}
                     <Form.Group controlId="formEscultor">
                         <Form.Label>Escultor</Form.Label>
-                        <Form.Control 
+                        <Form.Control
                             as="select"
                             value={escultor}
-                            onChange={(e) => setEscultor(e.target.value)} 
+                            onChange={(e) => setEscultor(e.target.value)}
                             required
                         >
                             <option value="">Seleccionar escultor</option>
@@ -134,10 +134,10 @@ function AgregarEsculturaModal({ show, handleClose, handleSubmit }) {
                     </Form.Group>
                     <Form.Group controlId="formEscultor">
                         <Form.Label>Evento</Form.Label>
-                        <Form.Control 
+                        <Form.Control
                             as="select"
                             value={evento}
-                            onChange={(e) => setEvento(e.target.value)} 
+                            onChange={(e) => setEvento(e.target.value)}
                         >
                             <option value="">Seleccionar evento</option>
                             {eventos.map((evento) => (

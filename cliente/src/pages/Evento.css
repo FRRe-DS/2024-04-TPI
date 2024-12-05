@@ -15,9 +15,9 @@
 
 .evento-galeria {
     display: flex;
-    flex-wrap: wrap; /* Permite que los items se acomoden en nuevas filas */
-    gap: 20px; /* Espacio entre las esculturas */
-    justify-content: flex-start; /* Alinea los elementos al inicio */
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start;
 }
 
 .evento-galeria-item {
@@ -25,32 +25,32 @@
     flex-direction: column;
     aspect-ratio: 1 / 1;
     align-items: center;
-    width: calc(33.33% - 20px); /* Establece el ancho al 33% menos el gap */
+    width: calc(33.33% - 20px);
     justify-content: space-between;
     gap: 10px;
-    box-sizing: border-box; /* Incluye el padding y margin en el cálculo del tamaño */
-    margin-bottom: 20px; /* Espaciado entre las filas */
+    box-sizing: border-box;
+    margin-bottom: 20px;
     padding: 10px;
-    border: 2px solid #ccc; /* Agrega un borde alrededor de cada item */
-    border-radius: 8px; /* Borde redondeado para los items */
-    background-color: #f9f9f9; /* Fondo sutil para los items */
-    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Efecto al pasar el mouse */
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .evento-galeria-item:hover {
-    transform: translateY(-5px); /* Desplazamiento ligero al pasar el mouse */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra al pasar el mouse */
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 @media (max-width: 768px) {
     .evento-galeria-item {
-        width: calc(50% - 20px); /* En pantallas más pequeñas (tablet), se ajusta al 50% */
+        width: calc(50% - 20px);
     }
 }
 
 @media (max-width: 480px) {
     .evento-galeria-item {
-        width: 100%; /* En pantallas muy pequeñas (móviles), cada item ocupa el 100% */
+        width: 100%;
     }
 }
 
@@ -84,9 +84,9 @@
 
 .evento-galeria-titulo {
     margin: 0;
-    font-size: 18px; /* Aumenta el tamaño del título */
-    font-weight: bold; /* Título en negrita */
-    text-align: center; /* Alinea el título al centro */
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
 }
 
 .evento-compartir {

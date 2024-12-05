@@ -18,7 +18,6 @@ header nav {
 }
 
 .logo {
-  aspect-ratio: 1.06;
   object-fit: contain;
   width: 71px;
   cursor: pointer;
@@ -27,14 +26,6 @@ header nav {
 .navItem {
   margin: auto 0;
   color: #aaa;
-}
-
-
-.menuIcon {
-  aspect-ratio: 1.04;
-  object-fit: contain;
-  width: 24px;
-  margin: auto 0;
 }
 
 .navItem:hover{

@@ -127,7 +127,7 @@ function EscultoresPage() {
           {user?.is_admin && (
             <div className="text-center mt-3">
               <Button variant="dark" onClick={handleShowModal}>
-                Agregar escultor
+                Crear nuevo escultor
               </Button>
             </div>
           )}
@@ -144,7 +144,7 @@ function EscultoresPage() {
       {/* Modal para agregar escultor */}
       <Modal show={showModal} onHide={handleCloseModal}>
         <Modal.Header closeButton>
-          <Modal.Title>Agregar nuevo escultor</Modal.Title>
+          <Modal.Title>Crear nuevo escultor</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form onSubmit={handleSubmit}>

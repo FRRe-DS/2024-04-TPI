@@ -74,7 +74,7 @@ function EsculturasPage() {
           {user?.is_admin && (
                 <div className="text-center mt-3">
                     <Button variant="dark" onClick={() => setShowModalEscultura(true)} className="mx-3">
-                        Agregar escultura
+                        Crear nueva escultura
                     </Button>
                 </div>
             )}

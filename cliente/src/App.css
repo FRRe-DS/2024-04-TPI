@@ -7,22 +7,24 @@
 }
 
 /* EVENTOS */
-.form-eventos{
+.form-eventos {
   display: flex;
   flex-direction: column;
-  
+
 }
-.form-eventos > input{
+
+.form-eventos>input {
   padding: 10px 5px;
   margin-bottom: 10px;
 }
-button, input[type='submit']{
+
+button,
+input[type='submit'] {
   cursor: pointer;
 }
 
 /* HOME */
-
-.hero-container{
+.hero-container {
   color: #fff;
   align-items: center;
   justify-content: center;
@@ -33,7 +35,7 @@ button, input[type='submit']{
   background-color: #000;
 }
 
-.hero-container::before{
+.hero-container::before {
   content: '';
   background-color: #000;
   position: absolute;
@@ -42,14 +44,16 @@ button, input[type='submit']{
   z-index: -1;
   height: 400px;
   width: 100%;
-  
+
 }
-.hero-title{
+
+.hero-title {
   box-sizing: border-box;
   max-width: 550px;
 
 }
-.hero-img{
+
+.hero-img {
   top: 0;
   right: 0;
   height: 600px;
@@ -57,56 +61,60 @@ button, input[type='submit']{
   object-fit: contain;
 
 }
-#seccion-eventos > h2{
+
+#seccion-eventos>h2 {
   margin-bottom: 10px;
 }
 
-.home-eventos-container{
+.home-eventos-container {
   padding: 0 200px;
   display: flex;
   flex-direction: column;
   gap: 24px;
 
 }
-.eventos-tarjetas-container{
+
+.eventos-tarjetas-container {
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
 }
-/* TARJETA EVENTO */
 
-.tarjeta-evento{
-  text-shadow: 0 0 10px  #000;
+/* TARJETA EVENTO */
+.tarjeta-evento {
+  text-shadow: 0 0 10px #000;
   transition: all .25s;
   width: 400px;
 }
 
-.tarjeta-evento > img{
+.tarjeta-evento>img {
   height: 240px;
   opacity: .5;
   transition: all .1s;
   object-fit: cover;
 }
-.tarjeta-evento:hover{
+
+.tarjeta-evento:hover {
   cursor: pointer;
   transform: scale(1.02);
 }
-.tarjeta-evento:hover > img{
+
+.tarjeta-evento:hover>img {
   opacity: .75;
-  
+
 }
-.tarjeta-evento > a:visited{
+
+.tarjeta-evento>a:visited {
 
   color: none;
 }
 
-.tarjeta-evento > a:v{
+.tarjeta-evento>a:v {
 
   color: none;
 }
 
-
-.tarjeta-evento > a {
+.tarjeta-evento>a {
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
@@ -119,21 +127,24 @@ button, input[type='submit']{
   text-align: center;
   background-color: #ddd;
 }
-.tarjeta-evento > a:hover {
+
+.tarjeta-evento>a:hover {
   border-color: #646cff;
 }
-.tarjeta-evento > a:focus,
-.tarjeta-evento > a:focus-visible {
+
+.tarjeta-evento>a:focus,
+.tarjeta-evento>a:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-.controles-votacion{
+.controles-votacion {
   display: flex;
   gap: 4px;
   width: 100%;
   justify-content: center;
 }
-.controles-votacion > button{
+
+.controles-votacion>button {
   width: 30px;
   padding: 0;
   border-radius: 2px;
