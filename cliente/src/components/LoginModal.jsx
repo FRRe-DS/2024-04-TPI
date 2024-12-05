@@ -17,7 +17,7 @@ function LoginModal({isOpen,closeModal}) {
                 </Modal.Header>
                 <Modal.Footer style={{justifyContent:'center'}}>
                     <Button variant="primary" onClick={redirectToLogin}>
-                        Iniciar Sesión
+                        Iniciar sesión
                     </Button>
                     <Button variant="secondary" onClick={closeModal}>
                         Cancelar

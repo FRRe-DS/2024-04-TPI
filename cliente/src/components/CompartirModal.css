@@ -1,4 +1,4 @@
-.modal-overlay {
+.modal-compartir-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -11,7 +11,7 @@
   z-index: 1000;
 }
   
-.modal-content {
+.modal-compartir-content {
   background: #fff;
   padding: 20px;
   border-radius: 8px;
@@ -23,11 +23,11 @@
   color: white;
 }
 
-.modal-content h2 {
+.modal-compartir-content h2 {
   color: black;
 }
   
-.modal-close {
+.modal-compartir-close {
   position: absolute;
   top: -10px;
   right: -10px;
@@ -38,7 +38,7 @@
   cursor: pointer;
 }
 
-.modal-button {
+.modal-compartir-button {
   display: inline-block;
   width: 90%;
   margin: 10px 0;
@@ -61,6 +61,6 @@
   background-color: #1da1f2;
 }
 
-.modal-button:hover {
+.modal-compartir-button:hover {
   opacity: 0.7;
 }

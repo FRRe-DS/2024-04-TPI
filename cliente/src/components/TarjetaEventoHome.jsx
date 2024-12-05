@@ -24,10 +24,10 @@ function TarjetaEvento({ evento }) {
             </Card.ImgOverlay>
             <Card.Footer>
                 <Card.Text>
-                    Fecha de Inicio: <b>{evento.fecha_inicio}</b>
+                    Fecha de inicio: <b>{evento.fecha_inicio}</b>
                 </Card.Text>
                 <Card.Text>
-                    Fecha de Finalización: <b>{evento.fecha_fin}</b>
+                    Fecha de finalización: <b>{evento.fecha_fin}</b>
                 </Card.Text>
             </Card.Footer>
         </Card>

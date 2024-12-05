@@ -95,7 +95,7 @@ function ModificarEscultorModal({ show, handleClose, handleSubmit, escultorActua
                         />
                     </Form.Group>
                     <Form.Group controlId="formFechaNacimiento">
-                        <Form.Label>Fecha de Nacimiento</Form.Label>
+                        <Form.Label>Fecha de nacimiento</Form.Label>
                         <Form.Control
                             type="date"
                             value={fechaNacimiento}

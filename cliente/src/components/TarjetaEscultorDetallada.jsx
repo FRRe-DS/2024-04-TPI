@@ -31,10 +31,10 @@ function TarjetaEscultorDetallada({ escultor }) {
         <p className="escultorBio">{biografia}</p>
         <div className="escultorDescriptionData">
         <span className="escultorBirthDate">
-            Fecha de Nacimiento: <b>{fecha_nacimiento}</b>
+            Fecha de nacimiento: <b>{fecha_nacimiento}</b>
           </span>
           <span className="escultorNacionalidad">
-            País de Nacimiento: <b>{nacionalidad}</b>
+            País de nacimiento: <b>{nacionalidad}</b>
           </span>
           <span className="escultorDeathDate">
             Contacto: <b>{contacto}</b>

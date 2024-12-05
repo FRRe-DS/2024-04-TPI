@@ -92,7 +92,7 @@ function EscultoresPage() {
           {user?.is_admin && (
             <div className="text-center mt-3">
               <Button variant="dark" onClick={handleShowModal}>
-                Agregar Escultor
+                Agregar escultor
               </Button>
             </div>
           )}
@@ -109,7 +109,7 @@ function EscultoresPage() {
       {/* Modal para agregar escultor */}
       <Modal show={showModal} onHide={handleCloseModal}>
         <Modal.Header closeButton>
-          <Modal.Title>Agregar Nuevo Escultor</Modal.Title>
+          <Modal.Title>Agregar nuevo escultor</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form onSubmit={handleSubmit}>
@@ -156,7 +156,7 @@ function EscultoresPage() {
             </Form.Group>
 
             <Form.Group controlId="fecha_nacimiento">
-              <Form.Label>Fecha de Nacimiento</Form.Label>
+              <Form.Label>Fecha de nacimiento</Form.Label>
               <Form.Control
                 type="date"
                 name="fecha_nacimiento"

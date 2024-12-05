@@ -116,7 +116,7 @@ function EventsPage() {
           {user?.is_admin && (
             <div className="text-center mt-3">
               <Button variant="dark" onClick={handleShowModal}>
-                Agregar Evento
+                Agregar evento
               </Button>
             </div>
           )}
@@ -132,7 +132,7 @@ function EventsPage() {
 
       <Modal show={showModal} onHide={handleCloseModal}>
         <Modal.Header closeButton>
-          <Modal.Title>Agregar Nuevo Evento</Modal.Title>
+          <Modal.Title>Agregar nuevo evento</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form onSubmit={handleSubmit}>
@@ -160,7 +160,7 @@ function EventsPage() {
             </Form.Group>
 
             <Form.Group controlId="fecha_inicio">
-              <Form.Label>Fecha de Inicio</Form.Label>
+              <Form.Label>Fecha de inicio</Form.Label>
               <Form.Control
                 type="date"
                 name="fecha_inicio"
@@ -171,7 +171,7 @@ function EventsPage() {
             </Form.Group>
 
             <Form.Group controlId="fecha_fin">
-              <Form.Label>Fecha de Fin</Form.Label>
+              <Form.Label>Fecha de fin</Form.Label>
               <Form.Control
                 type="date"
                 name="fecha_fin"

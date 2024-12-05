@@ -41,10 +41,10 @@ function EventCard({ evento }) {
                 <p className="eventDescription">{evento?.descripcion}</p>
                 <div className='eventDescriptionData'>
                     <span className="eventDate">
-                        Fecha de Inicio: <b>{evento?.fecha_inicio}</b>
+                        Fecha de inicio: <b>{evento?.fecha_inicio}</b>
                     </span>
                     <span className="eventDate">
-                        Fecha de Finalización: <b>{evento?.fecha_fin}</b>
+                        Fecha de finalización: <b>{evento?.fecha_fin}</b>
                     </span>
 
                     <div className="eventLocation">

@@ -7,6 +7,8 @@ import useAuth from "../context/AuthContext";
 
 import ModificarEsculturaModal from '../components/ModificarEsculturaModal';
 
+import CompartirBoton from '../components/CompartirBoton';
+
 function Escultura() {
     const [dataEscultura, setDataEscultura] = useState(null);
     const [evento, setEvento] = useState();
@@ -17,6 +19,8 @@ function Escultura() {
     const { id } = useParams();
     const { user } = useContext(useAuth);
     const navigate = useNavigate();
+
+    const shareUrl = `Mira la escultura "${dataEscultura?.titulo}": http://localhost:5173/esculturas/${id}`;
 
     const obtenerData = async () => {
         try {
@@ -143,14 +147,14 @@ function Escultura() {
             {user?.is_admin && (
                 <div className="text-center mt-3">
                     <Button variant="dark" onClick={eliminarEscultura}>
-                        Eliminar Escultura
+                        Eliminar escultura
                     </Button>
                     <Button
                         variant="dark"
                         onClick={() => setShowModalModificar(true)}
                         className="mx-3"
                     >
-                        Modificar Escultura
+                        Modificar escultura
                     </Button>
                 </div>
             )}
@@ -162,7 +166,7 @@ function Escultura() {
                     Temática: <b>{dataEscultura?.tematica}</b>
                 </span>
                 <span>
-                    Fecha de Creación: <b>{dataEscultura?.fecha_creacion}</b>
+                    Fecha de creación: <b>{dataEscultura?.fecha_creacion}</b>
                 </span>
                 <span>
                     Autor: <b>{dataEscultura?.escultor?.nombre}</b>
@@ -170,9 +174,10 @@ function Escultura() {
                 <span>
                     Evento: <b>{evento?.titulo}</b>
                 </span>
+                <CompartirBoton shareUrl={shareUrl}></CompartirBoton>
             </div>
 
-            <h5>Galería de Imágenes</h5>
+            <h5>Galería de imágenes</h5>
             {imagenes.length === 0 ? (
                 <p>Esta escultura no tiene imágenes disponibles.</p>
             ) : (

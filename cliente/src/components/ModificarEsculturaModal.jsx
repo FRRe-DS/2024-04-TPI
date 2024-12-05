@@ -85,7 +85,7 @@ function ModificarEsculturaModal({ show, handleClose, handleSubmit, esculturaAct
     return (
         <Modal show={show} onHide={handleClose}>
             <Modal.Header closeButton>
-                <Modal.Title>Modificar Escultura</Modal.Title>
+                <Modal.Title>Modificar escultura</Modal.Title>
             </Modal.Header>
             <Modal.Body>
                 <Form onSubmit={handleFormSubmit}>
@@ -119,7 +119,7 @@ function ModificarEsculturaModal({ show, handleClose, handleSubmit, esculturaAct
                         />
                     </Form.Group>
                     <Form.Group controlId="formFechaCreacion">
-                        <Form.Label>Fecha de Creación</Form.Label>
+                        <Form.Label>Fecha de creación</Form.Label>
                         <Form.Control
                             type="date"
                             value={fechaCreacion}

@@ -63,7 +63,7 @@ function ModificarEventoModal({ show, handleClose, handleSubmit, eventoActual })
     return (
         <Modal show={show} onHide={handleClose}>
             <Modal.Header closeButton>
-                <Modal.Title>Modificar Evento</Modal.Title>
+                <Modal.Title>Modificar evento</Modal.Title>
             </Modal.Header>
             <Modal.Body>
                 <Form onSubmit={handleFormSubmit}>
@@ -87,7 +87,7 @@ function ModificarEventoModal({ show, handleClose, handleSubmit, eventoActual })
                         />
                     </Form.Group>
                     <Form.Group controlId="formFechaInicio">
-                        <Form.Label>Fecha Inicio</Form.Label>
+                        <Form.Label>Fecha de inicio</Form.Label>
                         <Form.Control
                             type="date"
                             value={fecha_inicio}
@@ -96,7 +96,7 @@ function ModificarEventoModal({ show, handleClose, handleSubmit, eventoActual })
                         />
                     </Form.Group>
                     <Form.Group controlId="formFechaFin">
-                        <Form.Label>Fecha Fin</Form.Label>
+                        <Form.Label>Fecha de fin</Form.Label>
                         <Form.Control
                             type="date"
                             value={fecha_fin}

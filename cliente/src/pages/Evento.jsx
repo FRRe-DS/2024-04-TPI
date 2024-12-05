@@ -11,7 +11,6 @@ import ModificarEventoModal from '../components/ModificarEventoModal';
 
 import CompartirBoton from '../components/CompartirBoton';
 
-
 function Evento() {
     const [dataEvento, setDataEvento] = useState(null);
     const [showModalLogin, setShowModalLogin] = useState(false);
@@ -21,6 +20,8 @@ function Evento() {
     const { id } = useParams();
     const { user } = useContext(useAuth);
     const navigate = useNavigate();
+
+    const shareUrl = `Mira el evento "${dataEvento?.titulo}": http://localhost:5173/eventos/${id}`;
 
     const obtenerData = async () => {
         try {
@@ -40,8 +41,6 @@ function Evento() {
             setLoading(false);
         }
     };
-
-    const shareUrl = `Mira el evento "${dataEvento?.titulo}": http://localhost:5173/eventos/${id}`;
 
     useEffect(() => {
         obtenerData();
@@ -136,14 +135,14 @@ function Evento() {
             {user?.is_admin && (
                 <div className="text-center mt-3">
                     <Button variant="dark" onClick={eliminarEvento} className="mx-3">
-                        Eliminar Evento
+                        Eliminar evento
                     </Button>
                     <Button
                         variant="dark"
                         onClick={() => setShowModalModificar(true)}
                         className="mx-3"
                     >
-                        Modificar Evento
+                        Modificar evento
                     </Button>
                 </div>
             )}
@@ -151,10 +150,10 @@ function Evento() {
             <div className="evento-detalle">
                 <p>{dataEvento?.descripcion}</p>
                 <span>
-                    Fecha de Inicio: <b>{dataEvento?.fecha_inicio}</b>
+                    Fecha de inicio: <b>{dataEvento?.fecha_inicio}</b>
                 </span>
                 <span>
-                    Fecha de Finalización: <b>{dataEvento?.fecha_fin}</b>
+                    Fecha de finalización: <b>{dataEvento?.fecha_fin}</b>
                 </span>
                 <span>
                     Ubicación: <b>{dataEvento?.lugar}</b>
@@ -167,7 +166,7 @@ function Evento() {
                     <h5>Escultura más votada: {esculturaMasVotada?.titulo}</h5>
                     <h5>Escultor destacado: {esculturaMasVotada?.escultor?.nombre}</h5>
                     <p>
-                        Puntaje Promedio: <b>{puntajeEsculturaMasVotada?.toFixed(2)}</b>
+                        Puntaje promedio: <b>{puntajeEsculturaMasVotada?.toFixed(2)}</b>
                     </p>
                     <p>
                         Cantidad de votos: <b>{cantidadVotosEsculturaMasVotada}</b>

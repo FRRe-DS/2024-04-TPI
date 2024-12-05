@@ -7,6 +7,8 @@ import useAuth from "../context/AuthContext";
 
 import ModificarEscultorModal from '../components/ModificarEscultorModal';
 
+import CompartirBoton from '../components/CompartirBoton';
+
 function Escultor() {
     const [dataEscultor, setDataEscultor] = useState(null);
     const [esculturas, setDataEsculturas] = useState([]);
@@ -16,6 +18,8 @@ function Escultor() {
     const { id } = useParams();
     const { user } = useContext(useAuth);
     const navigate = useNavigate();
+
+    const shareUrl = `Mira el escultor "${dataEscultor?.nombre}": http://localhost:5173/escultores/${id}`;
 
     const obtenerData = async () => {
         try {
@@ -137,14 +141,14 @@ function Escultor() {
             {user?.is_admin && (
                 <div className="text-center mt-3">
                     <Button variant="dark" onClick={eliminarEscultor}>
-                        Eliminar Escultor
+                        Eliminar escultor
                     </Button>
                     <Button
                         variant="dark"
                         onClick={() => setShowModalModificar(true)}
                         className="mx-3"
                     >
-                        Modificar Escultor
+                        Modificar escultor
                     </Button>
                 </div>
             )}
@@ -152,7 +156,7 @@ function Escultor() {
             <div className="escultor-detalle">
                 <p>{dataEscultor?.biografia}</p>
                 <span>
-                    Fecha de Nacimiento: <b>{dataEscultor?.fecha_nacimiento}</b>
+                    Fecha de nacimiento: <b>{dataEscultor?.fecha_nacimiento}</b>
                 </span>
                 <span>
                     Nacionalidad: <b>{dataEscultor?.nacionalidad}</b>
@@ -160,7 +164,7 @@ function Escultor() {
                 <span>
                     Contacto: <b>{dataEscultor?.contacto}</b>
                 </span>
-                <button className="escultor-compartir">Compartir</button>
+                <CompartirBoton shareUrl={shareUrl}></CompartirBoton>
             </div>
 
             <h5>Esculturas de {dataEscultor?.nombre}</h5>
@@ -183,7 +187,7 @@ function Escultor() {
                                     alt={escultura.titulo}
                                     className="escultor-galeria-imagen"
                                 />
-                                <span>Fecha de Creación: {escultura.fecha_creacion}</span>
+                                <span>Fecha de creación: {escultura.fecha_creacion}</span>
                             </div>
                         );
                     })}

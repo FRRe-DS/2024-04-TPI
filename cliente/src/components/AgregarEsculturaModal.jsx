@@ -54,7 +54,7 @@ function AgregarEsculturaModal({ show, handleClose, handleSubmit }) {
     return (
         <Modal show={show} onHide={handleClose}>
             <Modal.Header closeButton>
-                <Modal.Title>Agregar Escultura</Modal.Title>
+                <Modal.Title>Agregar escultura</Modal.Title>
             </Modal.Header>
             <Modal.Body>
                 <Form onSubmit={handleFormSubmit}>
@@ -88,7 +88,7 @@ function AgregarEsculturaModal({ show, handleClose, handleSubmit }) {
                         />
                     </Form.Group>
                     <Form.Group controlId="formFechaCreacion">
-                        <Form.Label>Fecha de Creación</Form.Label>
+                        <Form.Label>Fecha de creación</Form.Label>
                         <Form.Control 
                             type="date" 
                             value={fechaCreacion}
@@ -104,7 +104,7 @@ function AgregarEsculturaModal({ show, handleClose, handleSubmit }) {
                             onChange={(e) => setEscultor(e.target.value)} 
                             required
                         >
-                            <option value="">Seleccionar Escultor</option>
+                            <option value="">Seleccionar escultor</option>
                             {escultores.map((escultor) => (
                                 <option key={escultor.id} value={escultor.id}>
                                     {escultor.nombre}
@@ -119,7 +119,7 @@ function AgregarEsculturaModal({ show, handleClose, handleSubmit }) {
                             value={evento}
                             onChange={(e) => setEvento(e.target.value)} 
                         >
-                            <option value="">Seleccionar Evento</option>
+                            <option value="">Seleccionar evento</option>
                             {eventos.map((evento) => (
                                 <option key={evento.id} value={evento.id}>
                                     {evento.titulo}

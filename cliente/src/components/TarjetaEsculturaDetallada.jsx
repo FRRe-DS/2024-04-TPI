@@ -31,7 +31,7 @@ function EsculturaCard({ escultura }) {
         <p className="esculturaDescription">{descripcion}</p>
         <div className="esculturaDescriptionData">
           <span className="esculturaDate">
-            Fecha de Creación: <b>{fecha_creacion}</b>
+            Fecha de creación: <b>{fecha_creacion}</b>
           </span>
           <span className="esculturaAuthor">
             Autor: <b>{escultor.nombre}</b>

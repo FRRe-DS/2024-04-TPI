@@ -16,7 +16,7 @@ function Header() {
         {navItems.map((item)=>{
           return <Link key={item} to={`/${item.toLocaleLowerCase()}`} className='navItem'>{item}</Link>
         })}
-        {user ? <button onClick={logoutUser}>Cerrar sesión</button> : <button onClick={()=>navigate('/login/')}>Iniciar Sesión</button>}
+        {user ? <button onClick={logoutUser}>Cerrar sesión</button> : <button onClick={()=>navigate('/login/')}>Iniciar sesión</button>}
         
       </nav>
     </header>

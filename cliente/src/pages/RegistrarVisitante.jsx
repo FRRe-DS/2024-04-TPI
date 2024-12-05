@@ -84,7 +84,7 @@ function RegistrarVisitante() {
                         </Form.Group>
 
                         <Form.Group controlId="formConfirmPassword" className="mt-3">
-                            <Form.Label>Repetir Contraseña</Form.Label>
+                            <Form.Label>Repetir contraseña</Form.Label>
                             <Form.Control
                                 type="password"
                                 name="confirmPassword"

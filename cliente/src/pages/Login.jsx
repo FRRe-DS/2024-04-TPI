@@ -21,7 +21,7 @@ function Login() {
         <Container className="d-flex justify-content-center align-items-center" style={{ height: '100vh' }}>
             <Row className="w-100">
                 <Col md={{ span: 6, offset: 3 }} lg={{ span: 4, offset: 4 }}>
-                    <h3 className="text-center mb-4">Iniciar Sesión</h3>
+                    <h3 className="text-center mb-4">Iniciar sesión</h3>
                     <Form onSubmit={handleSubmit}>
                         <Form.Group controlId="formEmail">
                             <Form.Label>Correo electrónico</Form.Label>
@@ -44,7 +44,7 @@ function Login() {
                         </Form.Group>
 
                         <Button variant="dark" type="submit" className="w-100 mt-4">
-                            Iniciar Sesión
+                            Iniciar sesión
                         </Button>
                     </Form>
                     <br />
