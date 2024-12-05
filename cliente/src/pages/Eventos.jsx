@@ -119,7 +119,7 @@ function EventsPage() {
           {user?.is_admin && (
             <div className="text-center mt-3">
               <Button variant="dark" onClick={handleShowModal}>
-                Agregar evento
+                Crear nuevo evento
               </Button>
             </div>
           )}
@@ -135,7 +135,7 @@ function EventsPage() {
 
       <Modal show={showModal} onHide={handleCloseModal}>
         <Modal.Header closeButton>
-          <Modal.Title>Agregar nuevo evento</Modal.Title>
+          <Modal.Title>Crear nuevo evento</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form onSubmit={handleSubmit}>

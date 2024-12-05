@@ -291,7 +291,7 @@ function Evento() {
                                         onClick={() => handleVotarEscultura(escultura.id)}
                                         className="mt-3"
                                     >
-                                        Votar Escultura
+                                        Votar escultura
                                     </Button>
                                 )}
                                 {!eventoEnCurso && <p>No puedes votar</p>}
@@ -322,7 +322,7 @@ function Evento() {
                 centered
             >
                 <Modal.Header closeButton>
-                <Modal.Title>Votar Escultura</Modal.Title>
+                <Modal.Title>Votar escultura</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                 <ControlesVotacion

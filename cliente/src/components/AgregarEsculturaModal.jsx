@@ -73,7 +73,7 @@ function AgregarEsculturaModal({ show, handleClose, handleSubmit }) {
     return (
         <Modal show={show} onHide={handleClose}>
             <Modal.Header closeButton>
-                <Modal.Title>Agregar escultura</Modal.Title>
+                <Modal.Title>Crear nueva escultura</Modal.Title>
             </Modal.Header>
             <Modal.Body>
                 <Form onSubmit={handleFormSubmit}>
