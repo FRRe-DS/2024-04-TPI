@@ -144,14 +144,14 @@ function Evento() {
       };
 
     useEffect(() => {
-        if (user) {
-            if (esculturaIdParam) {
+        if (esculturaIdParam) {
+            if (user) {
                 setEsculturaSeleccionada(esculturaIdParam);
                 setShowModalVotar(true);
+            }else {
+                setShowModalLogin(true);
             }
-        } else {
-            setShowModalLogin(true);
-        }
+        } 
     }, [esculturaIdParam]);
 
     if (error) return <span>Error al cargar el evento.</span>;
