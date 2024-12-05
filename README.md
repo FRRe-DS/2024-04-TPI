@@ -1,4 +1,4 @@
-# Trabajo Practico Final 2024 - Grupo 4
+# Trabajo Práctico Final 2024 - Grupo 4
 
 ## Integrantes:
 1. Benetucci, Ignacio Agustin - b4ngi
@@ -9,18 +9,18 @@
 6. Nikcevich, Adriano - adrinikcevich
 7. Nikcevich, Iván Josué - ivannikcevich
 
-## Objetivo del Proyecto
+## Objetivo del proyecto
 Analizar, desarrollar e implementar un sistema de gestión para la organización de la Bienal Internacional de Escultura del Chaco, que de soporte al registro de los eventos, escultores como así también aplicaciones satélites para que los ciudadanos/publico en general pueda realizar comentarios y votación durante el evento.
 
-## Tecnologías Utilizadas
+## Tecnologías ttilizadas
 - **Servidor**: Django + Django REST Framework  
 - **Cliente**: React
 - **Base de Datos**: PostgreSQL
 
-## Instalación y Configuración
+## Instalación y configuración
 
-### Servidor y Base de Datos
-1. Instalar dependendias:
+### Servidor y base de Datos (asegurarse de estar en la ruta "servidor")
+1. Instalar dependencias:
     ```
     pip install -r requirements.txt
     ```
@@ -33,6 +33,8 @@ Analizar, desarrollar e implementar un sistema de gestión para la organización
 3. Aplicar migraciones:
     ```
     python manage.py makemigrations
+    ```
+     ```
     python manage.py migrate
     ```
 
@@ -46,8 +48,8 @@ Analizar, desarrollar e implementar un sistema de gestión para la organización
     python manage.py runserver
     ```
 
-### Cliente
-1. Instalar dependendias:
+### Cliente (asegurarse de estar en la ruta "cliente")
+1. Instalar dependencias:
     ```
     npm install
     ```
