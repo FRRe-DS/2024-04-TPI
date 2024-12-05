@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react'
 
 import TarjetaEventoHome from '../components/TarjetaEventoHome'
-import Stack from 'react-bootstrap/esm/Stack'
-import Container from 'react-bootstrap/esm/Container'
+
 function Home() {
     const [eventosActuales, setEventosActuales] = useState()
     const [loading, setLoading] = useState(false)

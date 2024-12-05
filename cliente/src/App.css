@@ -154,3 +154,22 @@ input[type='submit'] {
   justify-content: center;
   align-items: center;
 }
+
+@media (max-width: 991px) {
+  .home-eventos-container{
+    padding: 0 10px;
+    justify-content: center;
+  }
+  .home-eventos-container > h2{
+    text-align: center;
+
+  }
+  .eventos-tarjetas-container{
+    justify-content: center;
+  }
+
+  
+  .hero-img {
+    display: none;
+  }
+}
