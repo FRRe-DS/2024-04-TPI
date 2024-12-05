@@ -63,7 +63,6 @@ function Escultura() {
                 },
                 body: JSON.stringify(esculturaModificado),
             });
-            console.log(esculturaModificado)
             if (response.ok) {
                 alert('Escultura modificada exitosamente');
                 setShowModalModificar(false);
@@ -162,6 +161,23 @@ function Escultura() {
         }
     };
 
+    // Obtener la fecha actual
+    const currentDate = new Date();
+
+    // Comparar la fecha actual con las fechas de inicio y fin del evento
+    const fechaInicio = new Date(evento?.fecha_inicio);
+    const fechaFin = new Date(evento?.fecha_fin);
+
+    // Determinar el estado del evento
+    let estadoEvento = '';
+    if (fechaInicio > currentDate) {
+        estadoEvento = 'Proximamente';
+    } else if (fechaInicio <= currentDate && fechaFin >= currentDate) {
+        estadoEvento = 'En curso';
+    } else {
+        estadoEvento = 'Finalizado'
+    }
+
     if (error) return <span>Error al cargar la información de la escultura.</span>;
     if (loading) return <span>Cargando...</span>;
 
@@ -194,7 +210,6 @@ function Escultura() {
             )}
             <h1 className="escultura-titulo">{dataEscultura?.titulo}</h1>
             <div className="escultura-detalle">
-                {console.log(dataEscultura)}
                 <p>{dataEscultura?.descripcion}</p>
                 <span>
                     Temática: <b>{dataEscultura?.tematica}</b>
@@ -222,7 +237,7 @@ function Escultura() {
                 </span>
                 <CompartirBoton shareUrl={shareUrl}></CompartirBoton>
             </div>
-            { evento &&
+            { estadoEvento === "En curso" &&
                 <div className="qr-votacion">
                     <h2>Participa en el evento <b>{evento.titulo}</b> votando por esta escultura.</h2>
                     <div className="qr-code">
@@ -238,7 +253,6 @@ function Escultura() {
                 <div className="escultura-galeria">
                     {imagenes.map((imagen) => (
                         <div key={imagen.id} className="escultura-galeria-item">
-                            {console.log(imagen)}
                             <img
                                 src={
                                     imagen.imagen

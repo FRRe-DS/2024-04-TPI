@@ -61,7 +61,7 @@ function Evento() {
                 },
                 body: JSON.stringify(eventoModificado),
             });
-            console.log(eventoModificado)
+
             if (response.ok) {
                 alert('Evento modificado exitosamente');
                 setShowModalModificar(false);
@@ -151,7 +151,8 @@ function Evento() {
             }else {
                 setShowModalLogin(true);
             }
-        } 
+        }
+
     }, [esculturaIdParam]);
 
     if (error) return <span>Error al cargar el evento.</span>;
