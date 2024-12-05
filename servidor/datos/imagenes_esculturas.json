@@ -1,106 +1,194 @@
-[{
-    "escultura": 15,
+[
+  {
+    "escultura": 1,
     "imagen": "escultura1.jpg",
     "etapa": "antes",
     "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit."
   }, {
-    "escultura": 15,
-    "imagen": "escultura5.jpg",
-    "etapa": "durante",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit."
-  }, {
-    "escultura": 17,
-    "imagen": "escultura3.jpg",
-    "etapa": "despues",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit."
-  }, {
-    "escultura": 45,
-    "imagen": "escultura2.jpg",
-    "etapa": "despues",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit."
-  }, {
-    "escultura": 68,
-    "imagen": "escultura4.jpg",
-    "etapa": "despues",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit."
-  }, {
-    "escultura": 73,
-    "imagen": "escultura2.jpg",
-    "etapa": "antes",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit."
-  }, {
-    "escultura": 16,
-    "imagen": "escultura1.jpg",
-    "etapa": "despues",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit."
-  }, {
-    "escultura": 16,
-    "imagen": "escultura4.jpg",
-    "etapa": "durante",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit."
-  }, {
-    "escultura": 29,
-    "imagen": "escultura1.jpg",
-    "etapa": "durante",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit."
-  }, {
-    "escultura": 53,
-    "imagen": "escultura3.jpg",
-    "etapa": "durante",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit."
-  }, {
-    "escultura": 54,
-    "imagen": "escultura4.jpg",
-    "etapa": "durante",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit."
-  }, {
-    "escultura": 76,
+    "escultura": 1,
     "imagen": "escultura2.jpg",
     "etapa": "durante",
     "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit."
   }, {
     "escultura": 1,
-    "imagen": "escultura4.jpg",
-    "etapa": "durante",
+    "imagen": "escultura3.jpg",
+    "etapa": "despues",
     "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit."
-  }, {
-    "escultura": 1,
-    "imagen": "escultura4.jpg",
+  },
+  {
+    "escultura": 2,
+    "imagen": "escultura1.jpg",
     "etapa": "antes",
     "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit."
   }, {
-    "escultura": 13,
+    "escultura": 2,
     "imagen": "escultura2.jpg",
     "etapa": "durante",
     "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit."
   }, {
-    "escultura": 32,
-    "imagen": "escultura5.jpg",
-    "etapa": "durante",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit."
-  }, {
-    "escultura": 59,
-    "imagen": "escultura1.jpg",
-    "etapa": "antes",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit."
-  }, {
-    "escultura": 65,
-    "imagen": "escultura4.jpg",
-    "etapa": "antes",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit."
-  }, {
-    "escultura": 65,
+    "escultura": 2,
     "imagen": "escultura3.jpg",
-    "etapa": "durante",
-    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit."
-  }, {
-    "escultura": 70,
-    "imagen": "escultura1.jpg",
     "etapa": "despues",
     "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit."
-  }, {
-    "escultura": 84,
+  },
+  {
+    "escultura": 3,
     "imagen": "escultura1.jpg",
+    "etapa": "antes",
+    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit."
+  }, {
+    "escultura": 3,
+    "imagen": "escultura2.jpg",
+    "etapa": "durante",
+    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit."
+  }, {
+    "escultura": 3,
+    "imagen": "escultura3.jpg",
+    "etapa": "despues",
+    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit."
+  },
+  {
+    "escultura": 4,
+    "imagen": "escultura1.jpg",
+    "etapa": "antes",
+    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit."
+  }, {
+    "escultura": 4,
+    "imagen": "escultura2.jpg",
+    "etapa": "durante",
+    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit."
+  }, {
+    "escultura": 4,
+    "imagen": "escultura3.jpg",
+    "etapa": "despues",
+    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit."
+  },
+  {
+    "escultura": 5,
+    "imagen": "escultura1.jpg",
+    "etapa": "antes",
+    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit."
+  }, {
+    "escultura": 5,
+    "imagen": "escultura2.jpg",
+    "etapa": "durante",
+    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit."
+  }, {
+    "escultura": 5,
+    "imagen": "escultura3.jpg",
+    "etapa": "despues",
+    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit."
+  },
+  {
+    "escultura": 6,
+    "imagen": "escultura1.jpg",
+    "etapa": "antes",
+    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit."
+  }, {
+    "escultura": 6,
+    "imagen": "escultura2.jpg",
+    "etapa": "durante",
+    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit."
+  }, {
+    "escultura": 6,
+    "imagen": "escultura3.jpg",
+    "etapa": "despues",
+    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit."
+  },
+  {
+    "escultura": 7,
+    "imagen": "escultura1.jpg",
+    "etapa": "antes",
+    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit."
+  }, {
+    "escultura": 7,
+    "imagen": "escultura2.jpg",
+    "etapa": "durante",
+    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit."
+  }, {
+    "escultura": 7,
+    "imagen": "escultura3.jpg",
+    "etapa": "despues",
+    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit."
+  },
+  {
+    "escultura": 8,
+    "imagen": "escultura1.jpg",
+    "etapa": "antes",
+    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit."
+  }, {
+    "escultura": 8,
+    "imagen": "escultura2.jpg",
+    "etapa": "durante",
+    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit."
+  }, {
+    "escultura": 8,
+    "imagen": "escultura3.jpg",
+    "etapa": "despues",
+    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit."
+  },
+  {
+    "escultura": 9,
+    "imagen": "escultura1.jpg",
+    "etapa": "antes",
+    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit."
+  }, {
+    "escultura": 9,
+    "imagen": "escultura2.jpg",
+    "etapa": "durante",
+    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit."
+  }, {
+    "escultura": 9,
+    "imagen": "escultura3.jpg",
+    "etapa": "despues",
+    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit."
+  },
+  {
+    "escultura": 10,
+    "imagen": "escultura1.jpg",
+    "etapa": "antes",
+    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit."
+  }, {
+    "escultura": 10,
+    "imagen": "escultura2.jpg",
+    "etapa": "durante",
+    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit."
+  }, {
+    "escultura": 10,
+    "imagen": "escultura3.jpg",
+    "etapa": "despues",
+    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit."
+  },
+  {
+    "escultura": 11,
+    "imagen": "escultura1.jpg",
+    "etapa": "antes",
+    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit."
+  }, {
+    "escultura": 11,
+    "imagen": "escultura2.jpg",
+    "etapa": "durante",
+    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit."
+  }, {
+    "escultura": 11,
+    "imagen": "escultura3.jpg",
+    "etapa": "despues",
+    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit."
+  },
+  {
+    "escultura": 12,
+    "imagen": "escultura1.jpg",
+    "etapa": "antes",
+    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit."
+  }, 
+  {
+    "escultura": 12,
+    "imagen": "escultura2.jpg",
+    "etapa": "durante",
+    "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit."
+  }, {
+    "escultura": 12,
+    "imagen": "escultura3.jpg",
     "etapa": "despues",
     "descripcion": "Lorem ipsum odor amet, consectetuer adipiscing elit."
   }

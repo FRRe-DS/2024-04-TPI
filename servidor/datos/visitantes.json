@@ -1,4 +1,5 @@
-[{
+[
+  {
     "username": "visitante1",
     "email": "visitante1@gmail.com",
     "is_admin": "False"
@@ -38,4 +39,9 @@
     "username": "visitante10",
     "email": "visitante10@gmail.com",
     "is_admin": "False"
-  }]
+  }, {
+    "username": "admin",
+    "email": "admin@gmail.com",
+    "is_admin": "True"
+  }
+]

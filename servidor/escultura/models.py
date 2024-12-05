@@ -15,6 +15,7 @@ class Escultura(models.Model):
     descripcion = models.TextField(null=True, blank=True)
     tematica = models.CharField(max_length=255)
     fecha_creacion = models.DateField()
+
     def promedio_votos(self):
         total_votos = self.votos.aggregate(models.Avg('puntaje'))['puntaje__avg']
         return total_votos if total_votos else 0
@@ -43,9 +44,6 @@ class ImagenEscultura(models.Model):
     def save(self, *args, **kwargs):
         if self.imagen:
             img = Image.open(self.imagen)
-
-            size = (800, 800)
-            img = img.resize(size, Image.LANCZOS)
 
             img_io = BytesIO()
 

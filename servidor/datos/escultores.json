@@ -1,301 +1,72 @@
-[{
-    "nombre": "Xylia Gouda",
-    "nacionalidad": "Vietnam",
-    "biografia": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "contacto": "xgouda0@samsung.com",
-    "fecha_nacimiento": "1995-09-22"
-  }, {
-    "nombre": "Madelle Lumox",
-    "nacionalidad": "Indonesia",
-    "biografia": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "contacto": "mlumox1@acquirethisname.com",
-    "fecha_nacimiento": "1972-01-18"
-  }, {
-    "nombre": "Rudiger Kemish",
-    "nacionalidad": "Peru",
-    "biografia": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "contacto": "rkemish2@rambler.ru",
-    "fecha_nacimiento": "1987-01-28"
-  }, {
-    "nombre": "Monti Gariff",
-    "nacionalidad": "Indonesia",
-    "biografia": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "contacto": "mgariff3@google.nl",
-    "fecha_nacimiento": "1993-12-13"
-  }, {
-    "nombre": "Ike Hames",
-    "nacionalidad": "Netherlands",
-    "biografia": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "contacto": "ihames4@devhub.com",
-    "fecha_nacimiento": "1985-09-25"
-  }, {
-    "nombre": "Hewet Latter",
-    "nacionalidad": "China",
-    "biografia": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "contacto": "hlatter5@telegraph.co.uk",
-    "fecha_nacimiento": "1994-05-11"
-  }, {
-    "nombre": "Rochella Guillou",
-    "nacionalidad": "France",
-    "biografia": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "contacto": "rguillou6@ow.ly",
-    "fecha_nacimiento": "1994-08-13"
-  }, {
-    "nombre": "Monique Barneville",
-    "nacionalidad": "Kyrgyzstan",
-    "biografia": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "contacto": "mbarneville7@devhub.com",
-    "fecha_nacimiento": "1999-02-21"
-  }, {
-    "nombre": "Loella Darkins",
-    "nacionalidad": "Russia",
-    "biografia": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "contacto": "ldarkins8@ox.ac.uk",
-    "fecha_nacimiento": "1963-05-11"
-  }, {
-    "nombre": "Rog Kelmere",
-    "nacionalidad": "Portugal",
-    "biografia": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "contacto": "rkelmere9@spiegel.de",
-    "fecha_nacimiento": "1968-09-01"
-  }, {
-    "nombre": "Andromache Tambling",
-    "nacionalidad": "Bangladesh",
-    "biografia": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "contacto": "atamblinga@zimbio.com",
-    "fecha_nacimiento": "1963-11-29"
-  }, {
-    "nombre": "Bronson Leydon",
-    "nacionalidad": "Tunisia",
-    "biografia": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "contacto": "bleydonb@sina.com.cn",
-    "fecha_nacimiento": "1978-12-28"
-  }, {
-    "nombre": "Ginger Aldine",
-    "nacionalidad": "China",
-    "biografia": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "contacto": "galdinec@wordpress.com",
-    "fecha_nacimiento": "1977-09-02"
-  }, {
-    "nombre": "Sauveur Botly",
-    "nacionalidad": "Palestinian Territory",
-    "biografia": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "contacto": "sbotlyd@toplist.cz",
-    "fecha_nacimiento": "1979-11-19"
-  }, {
-    "nombre": "Bobbe Eouzan",
+[
+  {
+    "nombre": "Auguste Rodin",
+    "nacionalidad": "Francia",
+    "biografia": "Famoso escultor francés conocido por sus obras maestras como 'El Pensador' y 'Los Burgueses de Calais'.",
+    "contacto": "arodinofficial@artmail.com",
+    "fecha_nacimiento": "1960-11-12"
+  },
+  {
+    "nombre": "Barbara Hepworth",
+    "nacionalidad": "Reino Unido",
+    "biografia": "Pionera en la escultura abstracta moderna, con un enfoque en formas orgánicas y el espacio.",
+    "contacto": "bhepworth@modernart.uk",
+    "fecha_nacimiento": "1963-01-10"
+  },
+  {
+    "nombre": "Fernando Botero",
     "nacionalidad": "Colombia",
-    "biografia": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "contacto": "beouzane@qq.com",
-    "fecha_nacimiento": "1984-05-11"
-  }, {
-    "nombre": "Wyatt Hearn",
-    "nacionalidad": "Argentina",
-    "biografia": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "contacto": "whearnf@globo.com",
-    "fecha_nacimiento": "1974-04-15"
-  }, {
-    "nombre": "Pauly Kowal",
-    "nacionalidad": "China",
-    "biografia": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "contacto": "pkowalg@deviantart.com",
-    "fecha_nacimiento": "1970-09-18"
-  }, {
-    "nombre": "Philly Grisley",
-    "nacionalidad": "Brazil",
-    "biografia": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "contacto": "pgrisleyh@imgur.com",
-    "fecha_nacimiento": "1977-05-28"
-  }, {
-    "nombre": "Sadella Tivers",
-    "nacionalidad": "Portugal",
-    "biografia": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "contacto": "stiversi@storify.com",
-    "fecha_nacimiento": "1967-06-23"
-  }, {
-    "nombre": "Hastings Guillet",
-    "nacionalidad": "China",
-    "biografia": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "contacto": "hguilletj@fc2.com",
-    "fecha_nacimiento": "1961-10-09"
-  }, {
-    "nombre": "Ermina Alexsandrov",
-    "nacionalidad": "Uruguay",
-    "biografia": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "contacto": "ealexsandrovk@admin.ch",
-    "fecha_nacimiento": "1987-09-07"
-  }, {
-    "nombre": "Sylvan Tattoo",
-    "nacionalidad": "Indonesia",
-    "biografia": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "contacto": "stattool@skyrock.com",
-    "fecha_nacimiento": "1983-11-24"
-  }, {
-    "nombre": "Alphard Ludman",
-    "nacionalidad": "Brazil",
-    "biografia": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "contacto": "aludmanm@ucla.edu",
-    "fecha_nacimiento": "1995-05-11"
-  }, {
-    "nombre": "Zilvia Ribou",
-    "nacionalidad": "Portugal",
-    "biografia": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "contacto": "zriboun@illinois.edu",
-    "fecha_nacimiento": "1973-05-07"
-  }, {
-    "nombre": "Starr de Broke",
-    "nacionalidad": "Philippines",
-    "biografia": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "contacto": "sdeo@usa.gov",
-    "fecha_nacimiento": "1999-07-06"
-  }, {
-    "nombre": "Gregoire Maffin",
-    "nacionalidad": "South Africa",
-    "biografia": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "contacto": "gmaffinp@google.it",
-    "fecha_nacimiento": "1972-01-15"
-  }, {
-    "nombre": "Guillema Nunn",
-    "nacionalidad": "Russia",
-    "biografia": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "contacto": "gnunnq@aol.com",
-    "fecha_nacimiento": "1962-09-08"
-  }, {
-    "nombre": "Claudetta Borborough",
-    "nacionalidad": "Peru",
-    "biografia": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "contacto": "cborboroughr@deliciousdays.com",
-    "fecha_nacimiento": "1994-10-23"
-  }, {
-    "nombre": "Tamma Billion",
-    "nacionalidad": "China",
-    "biografia": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "contacto": "tbillions@google.co.uk",
-    "fecha_nacimiento": "1996-05-11"
-  }, {
-    "nombre": "Quill Necolds",
-    "nacionalidad": "Ireland",
-    "biografia": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "contacto": "qnecoldst@163.com",
-    "fecha_nacimiento": "1961-12-09"
-  }, {
-    "nombre": "Ronny Caldicott",
-    "nacionalidad": "Syria",
-    "biografia": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "contacto": "rcaldicottu@mac.com",
-    "fecha_nacimiento": "1976-04-26"
-  }, {
-    "nombre": "Maison Siene",
-    "nacionalidad": "Portugal",
-    "biografia": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "contacto": "msienev@senate.gov",
-    "fecha_nacimiento": "1961-08-08"
-  }, {
-    "nombre": "Quent Pownall",
-    "nacionalidad": "Sweden",
-    "biografia": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "contacto": "qpownallw@adobe.com",
-    "fecha_nacimiento": "1988-02-06"
-  }, {
-    "nombre": "Inness Morrant",
-    "nacionalidad": "Argentina",
-    "biografia": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "contacto": "imorrantx@cocolog-nifty.com",
-    "fecha_nacimiento": "1967-07-29"
-  }, {
-    "nombre": "Shaw Kubecka",
-    "nacionalidad": "China",
-    "biografia": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "contacto": "skubeckay@rakuten.co.jp",
-    "fecha_nacimiento": "1993-11-21"
-  }, {
-    "nombre": "Aube Reder",
-    "nacionalidad": "Syria",
-    "biografia": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "contacto": "arederz@infoseek.co.jp",
-    "fecha_nacimiento": "1968-05-06"
-  }, {
-    "nombre": "Sharyl Omar",
-    "nacionalidad": "France",
-    "biografia": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "contacto": "somar10@cbsnews.com",
-    "fecha_nacimiento": "1970-10-17"
-  }, {
-    "nombre": "Wanda Littler",
-    "nacionalidad": "Czech Republic",
-    "biografia": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "contacto": "wlittler11@java.com",
-    "fecha_nacimiento": "1971-08-28"
-  }, {
-    "nombre": "Brier Brownsea",
-    "nacionalidad": "China",
-    "biografia": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "contacto": "bbrownsea12@time.com",
-    "fecha_nacimiento": "1989-10-27"
-  }, {
-    "nombre": "Georgianne Hasel",
-    "nacionalidad": "Malta",
-    "biografia": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "contacto": "ghasel13@tmall.com",
-    "fecha_nacimiento": "1969-01-21"
-  }, {
-    "nombre": "Stephan Pillman",
-    "nacionalidad": "Indonesia",
-    "biografia": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "contacto": "spillman14@xrea.com",
-    "fecha_nacimiento": "1999-05-28"
-  }, {
-    "nombre": "Hewet McNuff",
-    "nacionalidad": "United Kingdom",
-    "biografia": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "contacto": "hmcnuff15@unblog.fr",
-    "fecha_nacimiento": "1968-03-18"
-  }, {
-    "nombre": "Wakefield Petrelli",
-    "nacionalidad": "United States",
-    "biografia": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "contacto": "wpetrelli16@oakley.com",
-    "fecha_nacimiento": "1993-12-19"
-  }, {
-    "nombre": "Stacie Vasiltsov",
-    "nacionalidad": "Italy",
-    "biografia": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "contacto": "svasiltsov17@tumblr.com",
-    "fecha_nacimiento": "1971-12-18"
-  }, {
-    "nombre": "Ola Downes",
-    "nacionalidad": "China",
-    "biografia": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "contacto": "odownes18@feedburner.com",
-    "fecha_nacimiento": "1974-06-26"
-  }, {
-    "nombre": "Junia Mattevi",
-    "nacionalidad": "Poland",
-    "biografia": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "contacto": "jmattevi19@dagondesign.com",
-    "fecha_nacimiento": "1984-08-19"
-  }, {
-    "nombre": "Tobie Leythley",
-    "nacionalidad": "Democratic Republic of the Congo",
-    "biografia": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "contacto": "tleythley1a@guardian.co.uk",
-    "fecha_nacimiento": "1990-08-08"
-  }, {
-    "nombre": "Blancha Rillstone",
-    "nacionalidad": "Finland",
-    "biografia": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "contacto": "brillstone1b@addtoany.com",
-    "fecha_nacimiento": "1974-01-18"
-  }, {
-    "nombre": "Melloney Dulen",
-    "nacionalidad": "Indonesia",
-    "biografia": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "contacto": "mdulen1c@youtu.be",
-    "fecha_nacimiento": "1996-07-17"
-  }, {
-    "nombre": "Erwin Sandry",
-    "nacionalidad": "France",
-    "biografia": "Lorem ipsum odor amet, consectetuer adipiscing elit. Fringilla rhoncus torquent nisl enim ridiculus lacus. Eleifend convallis congue erat platea inceptos lectus pharetra nascetur lacus.",
-    "contacto": "esandry1d@studiopress.com",
-    "fecha_nacimiento": "1978-01-15"
-  }]
+    "biografia": "Escultor y pintor famoso por su estilo único conocido como 'Boterismo', que representa figuras voluminosas.",
+    "contacto": "fbotero@latinart.com",
+    "fecha_nacimiento": "1962-04-19"
+  },
+  {
+    "nombre": "Louise Bourgeois",
+    "nacionalidad": "Francia",
+    "biografia": "Artista conocida por sus esculturas emocionales y surrealistas como 'Maman', un enorme arácnido.",
+    "contacto": "lbourgeois@surrealart.com",
+    "fecha_nacimiento": "1961-12-25"
+  },
+  {
+    "nombre": "Henry Moore",
+    "nacionalidad": "Reino Unido",
+    "biografia": "Escultor británico famoso por sus representaciones abstractas y modernas de figuras humanas.",
+    "contacto": "hmoore@abstractart.org",
+    "fecha_nacimiento": "1978-07-30"
+  },
+  {
+    "nombre": "Anish Kapoor",
+    "nacionalidad": "India",
+    "biografia": "Reconocido escultor contemporáneo, conocido por obras como 'Cloud Gate' en Chicago.",
+    "contacto": "akapoor@modernsculpture.com",
+    "fecha_nacimiento": "1964-03-12"
+  },
+  {
+    "nombre": "Jean Arp",
+    "nacionalidad": "Francia",
+    "biografia": "Artista franco-alemán y escultor conocido por sus formas abstractas y surrealistas.",
+    "contacto": "jarp@surrealism.eu",
+    "fecha_nacimiento": "1976-09-16"
+  },
+  {
+    "nombre": "Camille Claudel",
+    "nacionalidad": "Francia",
+    "biografia": "Escultora y musa de Rodin, conocida por su talento y su vida trágica.",
+    "contacto": "cclaudel@frenchsculpture.com",
+    "fecha_nacimiento": "1964-12-08"
+  },
+  {
+    "nombre": "Alexander Calder",
+    "nacionalidad": "EE.UU.",
+    "biografia": "Artista estadounidense famoso por inventar los móviles, esculturas cinéticas y abstractas.",
+    "contacto": "acalder@kineticart.com",
+    "fecha_nacimiento": "1978-07-22"
+  },
+  {
+    "nombre": "Jaume Plensa",
+    "nacionalidad": "España",
+    "biografia": "Escultor contemporáneo español conocido por obras monumentales de rostros y figuras.",
+    "contacto": "jplensa@modernart.es",
+    "fecha_nacimiento": "1955-08-23"
+  }
+]

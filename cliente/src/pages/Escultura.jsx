@@ -227,7 +227,6 @@ function Escultura() {
                 <p>Esta escultura no tiene imágenes disponibles.</p>
             ) : (
                 <div className="escultura-galeria">
-                    {console.log(imagenes)}
                     {imagenes.map((imagen) => (
                         <div key={imagen.id} className="escultura-galeria-item">
                             {console.log(imagen)}
