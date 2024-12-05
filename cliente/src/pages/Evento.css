@@ -19,7 +19,12 @@
     gap: 20px;
     justify-content: flex-start;
 }
-
+.admin-controls{
+    display: flex;
+    margin:10px 0;
+    width:100%;
+    justify-content: center;
+}
 .evento-galeria-item {
     display: flex;
     flex-direction: column;
@@ -36,10 +41,11 @@
     background-color: #f9f9f9;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-
-.evento-galeria-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.evento-galeria-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
 }
 
 @media (max-width: 768px) {
@@ -60,7 +66,7 @@
     background-color: #eee;
     border-radius: 5px;
     flex: 1;
-    transition: all .1s;
+    transition: all 0.1s;
 }
 
 .galeria-item-opciones {
@@ -103,4 +109,61 @@
 .evento-compartir:hover {
     background-color: #ddd;
     border: 1px solid #000;
+}
+
+.carousel {
+    position: relative;
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 8px; /* Opcional: suaviza los bordes del slider */
+}
+
+.carousel-inner {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel-item {
+    flex: 0 0 100%; /* Cada item ocupa todo el ancho del slider */
+    transition: transform 0.5s ease-in-out; /* Suaviza las transiciones */
+}
+
+.carousel-item img {
+    width: 100%; /* Asegura que la imagen ocupe todo el ancho */
+    height: 300px; /* Altura consistente para todas las imágenes */
+    object-fit: cover; /* Escala y recorta las imágenes para mantener proporciones */
+    border-radius: 8px; /* Opcional: cohesión con el diseño */
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff !important;
+    cursor: pointer;
+}
+
+.carousel-control-next:hover,
+.carousel-control-prev:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+@media (max-width: 991px) {
+    .evento-galeria {
+        flex-direction: column;
+    }
+    .evento-galeria-item{
+        width: 100%;
+    }
+
+    
 }
