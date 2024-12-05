@@ -202,21 +202,21 @@ function Escultura() {
                     Fecha de creación: <b>{dataEscultura?.fecha_creacion}</b>
                 </span>
                 <span>
-                    Autor: 
+                    Autor: {" "}
                             <b
                             onClick={() => navigate(`/escultores/${dataEscultura?.escultor?.id}`)}
-                            style={{ cursor: 'pointer' }}
+                            className="hover-subrayado"
                             >
-                                {" " + dataEscultura?.escultor?.nombre}
+                                {dataEscultura?.escultor?.nombre}
                             </b>
                 </span>
                 <span>
-                    Evento:
+                    Evento: {" "}
                                 <b
                                 onClick={() => navigate(`/eventos/${evento?.id}`)}
-                                style={{ cursor: 'pointer' }}
+                                className="hover-subrayado"
                                 >
-                                    {" " + evento?.titulo}
+                                    {evento?.titulo}
                                 </b>
                 </span>
                 <CompartirBoton shareUrl={shareUrl}></CompartirBoton>
