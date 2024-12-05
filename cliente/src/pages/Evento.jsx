@@ -61,7 +61,7 @@ function Evento() {
                 },
                 body: JSON.stringify(eventoModificado),
             });
-            console.log(eventoModificado)
+
             if (response.ok) {
                 alert('Evento modificado exitosamente');
                 setShowModalModificar(false);
@@ -144,13 +144,13 @@ function Evento() {
       };
 
     useEffect(() => {
-        if (user) {
-            if (esculturaIdParam) {
+        if (esculturaIdParam) {
+            if (user) {
                 setEsculturaSeleccionada(esculturaIdParam);
                 setShowModalVotar(true);
+            } else {
+                setShowModalLogin(true);
             }
-        } else {
-            setShowModalLogin(true);
         }
     }, [esculturaIdParam]);
 
