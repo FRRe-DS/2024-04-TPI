@@ -20,6 +20,7 @@ function EscultoresPage() {
     biografia: "",
     contacto: "",
     fecha_nacimiento: "",
+    imagen: null,
   });
 
   // Manejo de modal
@@ -49,39 +50,51 @@ function EscultoresPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-      if (fechaError) {
+    if (fechaError) {
         return;
     }
 
     try {
-      const response = await fetch("http://127.0.0.1:8000/api/escultores/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(nuevoEscultor),
-      });
-      if (response.ok) {
-        alert('Escultor generado exitosamente');
-        const data = await response.json();
-        setListaEscultores((prev) => [...prev, data]); // Agregar el nuevo escultor a la lista
-        setShowModal(false); // Cerrar el modal
-        
-        setNuevoEscultor({
-          nombre: "",
-          nacionalidad: "",
-          biografia: "",
-          contacto: "",
-          fecha_nacimiento: "",
-        });
+          const formData = new FormData();
 
-        navigate(`/escultores/${data.data.id}`);
-      } else {
-        console.error("Error al agregar escultor");
+          // Agrega los campos al FormData
+          formData.append('nombre', nuevoEscultor.nombre);
+          formData.append('nacionalidad', nuevoEscultor.nacionalidad);
+          formData.append('biografia', nuevoEscultor.biografia);
+          formData.append('contacto', nuevoEscultor.contacto);
+          formData.append('fecha_nacimiento', nuevoEscultor.fecha_nacimiento);
+
+          if (nuevoEscultor.imagen) {
+              formData.append('imagen', nuevoEscultor.imagen);
+          }
+
+          const response = await fetch("http://127.0.0.1:8000/api/escultores/", {
+              method: "POST",
+              body: formData, // Enviar FormData en el cuerpo
+          });
+
+          if (response.ok) {
+              alert('Escultor generado exitosamente');
+              const data = await response.json();
+              setListaEscultores((prev) => [...prev, data]); // Agregar el nuevo escultor a la lista
+              setShowModal(false); // Cerrar el modal
+
+              setNuevoEscultor({
+                  nombre: "",
+                  nacionalidad: "",
+                  biografia: "",
+                  contacto: "",
+                  fecha_nacimiento: "",
+                  imagen: null,
+              });
+
+              navigate(`/escultores/${data.data.id}`);
+          } else {
+              console.error("Error al agregar escultor");
+          }
+      } catch (error) {
+          console.error(error);
       }
-    } catch (error) {
-      console.error(error);
-    }
   };
 
   useEffect(() => {
@@ -188,6 +201,19 @@ function EscultoresPage() {
               />
             </Form.Group>
             {fechaError && <div style={{ color: 'red' }}>{fechaError}</div>}
+            <Form.Group controlId="formImagen">
+                <Form.Label>Foto</Form.Label>
+                <Form.Control
+                    type="file"
+                    accept="image/*"
+                    onChange={(e) =>
+                        setNuevoEscultor((prev) => ({
+                            ...prev,
+                            imagen: e.target.files[0], // Guardar el archivo seleccionado
+                        }))
+                    }
+                />
+            </Form.Group>
             <div className="text-center mt-3">
               <Button variant="danger" className="mt-3 mx-2" onClick={handleCloseModal}>
                 Cancelar

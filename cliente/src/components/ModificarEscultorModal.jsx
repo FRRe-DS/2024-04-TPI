@@ -7,6 +7,7 @@ function ModificarEscultorModal({ show, handleClose, handleSubmit, escultorActua
     const [biografia, setBiografia] = useState('');
     const [contacto, setContacto] = useState('');
     const [fechaNacimiento, setFechaNacimiento] = useState('');
+    const [imagen, setImagen] = useState(null);
     const [fechaError, setFechaError] = useState('');
 
     useEffect(() => {
@@ -16,6 +17,7 @@ function ModificarEscultorModal({ show, handleClose, handleSubmit, escultorActua
             setBiografia(escultorActual.biografia || '');
             setContacto(escultorActual.contacto || '');
             setFechaNacimiento(escultorActual.fecha_nacimiento || '');
+            setImagen(escultorActual.imagen || '');
         }
     }, [escultorActual]);
 
@@ -46,6 +48,7 @@ function ModificarEscultorModal({ show, handleClose, handleSubmit, escultorActua
             biografia,
             contacto,
             fecha_nacimiento: fechaNacimiento,
+            imagen
         });
     };
 
@@ -104,6 +107,14 @@ function ModificarEscultorModal({ show, handleClose, handleSubmit, escultorActua
                         />
                     </Form.Group>
                     {fechaError && <div style={{ color: 'red' }}>{fechaError}</div>}
+                    <Form.Group controlId="formImagen">
+                        <Form.Label>Foto</Form.Label>
+                        <Form.Control
+                            type="file"
+                            accept="image/*"
+                            onChange={(e) => setImagen(e.target.files[0])}
+                        />
+                    </Form.Group>
                     <br />
                     <div className="text-center mt-3">
                         <Button variant="danger" onClick={handleClose} className="mx-3">

@@ -73,18 +73,29 @@ function Escultor() {
 
     const actualizarEscultor = async (escultorModificado) => {
         try {
+            const formData = new FormData();
+    
+            // Agrega todos los campos al FormData
+            formData.append('nombre', escultorModificado.nombre);
+            formData.append('nacionalidad', escultorModificado.nacionalidad);
+            formData.append('biografia', escultorModificado.biografia);
+            formData.append('contacto', escultorModificado.contacto);
+            formData.append('fecha_nacimiento', escultorModificado.fecha_nacimiento);
+    
+            // Solo agregar imagen si se seleccionó una nueva
+            if (escultorModificado.imagen) {
+                formData.append('imagen', escultorModificado.imagen);
+            }
+    
             const response = await fetch(`http://127.0.0.1:8000/api/escultores/${id}/`, {
                 method: 'PUT',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(escultorModificado),
+                body: formData, // Enviar FormData en el cuerpo
             });
-            console.log(escultorModificado)
+    
             if (response.ok) {
                 alert('Escultor modificado exitosamente');
                 setShowModalModificar(false);
-                await obtenerData();
+                await obtenerData(); // Recargar los datos después de la modificación
             } else {
                 console.error('Error al actualizar el escultor');
                 setError(true);
@@ -155,7 +166,15 @@ function Escultor() {
                 </div>
             )}
             <h1 className="escultor-titulo">{dataEscultor?.nombre}</h1>
+            {dataEscultor?.imagen && (
+                        <img
+                            src={`${dataEscultor.imagen}`}
+                            alt={`Imagen de ${dataEscultor.nombre}`}
+                            className="escultor-imagen mb-3"
+                        />
+            )}
             <div className="escultor-detalle">
+                {console.log(dataEscultor)}
                 <p>{dataEscultor?.biografia}</p>
                 <span>
                     Fecha de nacimiento: <b>{dataEscultor?.fecha_nacimiento}</b>
