@@ -169,10 +169,8 @@ class GenerarQR(APIView):
             )
 
         # Obtener el minuto actual para incluirlo en la URL
-        minuto_actual = datetime.now().strftime("%Y%m%d%H%M")  # Ejemplo: '202412031345' (AAAAmmddHHMM)
+        minuto_actual = datetime.now().strftime("%Y%m%d%H%M")
         
-        # Construcción de la URL para la escultura
-        # escultura_url = f"http://localhost:5173/validar/{escultura_id}?timestamp={minuto_actual}"
 
         escultura_url = f"http://localhost:5173/eventos/{escultura.evento.id}?escultura={escultura_id}&timestamp={minuto_actual}"
         
